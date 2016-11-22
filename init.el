@@ -56,3 +56,12 @@
 
 ;;; Change font to 13pt
 (set-face-attribute 'default nil :height 130)
+
+;;; Install company (complete anything) mode and activate it
+(package-install 'company)
+(company-mode)
+
+(custom-set-variables
+ '(package-selected-packages (quote (company))))
+(custom-set-faces
+ )
