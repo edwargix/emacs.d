@@ -54,6 +54,9 @@
 ;;; Load and activate lisp packages
 (package-initialize)
 
+;;; Update package listings
+(package-refresh-contents)
+
 ;;; Change font to 13pt
 (set-face-attribute 'default nil :height 130)
 
