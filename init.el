@@ -54,16 +54,24 @@
 ;;; Load and activate lisp packages
 (package-initialize)
 
-;;; Update package listings
-(package-refresh-contents)
-
 ;;; Change font to 13pt
 (set-face-attribute 'default nil :height 130)
 
 ;;; Install company (complete anything) mode and activate it
-(package-install 'company)
+(condition-case nil
+    (package-install 'company)
+  (error
+    (package-refresh-contents)
+    (package-install 'company)))
+
 (require 'company)
-(company-mode)
+(add-hook 'after-init-hook 'global-company-mode)
+
+;;; Install yasnippet
+(package-install 'yasnippet)
+
+(require 'yasnippet)
+(yas-global-mode 1)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
