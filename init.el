@@ -63,13 +63,11 @@
   (error
     (package-refresh-contents)
     (package-install 'company)))
-
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;;; Install yasnippet
 (package-install 'yasnippet)
-
 (require 'yasnippet)
 (yas-global-mode 1)
 
@@ -80,6 +78,7 @@
 
 ;;; Install company backend for C/C++ headers
 (package-install 'company-c-headers)
+(require 'company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
 
 (custom-set-variables
