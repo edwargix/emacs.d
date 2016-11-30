@@ -78,6 +78,10 @@
 (setq company-quickhelp-idle-delay 1)
 (company-quickhelp-mode 1)
 
+;;; Install company backend for C/C++ headers
+(package-install 'company-c-headers)
+(add-to-list 'company-backends 'company-c-headers)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
