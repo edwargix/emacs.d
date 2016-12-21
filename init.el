@@ -19,9 +19,6 @@
 ;;; Set cursor type
 (set-default 'cursor-type 't)
 
-;;; Simple smex
-(ido-mode)
-
 ;;; Show column number next to line number in mode line
 (column-number-mode)
 
