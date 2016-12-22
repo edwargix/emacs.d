@@ -90,12 +90,18 @@
 (add-to-list 'company-backends 'company-tern)
 (add-hook 'js-mode-hook (lambda() (tern-mode)))
 
+;;; Install auctex
+(package-install 'auctex)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (company-tern company))))
+ '(package-selected-packages (quote (auctex company-tern company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
