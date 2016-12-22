@@ -79,7 +79,7 @@
 (add-to-list 'company-backends 'company-c-headers)
 
 ;;; Load tern server (for javascript ide-like features)
-(cd "./tern")
+(cd "~/.emacs.d/tern")
 (shell-command "npm install")
 (cd "../")
 (add-to-list 'load-path "./tern/emacs")
