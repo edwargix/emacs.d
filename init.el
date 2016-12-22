@@ -78,9 +78,14 @@
 (require 'company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
 
+;;; Start tern server (for javascript ide-like features)
+(add-to-list 'load-path "~/.emacs.d/elpa/tern-20160817.522")
+(autoload 'tern-mode "tern.el" nil t)
+
 ;;; Install company backend for javascript
 (package-install 'company-tern)
 (add-to-list 'company-backends 'company-tern)
+(add-hook 'js-mode-hook (lambda() (tern-mode)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
