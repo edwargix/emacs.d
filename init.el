@@ -19,9 +19,6 @@
 ;;; Set cursor type
 (set-default 'cursor-type 't)
 
-;;; Simple smex
-(ido-mode)
-
 ;;; Show column number next to line number in mode line
 (column-number-mode)
 
@@ -81,6 +78,24 @@
 (require 'company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
 
+;;; Install company backend for javascript
+(package-install 'company-tern)
+(add-to-list 'company-backends 'company-tern)
+(add-hook 'js-mode-hook (lambda() (tern-mode)))
+
+;;; Load tern server (for javascript ide-like features)
+(cd "~/.emacs.d/tern")
+(shell-command "npm install")
+(cd "../")
+(add-to-list 'load-path "./tern/emacs")
+(autoload 'tern-mode "tern.el" nil t)
+
+;;; Install auctex
+(package-install 'auctex)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+
+
 ;;; Install helm
 (package-install 'helm)
 
@@ -108,7 +123,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (company))))
+ '(package-selected-packages (quote (auctex company-tern company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
