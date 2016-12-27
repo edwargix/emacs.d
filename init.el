@@ -78,17 +78,17 @@
 (require 'company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
 
+;;; Install company backend for javascript
+(package-install 'company-tern)
+(add-to-list 'company-backends 'company-tern)
+(add-hook 'js-mode-hook (lambda() (tern-mode)))
+
 ;;; Load tern server (for javascript ide-like features)
 (cd "~/.emacs.d/tern")
 (shell-command "npm install")
 (cd "../")
 (add-to-list 'load-path "./tern/emacs")
 (autoload 'tern-mode "tern.el" nil t)
-
-;;; Install company backend for javascript
-(package-install 'company-tern)
-(add-to-list 'company-backends 'company-tern)
-(add-hook 'js-mode-hook (lambda() (tern-mode)))
 
 ;;; Install auctex
 (package-install 'auctex)
