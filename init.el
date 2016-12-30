@@ -98,6 +98,9 @@
 ;;; Install android mode
 (package-install 'android-mode)
 
+;;; Install projectile
+(package-install 'projectile)
+
 ;;; Install js-import
 (package-install 'js-import)
 
@@ -108,7 +111,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (js-import android-mode auctex company-tern company))))
+    (projectile js-import android-mode auctex company-tern company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
