@@ -104,6 +104,16 @@
 ;;; Install js-import
 (package-install 'js-import)
 
+;;; Install jade mode
+(package-install 'jade-mode)
+
+;;; Install company-web
+(package-install 'company-web)
+(require 'company-web-html)
+(require 'company-web-jade)
+
+(define-key html-mode-map (kbd "C-'") 'company-web-html)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
