@@ -115,6 +115,9 @@
 
 (define-key jade-mode-map (kbd "C-'") 'company-web-jade)
 
+;;; Install GNU Global front end
+(package-install 'ggtags)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
