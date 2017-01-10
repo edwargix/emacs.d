@@ -113,7 +113,6 @@
 (require 'company-web-html)
 (require 'company-web-jade)
 
-(define-key html-mode-map (kbd "C-'") 'company-web-html)
 (define-key jade-mode-map (kbd "C-'") 'company-web-jade)
 
 (custom-set-variables
