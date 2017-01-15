@@ -74,32 +74,23 @@
    (package-refresh-contents)
    (mapc 'package-install my-package-list)))
 
-;;; Install company (complete anything) mode and activate it
-(condition-case nil
-    (package-install 'company)
-  (error
-    (package-refresh-contents)
-    (package-install 'company)))
+;;; Company (complete anything) mode
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
-;;; Install yasnippet
-(package-install 'yasnippet)
+;;; Yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
 
-;;; Install Quickhelp (documentation lookup) for company
-(package-install 'company-quickhelp)
+;;; Quickhelp (documentation lookup) for company
 (setq company-quickhelp-idle-delay 1)
 (company-quickhelp-mode 1)
 
-;;; Install company backend for C/C++ headers
-(package-install 'company-c-headers)
+;;; company backend for C/C++ headers
 (require 'company-c-headers)
 (add-to-list 'company-backends 'company-c-headers)
 
-;;; Install company backend for javascript
-(package-install 'company-tern)
+;;; company backend for javascript: tern
 (add-to-list 'company-backends 'company-tern)
 (add-hook 'js-mode-hook (lambda() (tern-mode)))
 
@@ -110,38 +101,22 @@
 (add-to-list 'load-path "./tern/emacs")
 (autoload 'tern-mode "tern.el" nil t)
 
-;;; Install auctex
-(package-install 'auctex)
+;;; auctex
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 
-;;; Install android mode
-(package-install 'android-mode)
-
-;;; Install projectile
-(package-install 'projectile)
-
-;;; Install js-import
-(package-install 'js-import)
-
-;;; Install jade mode
-(package-install 'jade-mode)
+;;; jade mode
 (require 'jade-mode)
 
-;;; Install company-web
-(package-install 'company-web)
+;;; company-web
 (require 'company-web-html)
 (require 'company-web-jade)
-
 (define-key jade-mode-map (kbd "C-'") 'company-web-jade)
 
-;;; Install js2-mode
-(package-install 'js2-mode)
+;;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
-;;; Install GNU Global front end
-(package-install 'ggtags)
-
+;;; GNU Global front end
 (require 'ggtags)
 (add-hook 'c-mode-common-hook
 	  (lambda ()
