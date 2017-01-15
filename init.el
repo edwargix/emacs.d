@@ -54,6 +54,26 @@
 ;;; Change font to 13pt
 (set-face-attribute 'default nil :height 130)
 
+;;; Install all packages
+(setq my-package-list '(company
+			yasnippet
+			company-quickhelp
+			company-c-headers
+			company-tern
+			auctex
+			android-mode
+			projectile
+			js-import
+			jade-mode
+			company-web
+			js2-mode
+			ggtags))
+(condition-case nil
+    (mapc 'package-install my-package-list)
+  (error
+   (package-refresh-contents)
+   (mapc 'package-install my-package-list)))
+
 ;;; Install company (complete anything) mode and activate it
 (condition-case nil
     (package-install 'company)
@@ -145,7 +165,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(package-selected-packages
    (quote
-    (js2-mode projectile js-import android-mode auctex company-tern company))))
+    (ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import android-mode auctex company-tern company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
