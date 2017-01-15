@@ -115,6 +115,10 @@
 
 (define-key jade-mode-map (kbd "C-'") 'company-web-jade)
 
+;;; Install js2-mode
+(package-install 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
 ;;; Install GNU Global front end
 (package-install 'ggtags)
 
@@ -141,7 +145,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(package-selected-packages
    (quote
-    (projectile js-import android-mode auctex company-tern company))))
+    (js2-mode projectile js-import android-mode auctex company-tern company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
