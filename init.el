@@ -67,7 +67,8 @@
 			jade-mode
 			company-web
 			js2-mode
-			ggtags))
+			ggtags
+			elpy))
 (condition-case nil
     (mapc 'package-install my-package-list)
   (error
@@ -131,6 +132,9 @@
 (define-key ggtags-mode-map (kbd "C-c g u") 'ggtags-update-tags)
 
 (define-key ggtags-mode-map (kbd "M-,") 'pop-tag-mark)
+
+;; Elpy
+(elpy-enable)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
