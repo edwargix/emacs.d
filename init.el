@@ -68,7 +68,8 @@
 			company-web
 			js2-mode
 			ggtags
-			elpy))
+			elpy
+			paredit))
 (condition-case nil
     (mapc 'package-install my-package-list)
   (error
@@ -136,6 +137,10 @@
 ;; Elpy
 (elpy-enable)
 
+;; Setup paredit for javascript
+(define-key js-mode-map "{" 'paredit-open-curly)
+(define-key js-mode-map "}" 'paredit-close-curly-and-newline)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -144,7 +149,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(package-selected-packages
    (quote
-    (ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import android-mode auctex company-tern company))))
+    (projectile js-import android-mode auctex company-tern company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
