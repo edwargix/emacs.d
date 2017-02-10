@@ -64,7 +64,8 @@
 			js2-mode
 			ggtags
 			elpy
-			paredit))
+			paredit
+			ac-js2))
 (condition-case nil
     (mapc 'package-install my-package-list)
   (error
@@ -112,6 +113,7 @@
 
 ;;; js2-mode
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-hook 'js2-mode-hook 'ac-js2-mode)
 
 ;;; GNU Global front end
 (require 'ggtags)
