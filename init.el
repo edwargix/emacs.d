@@ -43,11 +43,6 @@
 	     '("melpa" . "https://melpa.org/packages/")
 	     t)
 
-;;; Add marmalade archives
-(add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/")
-	     t)
-
 ;;; Load and activate lisp packages
 (package-initialize)
 
