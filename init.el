@@ -65,7 +65,8 @@
 			ggtags
 			elpy
 			paredit
-			ac-js2))
+			ac-js2
+			eclim))
 (condition-case nil
     (mapc 'package-install my-package-list)
   (error
@@ -90,7 +91,7 @@
 
 ;;; company backend for javascript: tern
 (add-to-list 'company-backends 'company-tern)
-(add-hook 'js-mode-hook (lambda() (tern-mode)))
+(add-hook 'js-mode-hook) ; (lambda() (tern-mode)))
 
 ;;; Load tern server (for javascript ide-like features)
 (cd "~/.emacs.d/tern")
