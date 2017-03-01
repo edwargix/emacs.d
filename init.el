@@ -89,8 +89,8 @@
 (add-to-list 'company-backends 'company-c-headers)
 
 ;;; company backend for javascript: tern
-(add-to-list 'company-backends 'company-tern)
-(add-hook 'js-mode-hook (lambda() (tern-mode)))
+;; (add-to-list 'company-backends 'company-tern)
+;; (add-hook 'js-mode-hook (lambda() (tern-mode)))
 
 ;;; Load tern server (for javascript ide-like features)
 (cd "~/.emacs.d/tern")
@@ -137,6 +137,9 @@
 ;; Setup paredit for javascript
 (define-key js-mode-map "{" 'paredit-open-curly)
 (define-key js-mode-map "}" 'paredit-close-curly-and-newline)
+
+(define-key js2-mode-map "{" 'paredit-open-curly)
+(define-key js2-mode-map "}" 'paredit-close-curly-and-newline)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
