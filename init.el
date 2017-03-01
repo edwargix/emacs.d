@@ -66,7 +66,9 @@
 			elpy
 			paredit
 			ac-js2
-			eclim))
+			eclim
+			paredit-everywhere))
+
 (condition-case nil
     (mapc 'package-install my-package-list)
   (error
@@ -90,8 +92,8 @@
 (add-to-list 'company-backends 'company-c-headers)
 
 ;;; company backend for javascript: tern
-(add-to-list 'company-backends 'company-tern)
-(add-hook 'js-mode-hook) ; (lambda() (tern-mode)))
+;; (add-to-list 'company-backends 'company-tern)
+;; (add-hook 'js-mode-hook (lambda() (tern-mode)))
 
 ;;; Load tern server (for javascript ide-like features)
 (cd "~/.emacs.d/tern")
@@ -123,6 +125,9 @@
 	    (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'asm-mode)
 	      (ggtags-mode 1))))
 
+;; Paredit everywhere
+(add-hook 'prog-mode-hook 'paredit-everywhere-mode)
+
 (define-key ggtags-mode-map (kbd "C-c g s") 'ggtags-find-other-symbol)
 (define-key ggtags-mode-map (kbd "C-c g h") 'ggtags-view-tag-history)
 (define-key ggtags-mode-map (kbd "C-c g r") 'ggtags-find-reference)
@@ -148,7 +153,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(package-selected-packages
    (quote
-    (ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import android-mode auctex company-tern company)))
+    (paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import android-mode auctex company-tern company)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
