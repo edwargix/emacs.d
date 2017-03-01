@@ -138,9 +138,6 @@
 (define-key js-mode-map "{" 'paredit-open-curly)
 (define-key js-mode-map "}" 'paredit-close-curly-and-newline)
 
-(define-key js2-mode-map "{" 'paredit-open-curly)
-(define-key js2-mode-map "}" 'paredit-close-curly-and-newline)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
