@@ -66,7 +66,9 @@
 			elpy
 			paredit
 			ac-js2
+			eclim
 			paredit-everywhere))
+
 (condition-case nil
     (mapc 'package-install my-package-list)
   (error
