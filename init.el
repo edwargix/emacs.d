@@ -56,7 +56,6 @@
 			company-c-headers
 			company-tern
 			auctex
-			android-mode
 			projectile
 			js-import
 			jade-mode
@@ -161,7 +160,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(package-selected-packages
    (quote
-    (engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import android-mode auctex company-tern company)))
+    (engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import auctex company-tern company)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
