@@ -67,7 +67,8 @@
 			ac-js2
 			eclim
 			paredit-everywhere
-			engine-mode))
+			engine-mode
+			magit))
 
 (condition-case nil
     (mapc 'package-install my-package-list)
@@ -160,7 +161,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(package-selected-packages
    (quote
-    (engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import auctex company-tern company)))
+    (magit engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import auctex company-tern company)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
