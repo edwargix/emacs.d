@@ -1,9 +1,4 @@
 
-;;; Thanks to Mohammed Ismail Ansari for the YouTube tutorial
-;;; https://www.youtube.com/watch?v=FRu8SRWuUko
-
-;;; edwargix's emacs config!
-
 ;;; Change theme
 (load-theme 'adwaita)
 
