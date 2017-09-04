@@ -5,8 +5,8 @@
 ;;; Change xfce/gnome window title
 (setq frame-title-format "emacs")
 
-;;; Enable menu bar
-(menu-bar-mode 1)
+;;; Disable menu bar
+(menu-bar-mode 0)
 
 ;;; Disable scroll bar
 (scroll-bar-mode -1)
