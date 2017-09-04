@@ -11,6 +11,9 @@
 ;;; Disable scroll bar
 (scroll-bar-mode -1)
 
+;;; Disable tool bar
+(tool-bar-mode -1)
+
 ;;; Set cursor type
 (set-default 'cursor-type 't)
 
