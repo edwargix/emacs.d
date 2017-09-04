@@ -48,7 +48,8 @@
 (set-face-attribute 'default nil :height 120)
 
 ;;; Install all packages
-(setq my-package-list '(company
+(setq my-package-list '(evil
+			company
 			yasnippet
 			company-quickhelp
 			company-c-headers
@@ -73,6 +74,8 @@
   (error
    (package-refresh-contents)
    (mapc 'package-install my-package-list)))
+
+(evil-mode 1)
 
 ;;; Company (complete anything) mode
 (require 'company)
