@@ -23,8 +23,6 @@
 ;;; Highlight parentheses
 (show-paren-mode)
 
-;;; (global-hl-line-mode)
-
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
 ;;; C-c <right>: undo undo (aka redo)
