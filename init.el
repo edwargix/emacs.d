@@ -43,6 +43,9 @@
 ;;; Load and activate lisp packages
 (package-initialize)
 
+;;; Install use-package for easy package configuration
+(package-install 'use-package)
+
 ;;; Change font to 12pt
 (set-face-attribute 'default nil :height 120)
 
@@ -187,7 +190,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(package-selected-packages
    (quote
-    (magit engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import auctex company-tern company)))
+    (use-package magit engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import auctex company-tern company)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
