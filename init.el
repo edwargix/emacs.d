@@ -52,6 +52,16 @@
   :config
   (evil-mode 1))
 
+;;; Magit: a Git Porcelain inside Emacs
+(use-package magit
+  :ensure t
+  :bind
+  (("C-x g" . magit-status)
+   ("C-x M-g" . magit-dispatch-popup))
+  :config
+  (use-package evil-magit
+    :ensure t))
+
 ;;; Change font to 12pt
 (set-face-attribute 'default nil :height 120)
 
@@ -73,8 +83,7 @@
 			ac-js2
 			eclim
 			paredit-everywhere
-			engine-mode
-			magit))
+			engine-mode))
 
 (condition-case nil
     (mapc 'package-install my-package-list)
@@ -158,10 +167,6 @@
   :keybinding "d")
 (engine-mode)
 
-;; Magit
-(global-set-key (kbd "C-x g") 'magit-status)
-(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
-
 ;;; Install helm
 (package-install 'helm)
 
@@ -193,7 +198,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(package-selected-packages
    (quote
-    (use-package magit engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import auctex company-tern company)))
+    (evil-magit use-package magit engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import auctex company-tern company)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
