@@ -9,10 +9,10 @@
 (menu-bar-mode 0)
 
 ;;; Disable scroll bar
-(scroll-bar-mode -1)
+(scroll-bar-mode 0)
 
 ;;; Disable tool bar
-(tool-bar-mode -1)
+(tool-bar-mode 0)
 
 ;;; Set cursor type
 (set-default 'cursor-type 't)
