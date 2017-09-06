@@ -37,9 +37,10 @@
 (require 'package)
 
 ;;; Add melpa archives
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/")
-	     t)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (url (concat (if no-ssl "http" "https") "://melpa.org/packages/")))
+  (add-to-list 'package-archives (cons "melpa" url) t))
 
 ;;; Load and activate lisp packages
 (package-initialize)
