@@ -96,6 +96,15 @@
   :config
   (yas-global-mode 1))
 
+;;; Setup duckduckgo search engine
+(use-package engine-mode
+  :ensure t
+  :config
+  (defengine duckduckgo
+    "https://duckduckgo.com/?q=%s"
+    :keybinding "d")
+  (engine-mode))
+
 ;;; These will soon all be converted to `use-package` macros
 ;;; Install all packages
 (setq my-package-list '(company-quickhelp
@@ -112,8 +121,7 @@
 			paredit
 			ac-js2
 			eclim
-			paredit-everywhere
-			engine-mode))
+			paredit-everywhere))
 
 (condition-case nil
     (mapc 'package-install my-package-list)
@@ -181,13 +189,6 @@
 ;; Setup paredit for javascript
 (define-key js-mode-map "{" 'paredit-open-curly)
 (define-key js-mode-map "}" 'paredit-close-curly-and-newline)
-
-;; Setup duckduckgo search engine
-(require 'engine-mode)
-(defengine duckduckgo
-  "https://duckduckgo.com/?q=%s"
-  :keybinding "d")
-(engine-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
