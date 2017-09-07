@@ -134,6 +134,12 @@
 	    (lambda ()
 	      (evil-org-set-key-theme))))
 
+;;; Paradox: a modern package menu
+(use-package paradox
+  :ensure t
+  :config
+  (paradox-enable))
+
 ;;; These will soon all be converted to `use-package` macros
 ;;; Install all packages
 (setq my-package-list '(company-quickhelp
@@ -228,7 +234,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(package-selected-packages
    (quote
-    (evil-surround evil-magit use-package magit engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import auctex company-tern company)))
+    (paradox evil-org paredit js2-mode projectile use-package paredit-everywhere monokai-theme js-import jade-mode helm ggtags evil-surround evil-magit engine-mode elpy eclim company-web company-tern company-quickhelp company-c-headers auctex ac-js2)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
