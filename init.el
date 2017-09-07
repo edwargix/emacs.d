@@ -89,6 +89,14 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
+;;; Quickhelp (documentation lookup) for company
+(use-package company-quickhelp
+  :ensure t
+  :after company
+  :config
+  (setq company-quickhelp-idle-delay 1)
+  (company-quickhelp-mode 1))
+
 ;;; Helm: incremental completion and selection narrowing framework
 (use-package helm
   :ensure t
@@ -142,8 +150,7 @@
 
 ;;; These will soon all be converted to `use-package` macros
 ;;; Install all packages
-(setq my-package-list '(company-quickhelp
-			company-c-headers
+(setq my-package-list '(company-c-headers
 			company-tern
 			auctex
 			projectile
@@ -163,10 +170,6 @@
   (error
    (package-refresh-contents)
    (mapc 'package-install my-package-list)))
-
-;;; Quickhelp (documentation lookup) for company
-(setq company-quickhelp-idle-delay 1)
-(company-quickhelp-mode 1)
 
 ;;; company backend for C/C++ headers
 (require 'company-c-headers)
