@@ -1,6 +1,14 @@
 ;;; Change frame title
 (setq frame-title-format "emacs")
 
+;;; Font
+(set-frame-font
+ (font-spec
+  :name "Source Code Pro"
+  :size 13
+  :weight 'normal
+  :width 'normal))
+
 ;;; Disable menu bar
 (menu-bar-mode 0)
 
@@ -41,9 +49,6 @@
 
 ;;; Install use-package for easy package configuration
 (package-install 'use-package)
-
-;;; Change font to 12pt
-(set-face-attribute 'default nil :height 120)
 
 ;;; Change theme
 (use-package monokai-theme
