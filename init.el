@@ -1,7 +1,3 @@
-
-;;; Change theme
-(load-theme 'adwaita)
-
 ;;; Change xfce/gnome window title
 (setq frame-title-format "emacs")
 
@@ -48,6 +44,12 @@
 
 ;;; Change font to 12pt
 (set-face-attribute 'default nil :height 120)
+
+;;; Change theme
+(use-package monokai-theme
+  :ensure t
+  :config
+  (load-theme 'monokai t))
 
 ;;; Evil (extensible vi layer)
 (use-package evil
