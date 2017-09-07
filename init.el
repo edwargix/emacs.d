@@ -124,6 +124,16 @@
   :config
   (setq org-default-notes-file "~/notes.org"))
 
+;;; Evil keybindings for org
+(use-package evil-org
+  :ensure t
+  :after org
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+	    (lambda ()
+	      (evil-org-set-key-theme))))
+
 ;;; These will soon all be converted to `use-package` macros
 ;;; Install all packages
 (setq my-package-list '(company-quickhelp
