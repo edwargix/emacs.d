@@ -90,10 +90,15 @@
     (setq helm-net-prefer-curl t))
   (helm-mode 1))
 
+;;; Yasnippet: yet another snippet extension
+(use-package yasnippet
+  :ensure t
+  :config
+  (yas-global-mode 1))
+
 ;;; These will soon all be converted to `use-package` macros
 ;;; Install all packages
-(setq my-package-list '(yasnippet
-			company-quickhelp
+(setq my-package-list '(company-quickhelp
 			company-c-headers
 			company-tern
 			auctex
@@ -115,10 +120,6 @@
   (error
    (package-refresh-contents)
    (mapc 'package-install my-package-list)))
-
-;;; Yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
 
 ;;; Quickhelp (documentation lookup) for company
 (setq company-quickhelp-idle-delay 1)
