@@ -62,12 +62,17 @@
   (use-package evil-magit
     :ensure t))
 
+;;; Company (complete anything) mode
+(use-package company
+  :ensure t
+  :config
+  (add-hook 'after-init-hook 'global-company-mode))
+
 ;;; Change font to 12pt
 (set-face-attribute 'default nil :height 120)
 
 ;;; Install all packages
-(setq my-package-list '(company
-			yasnippet
+(setq my-package-list '(yasnippet
 			company-quickhelp
 			company-c-headers
 			company-tern
@@ -90,10 +95,6 @@
   (error
    (package-refresh-contents)
    (mapc 'package-install my-package-list)))
-
-;;; Company (complete anything) mode
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
 
 ;;; Yasnippet
 (require 'yasnippet)
