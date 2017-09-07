@@ -77,6 +77,19 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
+;;; Helm: incremental completion and selection narrowing framework
+(use-package helm
+  :ensure t
+  :bind
+  (("M-x" . helm-M-x)
+   ("C-x r b" . helm-filtered-bookmarks)
+   ("C-x C-f" . helm-find-files))
+  :config
+  (require 'helm-config)
+  (when (executable-find "curl")
+    (setq helm-net-prefer-curl t))
+  (helm-mode 1))
+
 ;;; Install all packages
 (setq my-package-list '(yasnippet
 			company-quickhelp
@@ -173,28 +186,6 @@
   "https://duckduckgo.com/?q=%s"
   :keybinding "d")
 (engine-mode)
-
-;;; Install helm
-(package-install 'helm)
-
-;;; This config code for helm was obtained from https://tuhdo.github.io/helm-intro.html
-(require 'helm)
-(require 'helm-config)
-
-;;; "'C-x c' is quite close to 'C-x C-c'" Agreed!
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
-
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persisten action
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
-(define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
-
-(when (executable-find "curl")
-  (setq helm-net-prefer-curl t))
-
-;; (setq helm-split-window)
-
-(helm-mode 1)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
