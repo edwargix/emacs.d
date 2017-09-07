@@ -46,6 +46,9 @@
 ;;; Install use-package for easy package configuration
 (package-install 'use-package)
 
+;;; Change font to 12pt
+(set-face-attribute 'default nil :height 120)
+
 ;;; Evil (extensible vi layer)
 (use-package evil
   :ensure t
@@ -67,9 +70,6 @@
   :ensure t
   :config
   (add-hook 'after-init-hook 'global-company-mode))
-
-;;; Change font to 12pt
-(set-face-attribute 'default nil :height 120)
 
 ;;; Install all packages
 (setq my-package-list '(yasnippet
