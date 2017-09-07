@@ -46,12 +46,17 @@
 ;;; Install use-package for easy package configuration
 (package-install 'use-package)
 
+;;; Evil (extensible vi layer)
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
+
 ;;; Change font to 12pt
 (set-face-attribute 'default nil :height 120)
 
 ;;; Install all packages
-(setq my-package-list '(evil
-			company
+(setq my-package-list '(company
 			yasnippet
 			company-quickhelp
 			company-c-headers
@@ -76,8 +81,6 @@
   (error
    (package-refresh-contents)
    (mapc 'package-install my-package-list)))
-
-(evil-mode 1)
 
 ;;; Company (complete anything) mode
 (require 'company)
