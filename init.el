@@ -25,7 +25,7 @@
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
-;;; C-c <right>: undo undo (aka redo)
+;;; C-c <right>: redo
 (winner-mode t)
 
 ;;; Allow easily switching windows with Shift-{left,right,up.down}
