@@ -1,4 +1,4 @@
-;;; Change xfce/gnome window title
+;;; Change frame title
 (setq frame-title-format "emacs")
 
 ;;; Disable menu bar
