@@ -71,10 +71,12 @@
   :ensure t
   :bind
   (("C-x g" . magit-status)
-   ("C-x M-g" . magit-dispatch-popup))
-  :config
-  (use-package evil-magit
-    :ensure t))
+   ("C-x M-g" . magit-dispatch-popup)))
+
+;;; Evil keybindings for magit
+(use-package evil-magit
+  :after evil
+  :ensure t)
 
 ;;; Company (complete anything) mode
 (use-package company
