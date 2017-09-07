@@ -55,7 +55,11 @@
 (use-package evil
   :ensure t
   :config
-  (evil-mode 1))
+  (evil-mode 1)
+  (use-package evil-surround
+    :ensure t
+    :config
+    (global-evil-surround-mode 1)))
 
 ;;; Magit: a Git Porcelain inside Emacs
 (use-package magit
@@ -201,7 +205,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(package-selected-packages
    (quote
-    (evil-magit use-package magit engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import auctex company-tern company)))
+    (evil-surround evil-magit use-package magit engine-mode eclim paredit-everywhere ac-js2 paredit elpy ggtags company-web jade-mode company-c-headers company-quickhelp yasnippet js2-mode projectile js-import auctex company-tern company)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
