@@ -44,6 +44,8 @@
        (url (concat (if no-ssl "http" "https") "://melpa.org/packages/")))
   (add-to-list 'package-archives (cons "melpa" url) t))
 
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
 ;;; Load and activate lisp packages
 (package-initialize)
 
@@ -114,6 +116,13 @@
     "https://duckduckgo.com/?q=%s"
     :keybinding "d")
   (engine-mode))
+
+;;; Org mode for keeping notes, todo lists, planning, and fast
+;;; documenting
+(use-package org
+  :ensure t
+  :config
+  (setq org-default-notes-file "~/notes.org"))
 
 ;;; These will soon all be converted to `use-package` macros
 ;;; Install all packages
