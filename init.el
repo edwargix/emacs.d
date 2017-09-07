@@ -97,6 +97,13 @@
   (setq company-quickhelp-idle-delay 1)
   (company-quickhelp-mode 1))
 
+;;; company backend for C/C++ headers
+(use-package company-c-headers
+  :ensure t
+  :defer t
+  :init
+  (add-to-list 'company-backends 'company-c-headers))
+
 ;;; Helm: incremental completion and selection narrowing framework
 (use-package helm
   :ensure t
@@ -150,8 +157,7 @@
 
 ;;; These will soon all be converted to `use-package` macros
 ;;; Install all packages
-(setq my-package-list '(company-c-headers
-			company-tern
+(setq my-package-list '(company-tern
 			auctex
 			projectile
 			js-import
@@ -170,10 +176,6 @@
   (error
    (package-refresh-contents)
    (mapc 'package-install my-package-list)))
-
-;;; company backend for C/C++ headers
-(require 'company-c-headers)
-(add-to-list 'company-backends 'company-c-headers)
 
 ;;; company backend for javascript: tern
 ;; (add-to-list 'company-backends 'company-tern)
