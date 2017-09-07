@@ -90,6 +90,7 @@
     (setq helm-net-prefer-curl t))
   (helm-mode 1))
 
+;;; These will soon all be converted to `use-package` macros
 ;;; Install all packages
 (setq my-package-list '(yasnippet
 			company-quickhelp
