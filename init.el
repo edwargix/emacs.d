@@ -155,6 +155,17 @@
   :config
   (paradox-enable))
 
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode))
+
+(use-package helm-projectile
+  :ensure t
+  :after projectile
+  :config
+  (paradox-enable)
+  (helm-projectile-on))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
