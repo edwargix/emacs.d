@@ -174,6 +174,44 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(initial-buffer-choice "~/.emacs.d/init.el")
+ '(org-agenda-files
+   (quote
+    ("~/Dropbox/org/event.org" "~/Dropbox/org/todo.org" "~/Dropbox/org/homework.org" "~/Dropbox/org/exam.org")))
+ '(org-capture-templates
+   (quote
+    (("w" "Store cool word for later study" entry
+      (file "~/lists/fantastic_words.org")
+      "* %(setq frypan-word (downcase (read-string \"Word: \" (current-kill 0))))
+%(completing-read \"Definition: \" (get-word-definitions frypan-word))
+%?")
+     ("t" "Todo" entry
+      (file "~/Dropbox/org/todo.org")
+      "* TODO %^{TODO|%i}
+DEADLINE: %^{Deadline}T
+
+%?
+")
+     ("e" "Event" entry
+      (file "~/Dropbox/org/event.org")
+      "* %^{Event}
+%^{When}T
+
+%?
+")
+     ("h" "Homework" entry
+      (file "~/Dropbox/org/homework.org")
+      "* TODO %^{Homework} %^g
+DEADLINE: %^{Due}T
+
+%i%?
+")
+     ("x" "Exam" entry
+      (file "~/Dropbox/org/exam.org")
+      "* %^{Exam} %^G
+%^{When}T
+
+%?
+"))))
  '(package-selected-packages
    (quote
     (paradox evil-org paredit js2-mode projectile use-package paredit-everywhere monokai-theme js-import jade-mode helm ggtags evil-surround evil-magit engine-mode elpy eclim company-web company-tern company-quickhelp company-c-headers auctex ac-js2)))
