@@ -53,7 +53,8 @@
 (package-refresh-contents)
 
 ;;; Install use-package for easy package configuration
-(package-install 'use-package)
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
 
 ;;; Change theme
 (use-package monokai-theme
