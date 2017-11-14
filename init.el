@@ -134,7 +134,7 @@
 
 ;;; Org mode for keeping notes, todo lists, planning, and fast
 ;;; documenting
-(use-package org
+(use-package org-plus-contrib
   :ensure t
   :config
   (setq org-default-notes-file "~/notes.org"))
