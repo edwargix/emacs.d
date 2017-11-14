@@ -179,7 +179,7 @@
  '(initial-buffer-choice "~/.emacs.d/init.el")
  '(org-agenda-files
    (quote
-    ("~/Dropbox/org/event.org" "~/Dropbox/org/todo.org" "~/Dropbox/org/homework.org" "~/Dropbox/org/exam.org")))
+    ("~/org/agenda/event.org" "~/org/agenda/todo.org" "~/org/agenda/homework.org" "~/org/agenda/exam.org")))
  '(org-capture-templates
    (quote
     (("w" "Store cool word for later study" entry
@@ -188,28 +188,28 @@
 %(completing-read \"Definition: \" (get-word-definitions frypan-word))
 %?")
      ("t" "Todo" entry
-      (file "~/Dropbox/org/todo.org")
+      (file "~/org/agenda/todo.org")
       "* TODO %^{TODO|%i}
 DEADLINE: %^{Deadline}T
 
 %?
 ")
      ("e" "Event" entry
-      (file "~/Dropbox/org/event.org")
+      (file "~/org/agenda/event.org")
       "* %^{Event}
 %^{When}T
 
 %?
 ")
      ("h" "Homework" entry
-      (file "~/Dropbox/org/homework.org")
+      (file "~/org/agenda/homework.org")
       "* TODO %^{Homework} %^g
 DEADLINE: %^{Due}T
 
 %i%?
 ")
      ("x" "Exam" entry
-      (file "~/Dropbox/org/exam.org")
+      (file "~/org/agenda/exam.org")
       "* %^{Exam} %^G
 %^{When}T
 
