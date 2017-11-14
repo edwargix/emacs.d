@@ -64,6 +64,8 @@
 
 ;;; Evil (extensible vi layer)
 (use-package evil
+  :init
+  (setq evil-want-C-u-scroll t)
   :ensure t
   :config
   (evil-mode 1)
