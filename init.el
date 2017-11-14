@@ -213,9 +213,6 @@ DEADLINE: %^{Due}T
 
 %?
 "))))
- '(package-selected-packages
-   (quote
-    (paradox evil-org paredit js2-mode projectile use-package paredit-everywhere monokai-theme js-import jade-mode helm ggtags evil-surround evil-magit engine-mode elpy eclim company-web company-tern company-quickhelp company-c-headers auctex ac-js2)))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
