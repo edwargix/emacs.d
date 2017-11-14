@@ -49,9 +49,6 @@
 ;;; Load and activate lisp packages
 (package-initialize)
 
-;;; Refresh package repositories
-(package-refresh-contents)
-
 ;;; Install use-package for easy package configuration
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
