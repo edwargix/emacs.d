@@ -18,8 +18,8 @@
 ;;; Disable tool bar
 (tool-bar-mode 0)
 
-;;; Set cursor type
-(set-default 'cursor-type 't)
+;;; Turn off cursor blinking
+(blink-cursor-mode 0)
 
 ;;; Show column number next to line number in mode line
 (column-number-mode)
