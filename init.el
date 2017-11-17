@@ -69,7 +69,9 @@
   (use-package evil-surround
     :ensure t
     :config
-    (global-evil-surround-mode 1)))
+    (global-evil-surround-mode 1))
+  (evil-define-key 'motion help-mode-map (kbd "<tab>") 'forward-button)
+  (evil-define-key 'motion help-mode-map (kbd "S-<tab>") 'backward-button))
 
 ;;; Magit: a Git Porcelain inside Emacs
 (use-package magit
