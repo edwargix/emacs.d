@@ -137,19 +137,26 @@
 ;;; Org mode for keeping notes, todo lists, planning, and fast
 ;;; documenting
 (use-package org-plus-contrib
-  :ensure t
-  :config
-  (setq org-default-notes-file "~/notes.org"))
+  :init
+  (progn
+    (setq org-default-notes-file "~/notes.org")
+    (setq org-return-follows-link t))
+  :ensure t)
 
 ;;; Evil keybindings for org
 (use-package evil-org
+  :init
+  (progn
+    (add-hook 'org-mode-hook 'evil-org-mode)
+    (add-hook 'evil-org-mode-hook
+	      (lambda ()
+		(evil-org-set-key-theme)
+		(evil-define-key 'normal
+		  evil-org-mode-map
+		  (kbd "<return>")
+		  'evil-org-return))))
   :ensure t
-  :after org
-  :config
-  (add-hook 'org-mode-hook 'evil-org-mode)
-  (add-hook 'evil-org-mode-hook
-	    (lambda ()
-	      (evil-org-set-key-theme))))
+  :after org)
 
 ;;; Paradox: a modern package menu
 (use-package paradox
