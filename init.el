@@ -7,7 +7,8 @@
   :name "Source Code Pro"
   :size 13
   :weight 'normal
-  :width 'normal))
+  :width 'normal)
+ nil t)
 
 ;;; Disable menu bar
 (menu-bar-mode 0)
