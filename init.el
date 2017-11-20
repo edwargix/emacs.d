@@ -147,12 +147,13 @@
 
 ;;; Org mode for keeping notes, todo lists, planning, and fast
 ;;; documenting
-(use-package org-plus-contrib
+(use-package org
   :init
   (progn
+    (unless (package-installed-p 'org-plus-contrib)
+      (package-install 'org-plus-contrib))
     (setq org-default-notes-file "~/notes.org")
-    (setq org-return-follows-link t))
-  :ensure t)
+    (setq org-return-follows-link t)))
 
 ;;; Evil keybindings for org
 (use-package evil-org
