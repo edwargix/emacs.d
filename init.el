@@ -201,6 +201,10 @@
   :ensure t
   :init (with-eval-after-load 'mu4e
 	  (mu4e-maildirs-extension-load)))
+(use-package evil-mu4e
+  :ensure t
+  :defer t
+  :after mu4e)
 
 ;;; Install local user packages
 (dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
