@@ -189,6 +189,11 @@
   (paradox-enable)
   (helm-projectile-on))
 
+;;; Install local user packages
+(dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
+  (add-to-list 'load-path d t))
+(add-to-list 'Info-directory-list "~/.local/share/info/")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
