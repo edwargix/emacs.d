@@ -150,6 +150,7 @@
 (use-package org
   :init
   (progn
+    (load-file "~/org/agenda/setup.el")
     (unless (package-installed-p 'org-plus-contrib)
       (package-install 'org-plus-contrib))
     (setq org-default-notes-file "~/notes.org")
@@ -195,44 +196,6 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(initial-buffer-choice "~/.emacs.d/init.el")
- '(org-agenda-files
-   (quote
-    ("~/org/agenda/event.org" "~/org/agenda/todo.org" "~/org/agenda/homework.org" "~/org/agenda/exam.org")))
- '(org-capture-templates
-   (quote
-    (("w" "Store cool word for later study" entry
-      (file "~/lists/fantastic_words.org")
-      "* %(setq frypan-word (downcase (read-string \"Word: \" (current-kill 0))))
-%(completing-read \"Definition: \" (get-word-definitions frypan-word))
-%?")
-     ("t" "Todo" entry
-      (file "~/org/agenda/todo.org")
-      "* TODO %^{TODO|%i}
-DEADLINE: %^{Deadline}T
-
-%?
-")
-     ("e" "Event" entry
-      (file "~/org/agenda/event.org")
-      "* %^{Event}
-%^{When}T
-
-%?
-")
-     ("h" "Homework" entry
-      (file "~/org/agenda/homework.org")
-      "* TODO %^{Homework} %^g
-DEADLINE: %^{Due}T
-
-%i%?
-")
-     ("x" "Exam" entry
-      (file "~/org/agenda/exam.org")
-      "* %^{Exam} %^G
-%^{When}T
-
-%?
-"))))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
