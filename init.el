@@ -53,11 +53,13 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
-;;; Change theme
+;;; Custom themes
 (use-package monokai-theme
-  :ensure t
-  :config
-  (load-theme 'monokai t))
+  :ensure t)
+;; Alternate theme (bright)
+(unless (package-installed-p 'leuven-theme)
+  (package-install 'leuven-theme))
+(load-theme 'leuven t t)
 
 ;;; Evil (extensible vi layer)
 (use-package evil
