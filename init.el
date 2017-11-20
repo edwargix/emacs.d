@@ -189,6 +189,18 @@
   (paradox-enable)
   (helm-projectile-on))
 
+;;; mu4e email client
+(use-package mu4e
+  :defer t
+  :config
+  (load-file "~/scripts/setup_mu4e.el")
+  :commands (mu4e mu4e-compose-new))
+(use-package mu4e-maildirs-extension
+  :defer t
+  :ensure t
+  :init (with-eval-after-load 'mu4e
+	  (mu4e-maildirs-extension-load)))
+
 ;;; Install local user packages
 (dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
   (add-to-list 'load-path d t))
