@@ -208,6 +208,9 @@
   :defer t
   :after mu4e)
 
+(use-package ess
+  :ensure t)
+
 ;;; Install local user packages
 (dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
   (add-to-list 'load-path d t))
