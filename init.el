@@ -196,7 +196,14 @@
 (use-package mu4e
   :defer t
   :config
-  (load-file "~/scripts/setup_mu4e.el")
+  (progn
+    (load-file "~/scripts/setup_mu4e.el")
+    (add-hook 'mu4e-compose-mode-hook (lambda ()
+					(mml-secure-message-sign-pgpmime)
+					(let ((msg mu4e-compose-parent-message))
+					  (when msg
+					    (when (member 'encrypted (mu4e-message-field msg :flags))
+					      (mml-secure-message-encrypt-pgpmime)))))))
   :commands (mu4e mu4e-compose-new))
 (use-package mu4e-maildirs-extension
   :defer t
