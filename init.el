@@ -55,8 +55,10 @@
   (package-install 'use-package))
 
 ;;; Custom themes
-(use-package monokai-theme
-  :ensure t)
+;; Default theme
+(unless (package-installed-p 'monokai-theme)
+  (package-install 'monokai-theme))
+(load-theme 'monokai t nil)
 ;; Alternate theme (bright)
 (unless (package-installed-p 'leuven-theme)
   (package-install 'leuven-theme))
