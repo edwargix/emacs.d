@@ -197,6 +197,7 @@
   :defer t
   :config
   (progn
+    (require 'org-mu4e)
     (load-file "~/scripts/setup_mu4e.el")
     (add-hook 'mu4e-compose-mode-hook (lambda ()
 					(mml-secure-message-sign-pgpmime)
