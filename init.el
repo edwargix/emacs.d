@@ -239,6 +239,7 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(initial-buffer-choice "~/.emacs.d/init.el")
+ '(initial-scratch-message "")
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
