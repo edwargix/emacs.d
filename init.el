@@ -136,6 +136,11 @@
     (require 'helm-config)
     (when (executable-find "curl")
       (setq helm-net-prefer-curl t))
+    (add-hook 'helm-after-initialize-hook
+	      ;; hide the cursor in helm buffers
+	      (lambda ()
+		(with-helm-buffer
+		  (setq cursor-in-non-selected-windows nil))))
     (define-key helm-map (kbd "C-j") 'helm-next-line)
     (define-key helm-map (kbd "C-k") 'helm-previous-line)
     (define-key helm-map (kbd "C-h") 'helm-next-source)
