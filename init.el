@@ -83,13 +83,16 @@
   (setq evil-want-C-u-scroll t)
   :ensure t
   :config
-  (evil-mode 1)
-  (use-package evil-surround
-    :ensure t
-    :config
-    (global-evil-surround-mode 1))
-  (evil-define-key 'motion help-mode-map (kbd "<tab>") 'forward-button)
-  (evil-define-key 'motion help-mode-map (kbd "S-<tab>") 'backward-button))
+  (progn
+    (evil-define-key 'motion help-mode-map (kbd "<tab>") 'forward-button)
+    (evil-define-key 'motion help-mode-map (kbd "S-<tab>") 'backward-button)
+    (evil-mode 1)))
+(use-package evil-surround
+  :ensure t
+  :after evil
+  :config
+  (progn
+    (global-evil-surround-mode 1)))
 
 ;;; Magit: a Git Porcelain inside Emacs
 (use-package magit
