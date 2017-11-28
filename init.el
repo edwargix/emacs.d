@@ -153,11 +153,11 @@
     (define-key helm-map (kbd "C-S-h") 'describe-key)
     (define-key helm-map (kbd "C-l") (kbd "RET"))
     (define-key helm-map [escape] 'helm-keyboard-quit)
+    (helm-mode 1)
     (dolist (keymap (list helm-find-files-map helm-read-file-map))
       (define-key keymap (kbd "C-l") 'helm-execute-persistent-action)
       (define-key keymap (kbd "C-h") 'helm-find-files-up-one-level)
-      (define-key keymap (kbd "C-S-h") 'describe-key))
-    (helm-mode 1)))
+      (define-key keymap (kbd "C-S-h") 'describe-key))))
 
 ;;; Yasnippet: yet another snippet extension
 (use-package yasnippet
