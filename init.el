@@ -211,10 +211,12 @@
 					      (mml-secure-message-encrypt-pgpmime)))))))
   :commands (mu4e mu4e-compose-new))
 (use-package mu4e-maildirs-extension
-  :defer t
   :ensure t
-  :init (with-eval-after-load 'mu4e
-	  (mu4e-maildirs-extension-load)))
+  :defer t
+  :init
+  (progn
+    (with-eval-after-load 'mu4e
+      (mu4e-maildirs-extension-load))))
 (use-package evil-mu4e
   :ensure t
   :defer t
