@@ -132,10 +132,21 @@
    ("C-x r b" . helm-filtered-bookmarks)
    ("C-x C-f" . helm-find-files))
   :config
-  (require 'helm-config)
-  (when (executable-find "curl")
-    (setq helm-net-prefer-curl t))
-  (helm-mode 1))
+  (progn
+    (require 'helm-config)
+    (when (executable-find "curl")
+      (setq helm-net-prefer-curl t))
+    (define-key helm-map (kbd "C-j") 'helm-next-line)
+    (define-key helm-map (kbd "C-k") 'helm-previous-line)
+    (define-key helm-map (kbd "C-h") 'helm-next-source)
+    (define-key helm-map (kbd "C-S-h") 'describe-key)
+    (define-key helm-map (kbd "C-l") (kbd "RET"))
+    (define-key helm-map [escape] 'helm-keyboard-quit)
+    (dolist (keymap (list helm-find-files-map helm-read-file-map))
+      (define-key keymap (kbd "C-l") 'helm-execute-persistent-action)
+      (define-key keymap (kbd "C-h") 'helm-find-files-up-one-level)
+      (define-key keymap (kbd "C-S-h") 'describe-key))
+    (helm-mode 1)))
 
 ;;; Yasnippet: yet another snippet extension
 (use-package yasnippet
