@@ -86,6 +86,8 @@
   (progn
     (evil-define-key 'motion help-mode-map (kbd "<tab>") 'forward-button)
     (evil-define-key 'motion help-mode-map (kbd "S-<tab>") 'backward-button)
+    (define-key evil-ex-map "b " 'helm-mini)
+    (define-key evil-ex-map "e" 'helm-find-files)
     (evil-mode 1)))
 (use-package evil-surround
   :ensure t
