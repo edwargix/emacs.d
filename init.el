@@ -184,7 +184,11 @@
       (package-install 'org-plus-contrib))
     (setq org-default-notes-file "~/notes.org"
 	  org-return-follows-link t
-	  org-read-date-force-compatible-dates nil)))
+	  org-read-date-force-compatible-dates nil))
+  :bind
+  (("C-c a" . org-agenda)
+   ("C-c c" . org-capture)
+   ("C-c b" . org-iswitchb)))
 
 ;;; Evil keybindings for org
 (use-package evil-org
