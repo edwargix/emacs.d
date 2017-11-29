@@ -182,8 +182,9 @@
     (load-file "~/org/agenda/setup.el")
     (unless (package-installed-p 'org-plus-contrib)
       (package-install 'org-plus-contrib))
-    (setq org-default-notes-file "~/notes.org")
-    (setq org-return-follows-link t)))
+    (setq org-default-notes-file "~/notes.org"
+	  org-return-follows-link t
+	  org-read-date-force-compatible-dates nil)))
 
 ;;; Evil keybindings for org
 (use-package evil-org
