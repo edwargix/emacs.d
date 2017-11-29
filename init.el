@@ -190,6 +190,15 @@
    ("C-c c" . org-capture)
    ("C-c b" . org-iswitchb)))
 
+;;; UTF-8 bullets for org-mode
+(use-package org-bullets
+  :ensure t
+  :defer t
+  :after org
+  :config
+  (progn
+    (add-hook 'org-mode-hook 'org-bullets-mode)))
+
 ;;; Evil keybindings for org
 (use-package evil-org
   :init
