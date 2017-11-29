@@ -179,7 +179,7 @@
 (use-package org
   :init
   (progn
-    (load-file "~/org/agenda/setup.el")
+    (load-file "~/org/setup.el")
     (unless (package-installed-p 'org-plus-contrib)
       (package-install 'org-plus-contrib))
     (setq org-default-notes-file "~/notes.org"
