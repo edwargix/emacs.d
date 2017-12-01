@@ -8,6 +8,9 @@
 ;;; Allow easily switching windows with Shift-{left,right,up.down}
 (windmove-default-keybindings)
 
+;;; Don't make backup files
+(setq make-backup-files nil)
+
 ;;; Include package
 (require 'package)
 
