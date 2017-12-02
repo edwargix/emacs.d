@@ -57,7 +57,10 @@
 (use-package company
   :ensure t
   :config
-  (add-hook 'after-init-hook 'global-company-mode))
+  (progn
+    (add-hook 'after-init-hook 'global-company-mode)
+    (define-key company-active-map (kbd "M-j") 'company-select-next)
+    (define-key company-active-map (kbd "M-k") 'company-select-previous)))
 
 ;;; Quickhelp (documentation lookup) for company
 (use-package company-quickhelp
