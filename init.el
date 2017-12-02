@@ -64,8 +64,9 @@
   :ensure t
   :after company
   :config
-  (setq company-quickhelp-idle-delay 1)
-  (company-quickhelp-mode 1))
+  (progn
+    (setq company-quickhelp-idle-delay 1)
+    (company-quickhelp-mode 1)))
 
 ;;; company backend for C/C++ headers
 (use-package company-c-headers
