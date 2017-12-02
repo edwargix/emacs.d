@@ -12,16 +12,6 @@
 ;;; Don't make backup files
 (setq make-backup-files nil)
 
-;;; Custom themes
-;; Default theme
-(unless (package-installed-p 'monokai-theme)
-  (package-install 'monokai-theme))
-(load-theme 'monokai t nil)
-;; Alternate theme (bright)
-(unless (package-installed-p 'leuven-theme)
-  (package-install 'leuven-theme))
-(load-theme 'leuven t t)
-
 ;;; Markdown mode
 (use-package markdown-mode
   :ensure t

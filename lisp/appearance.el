@@ -27,3 +27,15 @@
 
 ;;; Highlight parentheses
 (show-paren-mode)
+
+;;; Custom themes
+;; Default theme
+(unless (package-installed-p 'monokai-theme)
+  (package-install 'monokai-theme))
+(load-theme 'monokai t t)
+(when (display-graphic-p)
+  (enable-theme 'monokai))
+;; Alternate theme (bright)
+(unless (package-installed-p 'leuven-theme)
+  (package-install 'leuven-theme))
+(load-theme 'leuven t t)
