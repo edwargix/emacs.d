@@ -1,3 +1,4 @@
+(load-file "~/.emacs.d/lisp/packages.el")
 (load-file "~/.emacs.d/lisp/appearance.el")
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
@@ -10,28 +11,6 @@
 
 ;;; Don't make backup files
 (setq make-backup-files nil)
-
-;;; Include package
-(require 'package)
-
-;;; Add melpa archives
-(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
-		    (not (gnutls-available-p))))
-       (url (concat (if no-ssl "http" "https") "://melpa.org/packages/")))
-  (add-to-list 'package-archives (cons "melpa" url) t))
-
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-
-;;; Load and activate lisp packages
-(package-initialize)
-
-;;; fetch the list of available packages
-(unless package-archive-contents
-  (package-refresh-contents))
-
-;;; Install use-package for easy package configuration
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
 
 ;;; Custom themes
 ;; Default theme
