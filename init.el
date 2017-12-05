@@ -122,6 +122,14 @@
   :config
   (yas-global-mode 1))
 
+;;; Helm extension for yasnippet
+(use-package helm-c-yasnippet
+  :ensure t
+  :after yasnippet
+  :config
+  (setq helm-yas-space-match-any-greedy t)
+  (global-set-key (kbd "C-c y") 'helm-yas-complete))
+
 ;;; Setup duckduckgo search engine
 (use-package engine-mode
   :ensure t
