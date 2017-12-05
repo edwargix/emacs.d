@@ -19,3 +19,5 @@
 ;;; Install use-package for easy package configuration
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
+
+(require 'use-package)
