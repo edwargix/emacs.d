@@ -197,6 +197,11 @@
 (use-package ess
   :ensure t)
 
+
+(use-package tex
+  :ensure auctex)
+
+
 ;;; Install local user packages
 (dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
   (add-to-list 'load-path d t))
