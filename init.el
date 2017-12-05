@@ -62,6 +62,15 @@
     (define-key company-active-map (kbd "M-j") 'company-select-next)
     (define-key company-active-map (kbd "M-k") 'company-select-previous)))
 
+;;; Syntax/error checking for GNU Emacs
+(use-package flycheck
+  :ensure t
+  :init
+  (progn
+    (global-flycheck-mode)
+    (evil-define-key 'normal
+      flycheck-error-list-mode-map (kbd "q") 'quit-window)))
+
 ;;; Quickhelp (documentation lookup) for company
 (use-package company-quickhelp
   :ensure t
