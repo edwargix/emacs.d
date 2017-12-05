@@ -39,3 +39,7 @@
 (unless (package-installed-p 'leuven-theme)
   (package-install 'leuven-theme))
 (load-theme 'leuven t t)
+;; Theme for late-at-night
+(unless (package-installed-p 'solarized-theme)
+  (package-install 'solarized-theme))
+(load-theme 'solarized-dark t t)
