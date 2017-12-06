@@ -47,3 +47,5 @@ flycheck_*.el
 # edwargix was here
 ido.last
 recentf
+/anaconda-mode/
+/url/
