@@ -194,8 +194,9 @@
   :ensure t
   :after projectile
   :config
-  (paradox-enable)
-  (helm-projectile-on))
+  (helm-projectile-on)
+  (setq projectile-completion-system 'helm)
+  (setq projectile-indexing-method 'alien))
 
 
 ;;; mu4e email client
