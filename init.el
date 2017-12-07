@@ -127,6 +127,7 @@
 (add-to-list 'Info-directory-list "~/.local/share/info/")
 
 ;;; Start Emacs Daemon
+(require 'server)
 (unless (server-running-p)
   (server-start))
 
