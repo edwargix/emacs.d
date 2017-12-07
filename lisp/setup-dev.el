@@ -70,5 +70,11 @@
   :bind (("C-x 1" . zygospore-toggle-delete-other-windows)))
 
 
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
+
 (provide 'setup-dev)
 ;;; setup-dev.el ends here
