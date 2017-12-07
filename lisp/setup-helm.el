@@ -13,37 +13,39 @@
   :bind
   (("M-x" . helm-M-x)
    ("C-x r b" . helm-filtered-bookmarks)
-   ("C-x C-f" . helm-find-files))
+   ("C-x C-f" . helm-find-files)
+   :map helm-map
+   ("C-j" . helm-next-line)
+   ("C-k" . helm-previous-line)
+   ("M-j" . helm-next-line)
+   ("M-k" . helm-previous-line)
+   ("C-h" . helm-next-source)
+   ("C-S-h" . describe-key)
+   ([escape] . helm-keyboard-quit)
+   ("<tab>" . helm-execute-persistent-action)
+   ("C-i" . helm-execute-persistent-action)
+   ("C-l" . helm-execute-persistent-action)
+   :map helm-find-files-map
+   ("C-l" . helm-execute-persistent-action)
+   ("C-h" . helm-find-files-up-one-level)
+   ("M-l" . helm-execute-persistent-action)
+   ("M-h" . helm-find-files-up-one-level)
+   :map helm-read-file-map
+   ("C-l" . helm-execute-persistent-action)
+   ("C-h" . helm-find-files-up-one-level)
+   ("M-l" . helm-execute-persistent-action)
+   ("M-h" . helm-find-files-up-one-level))
   :config
   (progn
     (require 'helm-config)
     (when (executable-find "curl")
       (setq helm-net-prefer-curl t))
     (add-hook 'helm-after-initialize-hook
-	      ;; hide the cursor in helm buffers
-	      (lambda ()
-		(with-helm-buffer
-		  (setq cursor-in-non-selected-windows nil))))
-
-	(global-set-key (kbd "C-c h") 'helm-command-prefix)
-	(global-unset-key (kbd "C-x c"))
-
-    (define-key helm-map (kbd "C-j") 'helm-next-line)
-    (define-key helm-map (kbd "C-k") 'helm-previous-line)
-    (define-key helm-map (kbd "M-j") 'helm-next-line)
-    (define-key helm-map (kbd "M-k") 'helm-previous-line)
-
-    (define-key helm-map (kbd "C-h") 'helm-next-source)
-    (define-key helm-map (kbd "C-S-h") 'describe-key)
-    (define-key helm-map (kbd "C-l") (kbd "RET"))
-    (define-key helm-map [escape] 'helm-keyboard-quit)
-	(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-	(define-key helm-map (kbd "C-i") (kbd "<tab>")) ;; make <tab> work in terminal
-    (helm-mode 1)
-    (dolist (keymap (list helm-find-files-map helm-read-file-map))
-      (define-key keymap (kbd "C-l") 'helm-execute-persistent-action)
-      (define-key keymap (kbd "C-h") 'helm-find-files-up-one-level)
-      (define-key keymap (kbd "C-S-h") 'describe-key))))
+			  ;; hide the cursor in helm buffers
+			  (lambda ()
+				(with-helm-buffer
+				  (setq cursor-in-non-selected-windows nil))))
+    (helm-mode 1)))
 
 
 ;;; Helm extension for yasnippet
