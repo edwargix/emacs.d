@@ -1,6 +1,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
+(require 'setup-evil)
 (require 'setup-packages)
 (require 'setup-appearance)
 (require 'setup-dev)
@@ -26,25 +27,6 @@
 		 ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
-;;; Evil (extensible vi layer)
-(use-package evil
-  :init
-  (setq evil-want-C-u-scroll t)
-  :ensure t
-  :config
-  (progn
-	(evil-define-key 'motion help-mode-map (kbd "<tab>") 'forward-button)
-	(evil-define-key 'motion help-mode-map (kbd "S-<tab>") 'backward-button)
-	(define-key evil-ex-map "b " 'helm-mini)
-	(define-key evil-ex-map "e " 'helm-find-files)
-	(add-hook 'with-editor-mode-hook 'evil-insert-state)
-	(evil-mode 1)))
-(use-package evil-surround
-  :ensure t
-  :after evil
-  :config
-  (progn
-	(global-evil-surround-mode 1)))
 
 ;;; Magit: a Git Porcelain inside Emacs
 (use-package magit
@@ -52,11 +34,6 @@
   :bind
   (("C-x g" . magit-status)
    ("C-x M-g" . magit-dispatch-popup)))
-
-;;; Evil keybindings for magit
-(use-package evil-magit
-  :after evil
-  :ensure t)
 
 ;;; Syntax/error checking for GNU Emacs
 (use-package flycheck
@@ -123,20 +100,6 @@
   (progn
 	(add-hook 'org-mode-hook 'org-bullets-mode)))
 
-;;; Evil keybindings for org
-(use-package evil-org
-  :init
-  (progn
-	(add-hook 'org-mode-hook 'evil-org-mode)
-	(add-hook 'evil-org-mode-hook
-			  (lambda ()
-				(evil-org-set-key-theme)
-				(evil-define-key 'normal
-				  evil-org-mode-map
-				  (kbd "<return>")
-				  'evil-org-return))))
-  :ensure t
-  :after org)
 
 ;;; Paradox: a modern package menu
 (use-package paradox
