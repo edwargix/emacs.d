@@ -56,8 +56,8 @@
 ;;; company backend for C/C++ headers
 (use-package company-c-headers
   :ensure t
-  :defer t
-  :init
+  :after company
+  :config
   (add-to-list 'company-backends 'company-c-headers))
 
 ;;; Yasnippet: yet another snippet extension
