@@ -1,8 +1,8 @@
-;;; setup-evil --- Setup evil
+;;; setup-keys --- Setup keys
 
 ;;; Commentary:
 
-;; Setup evil mode to my liking
+;; Setup keybindings to my liking
 
 ;;; Code:
 
@@ -49,5 +49,5 @@
 			   ("<ret>" . evil-org-return))))
 
 
-(provide 'setup-evil)
-;;; setup-evil.el ends here
+(provide 'setup-keys)
+;;; setup-keys.el ends here
