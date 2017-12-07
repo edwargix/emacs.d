@@ -35,24 +35,18 @@
 
 ;;; Evil keybindings for magit
 (use-package evil-magit
-  :after evil
+  :after (evil magit)
   :ensure t)
 
 
 ;;; Evil keybindings for org
 (use-package evil-org
-  :init
-  (progn
-	(add-hook 'org-mode-hook 'evil-org-mode)
-	(add-hook 'evil-org-mode-hook
-			  (lambda ()
-				(evil-org-set-key-theme)
-				(evil-define-key 'normal
-				  evil-org-mode-map
-				  (kbd "<return>")
-				  'evil-org-return))))
   :ensure t
-  :after org)
+  :after (evil org)
+  :hook ((org-mode . evil-org-mode)
+		 (evil-org-mode . evil-org-set-key-theme))
+  :bind ((:map evil-org-mode-map
+			   ("<ret>" . evil-org-return))))
 
 
 (provide 'setup-evil)
