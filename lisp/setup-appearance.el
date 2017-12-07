@@ -1,3 +1,11 @@
+;;; setup-appearance --- Setup look of Emacs
+
+;;; Commentary:
+
+;; This sets up the look of Emacs to my liking
+
+;;; Code:
+
 ;;; Change frame title
 (setq frame-title-format "emacs")
 
@@ -43,3 +51,6 @@
 (unless (package-installed-p 'solarized-theme)
   (package-install 'solarized-theme))
 (load-theme 'solarized-dark t t)
+
+(provide 'setup-appearance)
+;;; setup-appearance.el ends here

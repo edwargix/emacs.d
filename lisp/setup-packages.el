@@ -1,4 +1,13 @@
+;;; setup-packages --- Setup packages
+;;;
+;;; Commentary:
+
+;; This sets up package archives / preliminaries for later config
+
+;;; Code:
+
 (require 'package)
+
 
 ;;; Add melpa archive
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -21,3 +30,6 @@
   (package-install 'use-package))
 
 (require 'use-package)
+
+(provide 'setup-packages)
+;;; setup-packages.el ends here

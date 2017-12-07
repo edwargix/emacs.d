@@ -1,5 +1,8 @@
-(load-file "~/.emacs.d/lisp/packages.el")
-(load-file "~/.emacs.d/lisp/appearance.el")
+
+(add-to-list 'load-path "~/.emacs.d/lisp")
+
+(require 'setup-packages)
+(require 'setup-appearance)
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
