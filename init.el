@@ -1,7 +1,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
-(require 'setup-evil)
+(require 'setup-keys)
 (require 'setup-packages)
 (require 'setup-appearance)
 (require 'setup-dev)
