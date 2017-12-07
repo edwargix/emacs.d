@@ -51,7 +51,7 @@
 ;;; Helm extension for yasnippet
 (use-package helm-c-yasnippet
   :ensure t
-  :after yasnippet
+  :after (yasnippet helm)
   :bind
   ("C-c y" . helm-yas-complete)
   :init
