@@ -45,52 +45,12 @@
     (define-key company-active-map (kbd "M-k") 'company-select-previous)))
 
 
-(use-package helm-gtags
-  :ensure t
-  :commands (helm-gtags-mode)
-  :init
-  (progn
-	(setq helm-gtags-ignore-case t
-		  helm-gtags-auto-update t
-		  helm-gtags-use-input-at-cursor t
-		  helm-gtags-pulse-at-cursor t
-		  helm-gtags-prefix-key (kbd "C-c g")
-		  helm-gtags-suggested-key-mapping t)
-	(add-hook 'dired-mode-hook 'helm-gtags-mode)
-	(add-hook 'eshell-mode-hook 'helm-gtags-mode)
-	(add-hook 'c-mode-hook 'helm-gtags-mode)
-	(add-hook 'c++-mode-hook 'helm-gtags-mode)
-	(add-hook 'asm-made-hook 'helm-gtags-mode))
-  :config
-  (progn
-	(evil-define-key 'normal helm-gtags-mode-map (kbd "C-c g a")
-	  'helm-gtags-tags-in-this-function)
-	(evil-define-key 'nomral helm-gtags-mode-map (kbd "C-j")
-	  'helm-gtags-select)
-	(evil-define-key 'normal helm-gtags-mode-map (kbd "M-.")
-	  'helm-gtags-dwim)
-	(evil-define-key 'normal helm-gtags-mode-map (kbd "M-,")
-	  'helm-gtags-pop-stack)
-	(evil-define-key 'normal helm-gtags-mode-map (kbd "C-c <")
-	  'helm-gtags-previous-history)
-	(evil-define-key 'normal helm-gtags-mode-map (kbd "C-c >")
-	  'helm-gtags-next-history)))
-
 
 (use-package projectile
   :ensure t
   :config
   (projectile-mode)
   (setq projectile-enable-caching t))
-
-
-(use-package helm-projectile
-  :ensure t
-  :after (projectile helm)
-  :config
-  (helm-projectile-on)
-  (setq projectile-completion-system 'helm)
-  (setq projectile-indexing-method 'alien))
 
 
 (use-package zygospore

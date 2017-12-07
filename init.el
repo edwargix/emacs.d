@@ -4,6 +4,7 @@
 (require 'setup-packages)
 (require 'setup-appearance)
 (require 'setup-dev)
+(require 'setup-helm)
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
@@ -82,57 +83,11 @@
   :init
   (add-to-list 'company-backends 'company-c-headers))
 
-;;; Helm: incremental completion and selection narrowing framework
-(use-package helm
-  :ensure t
-  :bind
-  (("M-x" . helm-M-x)
-   ("C-x r b" . helm-filtered-bookmarks)
-   ("C-x C-f" . helm-find-files))
-  :config
-  (progn
-    (require 'helm-config)
-    (when (executable-find "curl")
-      (setq helm-net-prefer-curl t))
-    (add-hook 'helm-after-initialize-hook
-	      ;; hide the cursor in helm buffers
-	      (lambda ()
-		(with-helm-buffer
-		  (setq cursor-in-non-selected-windows nil))))
-
-	(global-set-key (kbd "C-c h") 'helm-command-prefix)
-	(global-unset-key (kbd "C-x c"))
-
-    (define-key helm-map (kbd "C-j") 'helm-next-line)
-    (define-key helm-map (kbd "C-k") 'helm-previous-line)
-    (define-key helm-map (kbd "M-j") 'helm-next-line)
-    (define-key helm-map (kbd "M-k") 'helm-previous-line)
-
-    (define-key helm-map (kbd "C-h") 'helm-next-source)
-    (define-key helm-map (kbd "C-S-h") 'describe-key)
-    (define-key helm-map (kbd "C-l") (kbd "RET"))
-    (define-key helm-map [escape] 'helm-keyboard-quit)
-	(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-	(define-key helm-map (kbd "C-i") (kbd "<tab>")) ;; make <tab> work in terminal
-    (helm-mode 1)
-    (dolist (keymap (list helm-find-files-map helm-read-file-map))
-      (define-key keymap (kbd "C-l") 'helm-execute-persistent-action)
-      (define-key keymap (kbd "C-h") 'helm-find-files-up-one-level)
-      (define-key keymap (kbd "C-S-h") 'describe-key))))
-
 ;;; Yasnippet: yet another snippet extension
 (use-package yasnippet
   :ensure t
   :config
   (yas-global-mode 1))
-
-;;; Helm extension for yasnippet
-(use-package helm-c-yasnippet
-  :ensure t
-  :after yasnippet
-  :config
-  (setq helm-yas-space-match-any-greedy t)
-  (global-set-key (kbd "C-c y") 'helm-yas-complete))
 
 ;;; Setup duckduckgo search engine
 (use-package engine-mode
