@@ -39,10 +39,10 @@
   :ensure t
   :config
   (progn
-    (add-hook 'after-init-hook 'global-company-mode)
+	(add-hook 'after-init-hook 'global-company-mode)
 	(delete 'company-semantic company-backends)
-    (define-key company-active-map (kbd "M-j") 'company-select-next)
-    (define-key company-active-map (kbd "M-k") 'company-select-previous)))
+	(define-key company-active-map (kbd "M-j") 'company-select-next)
+	(define-key company-active-map (kbd "M-k") 'company-select-previous)))
 
 
 

@@ -22,8 +22,8 @@
   :ensure t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
-	 ("\\.md\\'" . markdown-mode)
-	 ("\\.markdown\\'" . markdown-mode))
+		 ("\\.md\\'" . markdown-mode)
+		 ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
 ;;; Evil (extensible vi layer)
@@ -33,18 +33,18 @@
   :ensure t
   :config
   (progn
-    (evil-define-key 'motion help-mode-map (kbd "<tab>") 'forward-button)
-    (evil-define-key 'motion help-mode-map (kbd "S-<tab>") 'backward-button)
-    (define-key evil-ex-map "b " 'helm-mini)
-    (define-key evil-ex-map "e " 'helm-find-files)
-    (add-hook 'with-editor-mode-hook 'evil-insert-state)
-    (evil-mode 1)))
+	(evil-define-key 'motion help-mode-map (kbd "<tab>") 'forward-button)
+	(evil-define-key 'motion help-mode-map (kbd "S-<tab>") 'backward-button)
+	(define-key evil-ex-map "b " 'helm-mini)
+	(define-key evil-ex-map "e " 'helm-find-files)
+	(add-hook 'with-editor-mode-hook 'evil-insert-state)
+	(evil-mode 1)))
 (use-package evil-surround
   :ensure t
   :after evil
   :config
   (progn
-    (global-evil-surround-mode 1)))
+	(global-evil-surround-mode 1)))
 
 ;;; Magit: a Git Porcelain inside Emacs
 (use-package magit
@@ -63,9 +63,9 @@
   :ensure t
   :init
   (progn
-    (global-flycheck-mode)
-    (evil-define-key 'normal
-      flycheck-error-list-mode-map (kbd "q") 'quit-window)))
+	(global-flycheck-mode)
+	(evil-define-key 'normal
+	  flycheck-error-list-mode-map (kbd "q") 'quit-window)))
 
 ;;; Quickhelp (documentation lookup) for company
 (use-package company-quickhelp
@@ -73,8 +73,8 @@
   :after company
   :config
   (progn
-    (setq company-quickhelp-idle-delay 1)
-    (company-quickhelp-mode 1)))
+	(setq company-quickhelp-idle-delay 1)
+	(company-quickhelp-mode 1)))
 
 ;;; company backend for C/C++ headers
 (use-package company-c-headers
@@ -94,8 +94,8 @@
   :ensure t
   :config
   (defengine duckduckgo
-    "https://duckduckgo.com/?q=%s"
-    :keybinding "d")
+	"https://duckduckgo.com/?q=%s"
+	:keybinding "d")
   (engine-mode))
 
 ;;; Org mode for keeping notes, todo lists, planning, and fast
@@ -103,12 +103,12 @@
 (use-package org
   :init
   (progn
-    (load-file "~/org/setup.el")
-    (unless (package-installed-p 'org-plus-contrib)
-      (package-install 'org-plus-contrib))
-    (setq org-default-notes-file "~/notes.org"
-	  org-return-follows-link t
-	  org-read-date-force-compatible-dates nil))
+	(load-file "~/org/setup.el")
+	(unless (package-installed-p 'org-plus-contrib)
+	  (package-install 'org-plus-contrib))
+	(setq org-default-notes-file "~/notes.org"
+		  org-return-follows-link t
+		  org-read-date-force-compatible-dates nil))
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
@@ -121,20 +121,20 @@
   :after org
   :config
   (progn
-    (add-hook 'org-mode-hook 'org-bullets-mode)))
+	(add-hook 'org-mode-hook 'org-bullets-mode)))
 
 ;;; Evil keybindings for org
 (use-package evil-org
   :init
   (progn
-    (add-hook 'org-mode-hook 'evil-org-mode)
-    (add-hook 'evil-org-mode-hook
-	      (lambda ()
-		(evil-org-set-key-theme)
-		(evil-define-key 'normal
-		  evil-org-mode-map
-		  (kbd "<return>")
-		  'evil-org-return))))
+	(add-hook 'org-mode-hook 'evil-org-mode)
+	(add-hook 'evil-org-mode-hook
+			  (lambda ()
+				(evil-org-set-key-theme)
+				(evil-define-key 'normal
+				  evil-org-mode-map
+				  (kbd "<return>")
+				  'evil-org-return))))
   :ensure t
   :after org)
 

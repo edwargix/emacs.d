@@ -37,15 +37,15 @@
    ("M-h" . helm-find-files-up-one-level))
   :config
   (progn
-    (require 'helm-config)
-    (when (executable-find "curl")
-      (setq helm-net-prefer-curl t))
-    (add-hook 'helm-after-initialize-hook
+	(require 'helm-config)
+	(when (executable-find "curl")
+	  (setq helm-net-prefer-curl t))
+	(add-hook 'helm-after-initialize-hook
 			  ;; hide the cursor in helm buffers
 			  (lambda ()
 				(with-helm-buffer
 				  (setq cursor-in-non-selected-windows nil))))
-    (helm-mode 1)))
+	(helm-mode 1)))
 
 
 ;;; Helm extension for yasnippet
