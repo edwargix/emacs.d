@@ -52,10 +52,11 @@
 (use-package helm-c-yasnippet
   :ensure t
   :after yasnippet
-  :config
+  :bind
+  ("C-c y" . helm-yas-complete)
+  :init
   (progn
-	(setq helm-yas-space-match-any-greedy t)
-	(global-set-key (kbd "C-c y") 'helm-yas-complete)))
+	(setq helm-yas-space-match-any-greedy t)))
 
 
 ;;; Helm extension for gtags
