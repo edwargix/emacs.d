@@ -3,6 +3,7 @@
 
 (require 'setup-packages)
 (require 'setup-appearance)
+(require 'setup-dev)
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
@@ -55,15 +56,6 @@
 (use-package evil-magit
   :after evil
   :ensure t)
-
-;;; Company (complete anything) mode
-(use-package company
-  :ensure t
-  :config
-  (progn
-    (add-hook 'after-init-hook 'global-company-mode)
-    (define-key company-active-map (kbd "M-j") 'company-select-next)
-    (define-key company-active-map (kbd "M-k") 'company-select-previous)))
 
 ;;; Syntax/error checking for GNU Emacs
 (use-package flycheck
@@ -188,18 +180,6 @@
   :config
   (paradox-enable))
 
-(use-package projectile
-  :ensure t
-  :config
-  (projectile-mode))
-
-(use-package helm-projectile
-  :ensure t
-  :after projectile
-  :config
-  (helm-projectile-on)
-  (setq projectile-completion-system 'helm)
-  (setq projectile-indexing-method 'alien))
 
 
 ;;; mu4e email client
