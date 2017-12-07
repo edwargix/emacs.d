@@ -37,12 +37,17 @@
 ;;; Company (complete anything) mode
 (use-package company
   :ensure t
+  :bind (:map company-active-map
+			  ("M-j" . company-select-next)
+			  ("M-k" . company-select-previous)
+			  ("C-j" . company-select-next)
+			  ("C-k" . company-select-previous))
+  :init
+  (progn
+	(add-hook 'after-init-hook 'global-company-mode))
   :config
   (progn
-	(add-hook 'after-init-hook 'global-company-mode)
-	(delete 'company-semantic company-backends)
-	(define-key company-active-map (kbd "M-j") 'company-select-next)
-	(define-key company-active-map (kbd "M-k") 'company-select-previous)))
+	(delete 'company-semantic company-backends)))
 
 
 
