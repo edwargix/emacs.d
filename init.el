@@ -53,13 +53,6 @@
 	(setq company-quickhelp-idle-delay 1)
 	(company-quickhelp-mode 1)))
 
-;;; company backend for C/C++ headers
-(use-package company-c-headers
-  :ensure t
-  :after company
-  :config
-  (add-to-list 'company-backends 'company-c-headers))
-
 ;;; Yasnippet: yet another snippet extension
 (use-package yasnippet
   :ensure t

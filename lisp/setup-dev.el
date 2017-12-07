@@ -50,6 +50,13 @@
 	(delete 'company-semantic company-backends)))
 
 
+;;; company backend for C/C++ headers
+(use-package company-c-headers
+  :ensure t
+  :after company
+  :config
+  (add-to-list 'company-backends 'company-c-headers))
+
 
 (use-package projectile
   :ensure t
