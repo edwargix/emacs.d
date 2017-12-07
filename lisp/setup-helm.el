@@ -10,6 +10,7 @@
 ;;; Helm: incremental completion and selection narrowing framework
 (use-package helm
   :ensure t
+  :defer nil
   :bind
   (("M-x" . helm-M-x)
    ("C-x r b" . helm-filtered-bookmarks)
