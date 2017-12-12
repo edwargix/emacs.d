@@ -97,9 +97,11 @@
 ;;; Paradox: a modern package menu
 (use-package paradox
   :ensure t
-  :config
-  (paradox-enable))
-
+  :commands (paradox-enable paradox-quit-and-close)
+  :init
+  (progn
+    (paradox-enable)
+    (evil-define-key '(normal motion) paradox-menu-mode-map (kbd "q") 'paradox-quit-and-close)))
 
 
 ;;; mu4e email client
