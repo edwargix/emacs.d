@@ -55,7 +55,9 @@
   :ensure t
   :after company
   :config
-  (add-to-list 'company-backends 'company-c-headers))
+  (add-to-list 'company-backends 'company-c-headers)
+  (dolist (folder (file-expand-wildcards "/usr/include/c++/*"))
+    (add-to-list 'company-c-headers-path-system "/usr/include/c++/7.2.1/")))
 
 
 (use-package projectile
