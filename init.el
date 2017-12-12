@@ -105,7 +105,8 @@
 
 
 ;;; mu4e email client
-(load-file "~/scripts/setup_mu4e.el")
+(when (file-exists-p "~/scripts/setup_mu4e.el")
+  (load-file "~/scripts/setup_mu4e.el"))
 
 
 (use-package ess
