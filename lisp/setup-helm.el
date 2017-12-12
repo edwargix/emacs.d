@@ -16,8 +16,6 @@
    ("C-x r b" . helm-filtered-bookmarks)
    ("C-x C-f" . helm-find-files)
    :map helm-map
-   ("C-j" . helm-next-line)
-   ("C-k" . helm-previous-line)
    ("M-j" . helm-next-line)
    ("M-k" . helm-previous-line)
    ("C-h" . helm-next-source)
