@@ -79,7 +79,7 @@
   (progn
 	(evil-define-key 'normal helm-gtags-mode-map (kbd "C-c g a")
 	  'helm-gtags-tags-in-this-function)
-	(evil-define-key 'nomral helm-gtags-mode-map (kbd "C-j")
+	(evil-define-key 'normal helm-gtags-mode-map (kbd "C-j")
 	  'helm-gtags-select)
 	(evil-define-key 'normal helm-gtags-mode-map (kbd "M-.")
 	  'helm-gtags-dwim)
