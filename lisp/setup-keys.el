@@ -49,5 +49,10 @@
 	       ("<ret>" . evil-org-return))))
 
 
+;;; I don't always know where my frames are, and I want a way to kill
+;;; Emacs 100% of the time
+(global-set-key (kbd "C-x C-c") 'save-buffers-kill-emacs)
+
+
 (provide 'setup-keys)
 ;;; setup-keys.el ends here
