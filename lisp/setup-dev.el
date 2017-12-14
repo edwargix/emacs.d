@@ -11,18 +11,18 @@
 
 ;; show unnecessary whitespace that can mess up your diff
 (add-hook 'prog-mode-hook
-		  (lambda () (interactive)
-			(setq show-trailing-whitespace 1)))
+	  (lambda () (interactive)
+	    (setq show-trailing-whitespace 1)))
 
 
-;; set appearance of a tab that is represented by 4 spaces
-(setq-default tab-width 4)
+;; set appearance of a tab that is represented by 8 spaces
+(setq-default tab-width 8)
 
 
 (global-set-key (kbd "<f5>") (lambda ()
-							   (interactive)
-							   (setq-local compilation-read-command nil)
-							   (call-interactively 'compile)))
+			       (interactive)
+			       (setq-local compilation-read-command nil)
+			       (call-interactively 'compile)))
 
 
 ;; setup GDB
@@ -38,16 +38,16 @@
 (use-package company
   :ensure t
   :bind (:map company-active-map
-			  ("M-j" . company-select-next)
-			  ("M-k" . company-select-previous)
-			  ("C-j" . company-select-next)
-			  ("C-k" . company-select-previous))
+	      ("M-j" . company-select-next)
+	      ("M-k" . company-select-previous)
+	      ("C-j" . company-select-next)
+	      ("C-k" . company-select-previous))
   :init
   (progn
-	(add-hook 'after-init-hook 'global-company-mode))
+    (add-hook 'after-init-hook 'global-company-mode))
   :config
   (progn
-	(delete 'company-semantic company-backends)))
+    (delete 'company-semantic company-backends)))
 
 
 ;;; company backend for C/C++ headers

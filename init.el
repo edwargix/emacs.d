@@ -23,8 +23,8 @@
   :ensure t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
-		 ("\\.md\\'" . markdown-mode)
-		 ("\\.markdown\\'" . markdown-mode))
+	 ("\\.md\\'" . markdown-mode)
+	 ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
 
@@ -40,9 +40,9 @@
   :ensure t
   :init
   (progn
-	(global-flycheck-mode)
-	(evil-define-key 'normal
-	  flycheck-error-list-mode-map (kbd "q") 'quit-window)))
+    (global-flycheck-mode)
+    (evil-define-key 'normal
+      flycheck-error-list-mode-map (kbd "q") 'quit-window)))
 
 ;;; Quickhelp (documentation lookup) for company
 (use-package company-quickhelp
@@ -50,8 +50,8 @@
   :after company
   :config
   (progn
-	(setq company-quickhelp-idle-delay 1)
-	(company-quickhelp-mode 1)))
+    (setq company-quickhelp-idle-delay 1)
+    (company-quickhelp-mode 1)))
 
 ;;; Yasnippet: yet another snippet extension
 (use-package yasnippet
@@ -64,8 +64,8 @@
   :ensure t
   :config
   (defengine duckduckgo
-	"https://duckduckgo.com/?q=%s"
-	:keybinding "d")
+    "https://duckduckgo.com/?q=%s"
+    :keybinding "d")
   (engine-mode))
 
 ;;; Org mode for keeping notes, todo lists, planning, and fast
@@ -73,12 +73,12 @@
 (use-package org
   :init
   (progn
-	(load-file "~/org/setup.el")
-	(unless (package-installed-p 'org-plus-contrib)
-	  (package-install 'org-plus-contrib))
-	(setq org-default-notes-file "~/notes.org"
-		  org-return-follows-link t
-		  org-read-date-force-compatible-dates nil))
+    (load-file "~/org/setup.el")
+    (unless (package-installed-p 'org-plus-contrib)
+      (package-install 'org-plus-contrib))
+    (setq org-default-notes-file "~/notes.org"
+	  org-return-follows-link t
+	  org-read-date-force-compatible-dates nil))
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
@@ -91,7 +91,7 @@
   :after org
   :config
   (progn
-	(add-hook 'org-mode-hook 'org-bullets-mode)))
+    (add-hook 'org-mode-hook 'org-bullets-mode)))
 
 
 ;;; Paradox: a modern package menu
