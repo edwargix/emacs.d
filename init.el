@@ -27,6 +27,12 @@
 	 ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
+(use-package smartparens
+  :ensure t
+  :config
+  (progn
+    (require 'smartparens-config)
+    (smartparens-global-mode t)))
 
 ;;; Magit: a Git Porcelain inside Emacs
 (use-package magit
