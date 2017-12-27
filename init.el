@@ -123,6 +123,23 @@
   :ensure auctex)
 
 
+(use-package pyvenv
+  :ensure t
+  :commands (pyvenv-activate pyvenv-workon))
+
+(use-package anaconda-mode
+  :ensure t
+  :after python
+  :config (progn
+	    (add-hook 'python-mode-hook 'anaconda-mode)
+	    (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+	    (evil-define-key 'normal
+	      anaconda-mode-view-mode-map (kbd "q") 'quit-window)))
+
+(use-package company-anaconda
+  :ensure t
+  :after anaconda-mode)
+
 ;;; Install local user packages
 (dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
   (add-to-list 'load-path d t))
