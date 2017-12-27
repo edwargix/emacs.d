@@ -63,8 +63,9 @@
 (use-package projectile
   :ensure t
   :config
-  (projectile-mode)
-  (setq projectile-enable-caching t))
+  (progn
+    (projectile-mode)
+    (setq projectile-enable-caching t)))
 
 
 (use-package zygospore
