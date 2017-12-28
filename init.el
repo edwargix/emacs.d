@@ -110,6 +110,12 @@
     (evil-define-key '(normal motion) paradox-menu-mode-map (kbd "q") 'paradox-quit-and-close)))
 
 
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
+
+
 ;;; mu4e email client
 (when (file-exists-p "~/scripts/setup_mu4e.el")
   (load-file "~/scripts/setup_mu4e.el"))
