@@ -6,10 +6,12 @@
 
 ;;; Code:
 
+;; (package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
-(require 'setup-packages)
+(load-file "~/.emacs.d/lisp/setup-packages.el")
+
 (require 'setup-keys)
 (require 'setup-appearance)
 (require 'setup-dev)

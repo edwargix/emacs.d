@@ -31,5 +31,4 @@
 
 (require 'use-package)
 
-(provide 'setup-packages)
 ;;; setup-packages.el ends here
