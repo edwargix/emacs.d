@@ -53,8 +53,8 @@
   :after (evil org)
   :hook ((org-mode . evil-org-mode)
 	 (evil-org-mode . evil-org-set-key-theme))
-  :bind ((:map evil-org-mode-map
-	       ("<ret>" . evil-org-return))))
+  :bind (:map org-mode-map
+	      ("<return>" . evil-org-return)))
 
 
 ;;; I don't always know where my frames are, and I want a way to kill
