@@ -21,6 +21,8 @@
     (define-key evil-ex-map "b " 'helm-mini)
     (define-key evil-ex-map "e " 'helm-find-files)
     (add-hook 'with-editor-mode-hook 'evil-insert-state)
+    (evil-global-set-key 'normal (kbd "SPC") mode-specific-map)
+    (evil-global-set-key 'motion (kbd "SPC") mode-specific-map)
     (evil-mode 1)))
 
 
