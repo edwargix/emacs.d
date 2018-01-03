@@ -1,3 +1,11 @@
+;;; init.el --- Setup Emacs
+
+;;; Commentary:
+
+;; My personal init.el for Emacs.
+
+;;; Code:
+
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
