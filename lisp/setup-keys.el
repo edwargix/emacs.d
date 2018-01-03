@@ -24,6 +24,12 @@
     (evil-mode 1)))
 
 
+(use-package evil-collection
+  :ensure t
+  :init
+  (evil-collection-init))
+
+
 ;;; Easily surround text
 (use-package evil-surround
   :ensure t
