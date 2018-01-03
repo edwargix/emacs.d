@@ -79,5 +79,15 @@
   (editorconfig-mode 1))
 
 
+(use-package zeal-at-point
+  :ensure t
+  :bind
+  (("C-c d" . zeal-at-point))
+  :config
+  (progn
+    (add-to-list 'zeal-at-point-mode-alist '(c-mode . "c"))
+    (add-to-list 'zeal-at-point-mode-alist '(python-mode . "python"))))
+
+
 (provide 'setup-dev)
 ;;; setup-dev.el ends here
