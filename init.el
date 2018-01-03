@@ -144,9 +144,7 @@
   :after python
   :config (progn
 	    (add-hook 'python-mode-hook 'anaconda-mode)
-	    (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
-	    (evil-define-key 'normal
-	      anaconda-mode-view-mode-map (kbd "q") 'quit-window)))
+	    (add-hook 'python-mode-hook 'anaconda-eldoc-mode)))
 
 (use-package company-anaconda
   :ensure t
