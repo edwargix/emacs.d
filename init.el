@@ -99,6 +99,12 @@
   (progn
     (add-hook 'org-mode-hook 'org-bullets-mode)))
 
+(use-package org-contacts
+  :after org
+  :config
+  (progn
+    (setq org-contacts-files '("~/org/contacts.org"))))
+
 
 ;;; Paradox: a modern package menu
 (use-package paradox
