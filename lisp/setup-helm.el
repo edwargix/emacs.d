@@ -15,6 +15,8 @@
   (("M-x" . helm-M-x)
    ("C-x r b" . helm-filtered-bookmarks)
    ("C-x C-f" . helm-find-files)
+   :map mode-specific-map
+   ("SPC" . helm-M-x)
    :map helm-map
    ("M-j" . helm-next-line)
    ("M-k" . helm-previous-line)
