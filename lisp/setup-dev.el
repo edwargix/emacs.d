@@ -62,6 +62,9 @@
 
 (use-package projectile
   :ensure t
+  :bind
+  (:map mode-specific-map
+  	("p" . projectile-command-map))
   :config
   (progn
     (projectile-mode)
