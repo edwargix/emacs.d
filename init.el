@@ -150,6 +150,13 @@
   :ensure t
   :after anaconda-mode)
 
+
+(use-package lorem-ipsum
+  :ensure t
+  :config
+  (lorem-ipsum-use-default-bindings))
+
+
 ;;; Install local user packages
 (dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
   (add-to-list 'load-path d t))
