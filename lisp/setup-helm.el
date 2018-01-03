@@ -102,5 +102,9 @@
   (setq projectile-indexing-method 'alien))
 
 
+(use-package helm-pass
+  :ensure t)
+
+
 (provide 'setup-helm)
 ;;; setup-helm.el ends here
