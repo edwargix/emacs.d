@@ -102,15 +102,6 @@
   (objc-mode . rtags-hook)
   :config
   (progn
-    (evil-define-key '(normal motion) 'global (kbd "M-.") 'rtags-find-symbol-at-point)
-    (evil-define-key '(normal motion) 'global (kbd "M-,") 'rtags-find-references-at-point)
-    (evil-define-key '(normal motion) 'global (kbd "M-;") 'rtags-find-file)
-    (evil-define-key '(normal motion) 'global (kbd "C-.") 'rtags-find-symbol)
-    (evil-define-key '(normal motion) 'global (kbd "C-,") 'rtags-find-references)
-    (evil-define-key '(normal motion) 'global (kbd "C-<") 'rtags-find-virtuals-at-point)
-    (evil-define-key '(normal motion) 'global (kbd "C->") 'rtags-diagnostics)
-    (evil-define-key '(normal motion) 'global (kbd "M-[") 'rtags-location-stack-back)
-    (evil-define-key '(normal motion) 'global (kbd "M-]") 'rtags-location-stack-forward)
     (use-package company-rtags :ensure t)
     (use-package flycheck-rtags :ensure t)
     (use-package helm-rtags :ensure t)
