@@ -49,3 +49,6 @@ ido.last
 recentf
 /anaconda-mode/
 /url/
+/semanticdb/
+projectile.cache
+projectile-bookmarks.eld
