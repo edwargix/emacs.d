@@ -123,7 +123,7 @@
   :init
   (progn
     (paradox-enable)
-    (evil-define-key '(normal motion) paradox-menu-mode-map (kbd "q") 'paradox-quit-and-close)))
+    (evil-set-initial-state 'paradox-menu-mode 'motion)))
 
 
 (use-package which-key
