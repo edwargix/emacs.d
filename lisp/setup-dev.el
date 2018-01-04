@@ -77,6 +77,52 @@
   (editorconfig-mode 1))
 
 
+(require 'cc-mode)
+(require 'semantic)
+
+(global-semanticdb-minor-mode 1)
+(global-semantic-idle-scheduler-mode 1)
+
+(semantic-mode 1)
+
+(defun rtags-hook ()
+  "Setup rtags and flycheck."
+  (require 'flycheck-rtags)
+  (rtags-start-process-unless-running)
+  (flycheck-select-checker 'rtags)
+  (setq-local flycheck-highlighting-mode nil)
+  ;; (rtags-mode)
+  )
+
+(use-package rtags
+  :ensure t
+  :hook
+  (c-mode . rtags-hook)
+  (c++-mode . rtags-hook)
+  (objc-mode . rtags-hook)
+  :config
+  (progn
+    (evil-define-key '(normal motion) 'global (kbd "M-.") 'rtags-find-symbol-at-point)
+    (evil-define-key '(normal motion) 'global (kbd "M-,") 'rtags-find-references-at-point)
+    (evil-define-key '(normal motion) 'global (kbd "M-;") 'rtags-find-file)
+    (evil-define-key '(normal motion) 'global (kbd "C-.") 'rtags-find-symbol)
+    (evil-define-key '(normal motion) 'global (kbd "C-,") 'rtags-find-references)
+    (evil-define-key '(normal motion) 'global (kbd "C-<") 'rtags-find-virtuals-at-point)
+    (evil-define-key '(normal motion) 'global (kbd "C->") 'rtags-diagnostics)
+    (evil-define-key '(normal motion) 'global (kbd "M-[") 'rtags-location-stack-back)
+    (evil-define-key '(normal motion) 'global (kbd "M-]") 'rtags-location-stack-forward)
+    (use-package company-rtags :ensure t)
+    (use-package flycheck-rtags :ensure t)
+    (use-package helm-rtags :ensure t)
+    (setq rtags-autostart-diagnostics t
+	  rtags-completions-enabled t)
+    (with-eval-after-load 'company
+      ;; (push 'company-rtags company-backends)
+      (add-to-list 'company-backends 'company-rtags)
+      )
+    (setq rtags-display-result-backend 'helm)))
+
+
 (use-package zeal-at-point
   :ensure t
   :bind

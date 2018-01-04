@@ -75,8 +75,6 @@
 	  helm-gtags-suggested-key-mapping t)
     (add-hook 'dired-mode-hook 'helm-gtags-mode)
     (add-hook 'eshell-mode-hook 'helm-gtags-mode)
-    (add-hook 'c-mode-hook 'helm-gtags-mode)
-    (add-hook 'c++-mode-hook 'helm-gtags-mode)
     (add-hook 'asm-made-hook 'helm-gtags-mode))
   :config
   (progn
