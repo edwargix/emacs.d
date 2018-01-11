@@ -98,7 +98,8 @@
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
-   ("C-c b" . org-iswitchb)))
+   ("C-c b" . org-iswitchb)
+   ("C-c l" . org-store-link)))
 
 ;;; UTF-8 bullets for org-mode
 (use-package org-bullets
@@ -162,9 +163,7 @@
 
 
 (use-package lorem-ipsum
-  :ensure t
-  :config
-  (lorem-ipsum-use-default-bindings))
+  :ensure t)
 
 
 ;;; Install local user packages
