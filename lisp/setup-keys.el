@@ -12,7 +12,8 @@
   :ensure t
   :init
   (progn
-    (setq evil-want-C-u-scroll t))
+    (setq evil-want-C-u-scroll t
+	  evil-want-integration nil))
   :config
   (progn
     (require 'evil)
