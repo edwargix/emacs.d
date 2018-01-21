@@ -36,6 +36,9 @@
 ;;; Highlight parentheses
 (show-paren-mode)
 
+;;; Spell check in comments and strings
+(flyspell-prog-mode)
+
 ;;; Custom themes
 ;; Default theme
 (unless (package-installed-p 'monokai-theme)
