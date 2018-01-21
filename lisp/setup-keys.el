@@ -27,6 +27,10 @@
     (evil-mode 1)))
 
 
+(setq scroll-step 1
+      delete-selection-mode 1)
+
+
 (use-package evil-collection
   :ensure t
   :init
