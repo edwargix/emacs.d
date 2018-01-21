@@ -36,6 +36,9 @@
 ;;; Highlight parentheses
 (show-paren-mode)
 
+;;; Move mouse if it gets in the way of the cursor
+(mouse-avoidance-mode 'animate)
+
 ;;; Spell check in comments and strings
 (flyspell-prog-mode)
 
