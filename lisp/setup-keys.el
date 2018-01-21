@@ -67,5 +67,12 @@
 (global-set-key (kbd "C-x C-c") 'save-buffers-kill-emacs)
 
 
+(use-package evil-matchit
+  :ensure t
+  :init
+  (progn
+    (add-hook 'python-mode-hook 'turn-on-evil-matchit-mode)))
+
+
 (provide 'setup-keys)
 ;;; setup-keys.el ends here
