@@ -34,6 +34,10 @@
  gdb-show-main t)
 
 
+;;; Reload file's buffer when the file changes on disk
+(global-auto-revert-mode 1)
+
+
 ;;; Company (complete anything) mode
 (use-package company
   :ensure t
