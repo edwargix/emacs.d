@@ -36,6 +36,9 @@
 ;;; Highlight parentheses
 (show-paren-mode)
 
+;;; Highlight stuff with M-s h
+(global-hi-lock-mode 1)
+
 ;;; Move mouse if it gets in the way of the cursor
 (mouse-avoidance-mode 'animate)
 
