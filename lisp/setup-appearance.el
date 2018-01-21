@@ -55,5 +55,9 @@
   (package-install 'solarized-theme))
 (load-theme 'solarized-dark t t)
 
+(use-package pretty-mode
+  :ensure t
+  :hook ((emacs-lisp-mode python) . turn-on-pretty-mode))
+
 (provide 'setup-appearance)
 ;;; setup-appearance.el ends here
