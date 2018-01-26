@@ -138,6 +138,10 @@
   (which-key-mode))
 
 
+(use-package system-packages
+  :ensure t)
+
+
 ;;; mu4e email client
 (when (file-exists-p "~/scripts/setup-mu4e.el")
   (load-file "~/scripts/setup-mu4e.el"))
