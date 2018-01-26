@@ -56,10 +56,12 @@
 (use-package evil-org
   :ensure t
   :after (evil org)
-  :hook ((org-mode . evil-org-mode)
-	 (evil-org-mode . evil-org-set-key-theme))
-  :bind (:map org-mode-map
-	      ("<return>" . evil-org-return)))
+  :config
+  (progn
+    (add-hook 'org-mode-hook 'evil-org-mode)
+    (add-hook 'evil-org-mode-hook
+	      (lambda ()
+		(evil-org-set-key-theme)))))
 
 
 ;;; I don't always know where my frames are, and I want a way to kill
