@@ -66,8 +66,7 @@
   	("p" . projectile-command-map))
   :config
   (progn
-    (projectile-mode)
-    (setq projectile-enable-caching t)))
+    (projectile-mode)))
 
 
 (use-package zygospore
