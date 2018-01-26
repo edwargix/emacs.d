@@ -112,8 +112,7 @@
 	  rtags-completions-enabled t)
     (with-eval-after-load 'company
       ;; (push 'company-rtags company-backends)
-      (add-to-list 'company-backends 'company-rtags)
-      )
+      (add-to-list 'company-backends 'company-rtags))
     (setq rtags-display-result-backend 'helm)))
 
 
