@@ -146,5 +146,11 @@
       (evil-define-key 'normal map (kbd "M-,") 'pop-tag-mark))))
 
 
+(use-package pkgbuild-mode
+  :ensure t
+  :mode ("\\`PKGBUILD\\'" . pkgbuild-mode)
+  :defer t)
+
+
 (provide 'setup-dev)
 ;;; setup-dev.el ends here
