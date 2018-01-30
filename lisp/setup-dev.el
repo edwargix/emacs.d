@@ -19,6 +19,9 @@
 (setq-default tab-width 8)
 
 
+(setq-default indent-tabs-mode nil)
+
+
 (global-set-key (kbd "<f5>") (lambda ()
 			       (interactive)
 			       (setq-local compilation-read-command nil)
