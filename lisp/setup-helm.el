@@ -42,10 +42,10 @@
     (when (executable-find "curl")
       (setq helm-net-prefer-curl t))
     (add-hook 'helm-after-initialize-hook
-	      ;; hide the cursor in helm buffers
-	      (lambda ()
-		(with-helm-buffer
-		  (setq cursor-in-non-selected-windows nil))))
+              ;; hide the cursor in helm buffers
+              (lambda ()
+                (with-helm-buffer
+                  (setq cursor-in-non-selected-windows nil))))
     (helm-mode 1)))
 
 
@@ -68,11 +68,11 @@
   :init
   (progn
     (setq helm-gtags-ignore-case t
-	  helm-gtags-auto-update t
-	  helm-gtags-use-input-at-cursor t
-	  helm-gtags-pulse-at-cursor t
-	  helm-gtags-prefix-key (kbd "C-c g")
-	  helm-gtags-suggested-key-mapping t)
+          helm-gtags-auto-update t
+          helm-gtags-use-input-at-cursor t
+          helm-gtags-pulse-at-cursor t
+          helm-gtags-prefix-key (kbd "C-c g")
+          helm-gtags-suggested-key-mapping t)
     (add-hook 'dired-mode-hook 'helm-gtags-mode)
     (add-hook 'eshell-mode-hook 'helm-gtags-mode)
     (add-hook 'asm-made-hook 'helm-gtags-mode))

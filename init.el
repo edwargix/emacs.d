@@ -33,8 +33,8 @@
   :ensure t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
-	 ("\\.md\\'" . markdown-mode)
-	 ("\\.markdown\\'" . markdown-mode))
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
 (use-package smartparens
@@ -97,8 +97,8 @@
     (unless (package-installed-p 'org-plus-contrib)
       (package-install 'org-plus-contrib))
     (setq org-default-notes-file "~/notes.org"
-	  org-return-follows-link t
-	  org-read-date-force-compatible-dates nil))
+          org-return-follows-link t
+          org-read-date-force-compatible-dates nil))
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
@@ -163,8 +163,8 @@
   :ensure t
   :after python
   :config (progn
-	    (add-hook 'python-mode-hook 'anaconda-mode)
-	    (add-hook 'python-mode-hook 'anaconda-eldoc-mode)))
+            (add-hook 'python-mode-hook 'anaconda-mode)
+            (add-hook 'python-mode-hook 'anaconda-eldoc-mode)))
 
 (use-package company-anaconda
   :ensure t

@@ -11,8 +11,8 @@
 
 ;; show unnecessary whitespace that can mess up your diff
 (add-hook 'prog-mode-hook
-	  (lambda () (interactive)
-	    (setq show-trailing-whitespace 1)))
+          (lambda () (interactive)
+            (setq show-trailing-whitespace 1)))
 
 
 ;; set appearance of a tab that is represented by 8 spaces
@@ -23,9 +23,9 @@
 
 
 (global-set-key (kbd "<f5>") (lambda ()
-			       (interactive)
-			       (setq-local compilation-read-command nil)
-			       (call-interactively 'compile)))
+                               (interactive)
+                               (setq-local compilation-read-command nil)
+                               (call-interactively 'compile)))
 
 
 ;; setup GDB
@@ -66,7 +66,7 @@
   :ensure t
   :bind
   (:map mode-specific-map
-  	("p" . projectile-command-map))
+        ("p" . projectile-command-map))
   :config
   (progn
     (projectile-mode)))
@@ -121,7 +121,7 @@
     (use-package flycheck-rtags :ensure t)
     (use-package helm-rtags :ensure t)
     (setq rtags-autostart-diagnostics t
-	  rtags-completions-enabled t)
+          rtags-completions-enabled t)
     (with-eval-after-load 'company
       ;; (push 'company-rtags company-backends)
       (add-to-list 'company-backends 'company-rtags))
@@ -143,8 +143,8 @@
   :config
   (progn
     (dolist (map `(,emacs-lisp-mode-map
-		   ;; ,ielm-map
-		   ,lisp-interaction-mode-map))
+                   ;; ,ielm-map
+                   ,lisp-interaction-mode-map))
       (evil-define-key 'normal map (kbd "M-.") 'elisp-slime-nav-find-elisp-thing-at-point)
       (evil-define-key 'normal map (kbd "M-,") 'pop-tag-mark))))
 
@@ -156,9 +156,9 @@
 
 
 (use-package importmagic
-    :ensure t
-    :config
-    (add-hook 'python-mode-hook 'importmagic-mode))
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'importmagic-mode))
 
 
 (provide 'setup-dev)

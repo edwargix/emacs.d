@@ -13,7 +13,7 @@
   :init
   (progn
     (setq evil-want-C-u-scroll t
-	  evil-want-integration nil))
+          evil-want-integration nil))
   :config
   (progn
     (require 'evil)
@@ -60,8 +60,8 @@
   (progn
     (add-hook 'org-mode-hook 'evil-org-mode)
     (add-hook 'evil-org-mode-hook
-	      (lambda ()
-		(evil-org-set-key-theme)))))
+              (lambda ()
+                (evil-org-set-key-theme)))))
 
 
 ;;; I don't always know where my frames are, and I want a way to kill
