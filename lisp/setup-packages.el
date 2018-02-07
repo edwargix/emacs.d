@@ -7,7 +7,11 @@
 ;;; Code:
 
 (require 'package)
+(require 'tls)
 
+(setq tls-checktrust t)
+
+(setq-default package-archives '(("gnu" . "https://elpa.gnu.org/packages/")))
 
 ;;; Add melpa archive
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
@@ -16,7 +20,7 @@
   (add-to-list 'package-archives (cons "melpa" url) t))
 
 ;;; Add org archive
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 
 ;;; Load and activate lisp packages
 (package-initialize)
