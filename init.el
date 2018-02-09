@@ -22,7 +22,7 @@
 ;;; C-c <right>: redo
 (winner-mode t)
 
-;;; Allow easily switching windows with Shift-{left,right,up.down}
+;;; Allow easily switching windows with Shift-{left,right,up,down}
 (windmove-default-keybindings)
 
 ;;; Don't make backup files
