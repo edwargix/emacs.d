@@ -27,6 +27,8 @@
                                (setq-local compilation-read-command nil)
                                (call-interactively 'compile)))
 
+(global-set-key (kbd "<f6>") #'shell)
+
 
 ;; setup GDB
 (setq
