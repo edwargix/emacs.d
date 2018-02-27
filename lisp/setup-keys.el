@@ -68,6 +68,9 @@
 ;;; Emacs 100% of the time
 (global-set-key (kbd "C-x C-c") 'save-buffers-kill-emacs)
 
+(global-set-key (kbd "<f9>") (lambda () (interactive)
+                               (kill-buffer)
+                               (delete-window)))
 
 (use-package evil-matchit
   :ensure t
