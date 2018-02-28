@@ -51,7 +51,8 @@
     (add-hook 'after-init-hook 'global-company-mode))
   :config
   (progn
-    (delete 'company-semantic company-backends)))
+    (delete 'company-semantic company-backends)
+    (define-key company-active-map (kbd "RET") 'company-complete-selection)))
 
 
 ;;; company backend for C/C++ headers
