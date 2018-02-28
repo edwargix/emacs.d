@@ -79,5 +79,13 @@
     (add-hook 'python-mode-hook 'turn-on-evil-matchit-mode)))
 
 
+;;; Function keys
+(global-set-key (kbd "<f5>") (lambda ()
+                               (interactive)
+                               (setq-local compilation-read-command nil)
+                               (call-interactively 'compile)))
+(global-set-key (kbd "<f6>") #'shell)
+
+
 (provide 'setup-keys)
 ;;; setup-keys.el ends here

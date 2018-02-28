@@ -22,14 +22,6 @@
 (setq-default indent-tabs-mode nil)
 
 
-(global-set-key (kbd "<f5>") (lambda ()
-                               (interactive)
-                               (setq-local compilation-read-command nil)
-                               (call-interactively 'compile)))
-
-(global-set-key (kbd "<f6>") #'shell)
-
-
 ;; setup GDB
 (setq
  ;; use gdb-many-windows by default
