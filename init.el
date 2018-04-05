@@ -99,13 +99,33 @@
       (package-install 'org-plus-contrib))
     (setq org-default-notes-file "~/notes.org"
           org-return-follows-link t
-          org-read-date-force-compatible-dates nil))
+          org-read-date-force-compatible-dates nil)
+    (setq org-src-fontify-natively t
+          org-src-tab-acts-natively t)
+    (setq org-latex-pdf-process
+          '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+    (use-package htmlize :ensure t))
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
    ("C-c b" . org-iswitchb)
    ("C-c l" . org-store-link)
-   ("C-c o" . org-open-at-point-global)))
+   ("C-c o" . org-open-at-point-global))
+  :config
+  (progn
+    (require 'ox-md)
+    (require 'ox-beamer)
+    ;; (add-to-list 'org-latex-packages-alist '("" "minted"))
+    ;; (setq org-latex-listings 'minted)
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((emacs-lisp . t)
+       (python . t)
+       (dot . t)
+       (org . t)
+       (gnuplot . t)))))
 
 ;;; UTF-8 bullets for org-mode
 (use-package org-bullets
