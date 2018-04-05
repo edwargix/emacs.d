@@ -110,7 +110,6 @@
 ;;; UTF-8 bullets for org-mode
 (use-package org-bullets
   :ensure t
-  :defer t
   :after org
   :config
   (progn
