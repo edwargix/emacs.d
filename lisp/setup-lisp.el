@@ -18,5 +18,15 @@
       (evil-define-key 'normal map (kbd "M-,") 'pop-tag-mark))))
 
 
+(use-package auto-compile
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (setq auto-compile-display-buffer nil
+          auto-compile-use-mode-line nil)
+    (add-hook 'emacs-lisp-mode-hook 'auto-compile-mode)))
+
+
 (provide 'setup-lisp)
 ;;; setup-lisp.el ends here
