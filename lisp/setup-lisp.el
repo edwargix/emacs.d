@@ -28,5 +28,14 @@
     (add-hook 'emacs-lisp-mode-hook 'auto-compile-mode)))
 
 
+(use-package slime
+  :ensure t
+  :init
+  (progn
+    (slime-setup)
+    (setq slime-contribs '(slime-scratch))
+    (setq inferior-lisp-program "sbcl")))
+
+
 (provide 'setup-lisp)
 ;;; setup-lisp.el ends here
