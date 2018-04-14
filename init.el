@@ -17,6 +17,7 @@
 (require 'setup-dev)
 (require 'setup-helm)
 (require 'setup-defaults)
+(require 'setup-lisp)
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
