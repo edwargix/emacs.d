@@ -18,6 +18,7 @@
 (require 'setup-helm)
 (require 'setup-defaults)
 (require 'setup-lisp)
+(require 'setup-treemacs)
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
@@ -194,6 +195,13 @@
 
 (use-package lorem-ipsum
   :ensure t)
+
+
+(use-package winum
+  :ensure t
+  :config
+  (progn
+    (winum-mode)))
 
 
 ;;; Install local user packages
