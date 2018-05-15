@@ -20,6 +20,18 @@
 (require 'setup-lisp)
 (require 'setup-treemacs)
 
+(use-package dashboard
+  :init
+  (add-hook 'after-init-hook 'dashboard-refresh-buffer)
+  (add-hook 'dashboard-mode-hook (lambda ()
+                                   (setq dashboard-banner-logo-title "Welcome")))
+  (setq dashboard-items '((agenda . 5)
+                          (projects . 5)
+                          (bookmarks . 5)))
+  :config
+  (setq dashboard-startup-banner 'logo)
+  (dashboard-setup-startup-hook))
+
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
 ;;; C-c <right>: redo
@@ -220,7 +232,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(initial-buffer-choice "~/.emacs.d/init.el")
  '(initial-scratch-message "")
  '(show-paren-mode t))
 (custom-set-faces
