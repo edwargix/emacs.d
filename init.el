@@ -18,6 +18,7 @@
 (require 'setup-helm)
 (require 'setup-defaults)
 (require 'setup-lisp)
+(require 'setup-python)
 (require 'setup-treemacs)
 
 (use-package dashboard
@@ -187,22 +188,6 @@
 
 (use-package tex
   :ensure auctex)
-
-
-(use-package pyvenv
-  :ensure t
-  :commands (pyvenv-activate pyvenv-workon))
-
-(use-package anaconda-mode
-  :ensure t
-  :after python
-  :config (progn
-            (add-hook 'python-mode-hook 'anaconda-mode)
-            (add-hook 'python-mode-hook 'anaconda-eldoc-mode)))
-
-(use-package company-anaconda
-  :ensure t
-  :after anaconda-mode)
 
 
 (use-package lorem-ipsum
