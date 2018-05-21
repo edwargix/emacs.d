@@ -1,10 +1,13 @@
 # emacs
 My personal emacs configuration setup. The root directory is in ~/.emacs.d/
 
-I got the .gitignore from Emacs.gitignore of https://github.com/github/gitignore/tree/master/Global
+I got the .gitignore from Emacs.gitignore of
+https://github.com/github/gitignore/tree/master/Global
 
+You should be able to just run
 
-## acknowledgements
+    $ git clone https://github.com/edwargix/emacs.git ~/.emacs.d/
+    $ emacs
 
-* In the very beginning I started here:
-https://www.youtube.com/watch?v=FRu8SRWuUko
+and all packages will then be automatically downloaded and configured. If there
+are any problems, please submit an issue or get in touch with me! Thanks
