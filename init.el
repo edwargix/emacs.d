@@ -12,6 +12,7 @@
 
 (load-file "~/.emacs.d/lisp/setup-packages.el")
 
+
 (require 'setup-keys)
 (require 'setup-appearance)
 (require 'setup-dev)
@@ -20,6 +21,7 @@
 (require 'setup-lisp)
 (require 'setup-python)
 (require 'setup-treemacs)
+
 
 (use-package dashboard
   :init
@@ -33,18 +35,21 @@
   (setq dashboard-startup-banner 'logo)
   (dashboard-setup-startup-hook))
 
+
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
 ;;; C-c <right>: redo
 (winner-mode t)
 
+
 ;;; Allow easily switching windows with Shift-{left,right,up,down}
 (windmove-default-keybindings)
+
 
 ;;; Don't make backup files
 (setq make-backup-files nil)
 
-;;; Markdown mode
+
 (use-package markdown-mode
   :ensure t
   :commands (markdown-mode gfm-mode)
@@ -53,6 +58,8 @@
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
+
+;;; a minor mode for dealing with pairs
 (use-package smartparens
   :ensure t
   :config
@@ -60,14 +67,16 @@
     (require 'smartparens-config)
     (smartparens-global-mode t)))
 
-;;; Magit: a Git Porcelain inside Emacs
+
+;;; magit: a Git Porcelain
 (use-package magit
   :ensure t
   :bind
   (("C-x g" . magit-status)
    ("C-x M-g" . magit-dispatch-popup)))
 
-;;; Syntax/error checking for GNU Emacs
+
+;;; Syntax/error checking
 (use-package flycheck
   :ensure t
   :init
@@ -75,6 +84,7 @@
     (global-flycheck-mode)
     (evil-define-key 'normal
       flycheck-error-list-mode-map (kbd "q") 'quit-window)))
+
 
 ;;; Quickhelp (documentation lookup) for company
 (use-package company-quickhelp
@@ -85,15 +95,18 @@
     (setq company-quickhelp-idle-delay 1)
     (company-quickhelp-mode 1)))
 
+
 ;;; Yasnippet: yet another snippet extension
 (use-package yasnippet
   :ensure t
   :config
   (yas-global-mode 1))
 
+
 (use-package yasnippet-snippets
   :ensure t
   :after yasnippet)
+
 
 ;;; Setup duckduckgo search engine
 (use-package engine-mode
@@ -103,6 +116,7 @@
     "https://duckduckgo.com/?q=%s"
     :keybinding "d")
   (engine-mode))
+
 
 ;;; Org mode for keeping notes, todo lists, planning, and fast
 ;;; documenting
@@ -142,6 +156,7 @@
        (org . t)
        (gnuplot . t)))))
 
+
 ;;; UTF-8 bullets for org-mode
 (use-package org-bullets
   :ensure t
@@ -149,6 +164,7 @@
   :config
   (progn
     (add-hook 'org-mode-hook 'org-bullets-mode)))
+
 
 (use-package org-contacts
   :after org
@@ -173,27 +189,32 @@
   (which-key-mode))
 
 
+;;; functions to manage packages on linux distros
 (use-package system-packages
   :ensure t)
 
 
-;;; mu4e email client
+;;; setup the mu4e email client
 (when (file-exists-p "~/scripts/setup-mu4e.el")
   (load-file "~/scripts/setup-mu4e.el"))
 
 
+;;; statistics software and R-lang integration
 (use-package ess
   :ensure t)
 
 
+;;; TeX/LaTeX
 (use-package tex
   :ensure auctex)
 
 
+;;; ability to insert random text
 (use-package lorem-ipsum
   :ensure t)
 
 
+;;; number windows to easily switch between them
 (use-package winum
   :ensure t
   :config
@@ -206,10 +227,12 @@
   (add-to-list 'load-path d t))
 (add-to-list 'Info-directory-list "~/.local/share/info/")
 
+
 ;;; Start Emacs Daemon
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -6,7 +6,9 @@
 
 ;;; Code:
 
+
 (setq-default fill-column 80)
+
 
 (provide 'setup-defaults)
 ;;; setup-defaults.el ends here

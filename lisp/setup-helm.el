@@ -91,6 +91,7 @@
     (evil-define-key 'normal helm-gtags-mode-map (kbd "C-c >")
       'helm-gtags-next-history)))
 
+
 ;;; Helm extension for projectile
 (use-package helm-projectile
   :ensure t

@@ -14,8 +14,9 @@
     (dolist (map `(,emacs-lisp-mode-map
                    ;; ,ielm-map
                    ,lisp-interaction-mode-map))
-      (evil-define-key 'normal map (kbd "M-.") 'elisp-slime-nav-find-elisp-thing-at-point)
-      (evil-define-key 'normal map (kbd "M-,") 'pop-tag-mark))))
+      (with-eval-after-load 'evil
+        (evil-define-key 'normal map (kbd "M-.") 'elisp-slime-nav-find-elisp-thing-at-point)
+        (evil-define-key 'normal map (kbd "M-,") 'pop-tag-mark)))))
 
 
 (use-package auto-compile
