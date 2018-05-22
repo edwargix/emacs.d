@@ -31,5 +31,10 @@
   (add-hook 'python-mode-hook 'importmagic-mode))
 
 
+(use-package pipenv
+  :ensure t
+  :hook (python-mode . pipenv-mode))
+
+
 (provide 'setup-python)
 ;;; setup-python.el ends here
