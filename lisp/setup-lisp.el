@@ -38,5 +38,10 @@
     (setq inferior-lisp-program "sbcl")))
 
 
+(use-package common-lisp-snippets
+  :ensure t
+  :after yasnippet)
+
+
 (provide 'setup-lisp)
 ;;; setup-lisp.el ends here
