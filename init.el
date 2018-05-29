@@ -24,6 +24,7 @@
 
 
 (use-package dashboard
+  :ensure t
   :init
   (add-hook 'after-init-hook 'dashboard-refresh-buffer)
   (add-hook 'dashboard-mode-hook (lambda ()
