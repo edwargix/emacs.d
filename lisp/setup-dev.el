@@ -46,6 +46,16 @@
     (define-key company-active-map (kbd "RET") 'company-complete-selection)))
 
 
+;;; Quickhelp (documentation lookup) for company
+(use-package company-quickhelp
+  :ensure t
+  :after company
+  :config
+  (progn
+    (setq company-quickhelp-idle-delay 1)
+    (company-quickhelp-mode 1)))
+
+
 ;;; company backend for C/C++ headers
 (use-package company-c-headers
   :ensure t

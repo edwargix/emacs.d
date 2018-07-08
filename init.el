@@ -73,16 +73,6 @@
       flycheck-error-list-mode-map (kbd "q") 'quit-window)))
 
 
-;;; Quickhelp (documentation lookup) for company
-(use-package company-quickhelp
-  :ensure t
-  :after company
-  :config
-  (progn
-    (setq company-quickhelp-idle-delay 1)
-    (company-quickhelp-mode 1)))
-
-
 ;;; Yasnippet: yet another snippet extension
 (use-package yasnippet
   :ensure t
