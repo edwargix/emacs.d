@@ -209,6 +209,25 @@
     (winum-mode)))
 
 
+;;; ledger
+(use-package ledger-mode
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (setq ledger-clear-whole-transactions t))
+  :config
+  (progn
+    (add-to-list 'evil-emacs-state-modes 'ledger-report-mode))
+  :mode ("\\.\\(ledger\\|ldg\\)\\'" . ledger-mode))
+
+
+;;; flycheck for ledger
+(use-package flycheck-ledger
+  :ensure t
+  :after ledger)
+
+
 ;;; Install local user packages
 (dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
   (add-to-list 'load-path d t))
