@@ -52,3 +52,6 @@ recentf
 /semanticdb/
 projectile.cache
 projectile-bookmarks.eld
+/.cache/
+abbrev_defs
+bookmarks
