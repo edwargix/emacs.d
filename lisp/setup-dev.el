@@ -108,7 +108,6 @@
   )
 
 (use-package rtags
-  :ensure t
   :hook
   (c-mode . rtags-hook)
   (c++-mode . rtags-hook)
@@ -124,9 +123,9 @@
     (evil-define-key '(normal motion) 'global (kbd "C->") 'rtags-diagnostics)
     (evil-define-key '(normal motion) 'global (kbd "M-[") 'rtags-location-stack-back)
     (evil-define-key '(normal motion) 'global (kbd "M-]") 'rtags-location-stack-forward)
-    (use-package company-rtags :ensure t)
-    (use-package flycheck-rtags :ensure t)
-    (use-package helm-rtags :ensure t)
+    (use-package company-rtags)
+    (use-package flycheck-rtags)
+    (use-package helm-rtags)
     (setq rtags-autostart-diagnostics t
           rtags-completions-enabled t)
     (with-eval-after-load 'company
