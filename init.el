@@ -8,6 +8,12 @@
 
 ;; (package-initialize)
 
+
+;;; Install local user packages
+(dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
+  (add-to-list 'load-path d t))
+(add-to-list 'Info-directory-list "~/.local/share/info/")
+
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
 (load-file "~/.emacs.d/lisp/setup-packages.el")
@@ -216,12 +222,6 @@
 (use-package flycheck-ledger
   :ensure t
   :after ledger)
-
-
-;;; Install local user packages
-(dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
-  (add-to-list 'load-path d t))
-(add-to-list 'Info-directory-list "~/.local/share/info/")
 
 
 ;;; Start Emacs Daemon
