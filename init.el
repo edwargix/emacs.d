@@ -12,8 +12,6 @@
 ;;; Install local user packages
 (dolist (d (file-expand-wildcards "~/.local/share/emacs/site-lisp/*"))
   (add-to-list 'load-path d t))
-(require 'info)
-(add-to-list 'Info-directory-list "~/.local/share/info/")
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
