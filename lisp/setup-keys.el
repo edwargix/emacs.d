@@ -24,6 +24,8 @@
     (add-hook 'with-editor-mode-hook 'evil-insert-state)
     (evil-global-set-key 'normal (kbd "SPC") mode-specific-map)
     (evil-global-set-key 'motion (kbd "SPC") mode-specific-map)
+    (evil-global-set-key 'normal (kbd "SPC u") 'universal-argument)
+    (evil-global-set-key 'motion (kbd "SPC u") 'universal-argument)
     (evil-mode 1)))
 
 
