@@ -57,25 +57,25 @@
 (flyspell-prog-mode)
 
 
-;;; Custom themes
-;; Default theme
-(unless (package-installed-p 'monokai-theme)
-  (package-install 'monokai-theme))
-(load-theme 'monokai t t)
-(when (display-graphic-p)
-  (enable-theme 'monokai))
+;;; Setup theme
+(unless (package-installed-p 'doom-themes)
+  (package-install 'doom-themes))
+
+(use-package doom-themes
+  :ensure t
+  :init
+  (progn
+    (setq doom-themes-enable-bold t
+          doom-themes-enable-italic t))
+  :config
+  (progn
+    (when (display-graphic-p)
+      (load-theme 'doom-city-lights t)
+      (doom-themes-visual-bell-config)
+      (doom-themes-treemacs-config)
+      (doom-themes-org-config))))
 
 
-;; Alternate theme (bright)
-(unless (package-installed-p 'leuven-theme)
-  (package-install 'leuven-theme))
-(load-theme 'leuven t t)
-
-
-;; Theme for late-at-night
-(unless (package-installed-p 'solarized-theme)
-  (package-install 'solarized-theme))
-(load-theme 'solarized-dark t t)
 
 
 (use-package pretty-mode
