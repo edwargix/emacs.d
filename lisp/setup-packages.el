@@ -44,3 +44,4 @@
 
 (add-to-list 'Info-directory-list "~/.local/share/info/")
 ;;; setup-packages.el ends here
+(provide 'setup-packages)

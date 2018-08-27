@@ -20,6 +20,7 @@
 (load-file "~/.emacs.d/lisp/setup-packages.el")
 
 
+(require 'setup-packages)
 (require 'setup-keys)
 (require 'setup-appearance)
 (require 'setup-dev)
