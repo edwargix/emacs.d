@@ -14,6 +14,8 @@
   (add-to-list 'load-path d t))
 (dolist (d (file-expand-wildcards "/usr/local/share/emacs/site-lisp/*"))
   (add-to-list 'load-path d t))
+(dolist (d (file-expand-wildcards "/usr/share/emacs/site-lisp/*"))
+  (add-to-list 'load-path d t))
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
