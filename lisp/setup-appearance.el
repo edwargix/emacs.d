@@ -56,6 +56,7 @@
 
 
 (defun toggle-transparency ()
+  "Toggle the current frame's transparency."
   (interactive)
   (let ((alpha (frame-parameter nil 'alpha)))
     (set-frame-parameter
