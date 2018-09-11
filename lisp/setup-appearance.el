@@ -12,13 +12,14 @@
 
 
 ;;; Font
-(set-frame-font
- (font-spec
-  :name "Source Code Pro"
-  :size 13
-  :weight 'normal
-  :width 'normal)
- nil t)
+(ignore-errors
+  (set-frame-font
+   (font-spec
+    :name "Source Code Pro"
+    :size 13
+    :weight 'normal
+    :width 'normal)
+   nil t))
 
 
 ;;; Disable menu bar
