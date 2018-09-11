@@ -22,36 +22,14 @@
    nil t))
 
 
-;;; Disable menu bar
-(menu-bar-mode 0)
-
-
-;;; Disable scroll bar
-(scroll-bar-mode 0)
-
-
-;;; Disable tool bar
-(tool-bar-mode 0)
-
-
-;;; Turn off cursor blinking
-(blink-cursor-mode 0)
-
-
-;;; Show column number next to line number in mode line
-(column-number-mode)
-
-
-;;; Highlight parentheses
-(show-paren-mode)
-
-
-;;; Highlight stuff with M-s h
-(global-hi-lock-mode 1)
-
-
-;;; Move mouse if it gets in the way of the cursor
-(mouse-avoidance-mode 'animate)
+(menu-bar-mode 0) ; Disable menu bar
+(scroll-bar-mode 0) ; Disable scroll bar
+(tool-bar-mode 0) ; Disable tool bar
+(blink-cursor-mode 0) ; Turn off cursor blinking
+(column-number-mode 1) ; Show column number next to line number in mode line
+(show-paren-mode 1) ; Highlight parentheses
+(global-hi-lock-mode 1) ; Highlight stuff with M-s h
+(mouse-avoidance-mode 'animate) ; Move mouse if it gets in the way of the cursor
 
 
 ;;; Spell check in comments and strings
@@ -75,8 +53,6 @@
       (doom-themes-visual-bell-config)
       (doom-themes-treemacs-config)
       (doom-themes-org-config))))
-
-
 
 
 (use-package pretty-mode
