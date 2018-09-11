@@ -55,11 +55,6 @@
       (doom-themes-org-config))))
 
 
-(use-package pretty-mode
-  :ensure t
-  :hook ((emacs-lisp-mode python) . turn-on-pretty-mode))
-
-
 (defun toggle-transparency ()
   (interactive)
   (let ((alpha (frame-parameter nil 'alpha)))
