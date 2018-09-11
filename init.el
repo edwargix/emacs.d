@@ -110,7 +110,8 @@
 (use-package org
   :init
   (progn
-    (load-file "~/org/setup.el")
+    (when (file-exists-p "~/org/setup.el")
+      (load-file "~/org/setup.el"))
     (unless (package-installed-p 'org-plus-contrib)
       (package-install 'org-plus-contrib))
     (setq org-default-notes-file "~/notes.org"
