@@ -17,8 +17,6 @@
   :config
   (progn
     (require 'evil)
-    (evil-define-key 'motion help-mode-map (kbd "<tab>") 'forward-button)
-    (evil-define-key 'motion help-mode-map (kbd "S-<tab>") 'backward-button)
     (define-key evil-ex-map "b " 'helm-mini)
     (define-key evil-ex-map "e " 'helm-find-files)
     (add-hook 'with-editor-mode-hook 'evil-insert-state)
