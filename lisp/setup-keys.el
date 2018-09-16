@@ -13,7 +13,8 @@
   :init
   (progn
     (setq evil-want-C-u-scroll t
-          evil-want-integration nil))
+          evil-want-integration nil
+          evil-want-keybinding nil)) ; needed by evil-collection
   :config
   (progn
     (require 'evil)
@@ -33,6 +34,7 @@
 
 (use-package evil-collection
   :ensure t
+  :after evil
   :init
   (evil-collection-init))
 
