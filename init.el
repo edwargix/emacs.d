@@ -194,7 +194,11 @@
 
 ;;; TeX/LaTeX
 (use-package tex
-  :ensure auctex)
+  :ensure auctex
+  :config
+  (progn
+    (setcdr (assoc 'output-pdf TeX-view-program-selection)
+            '("Zathura"))))
 
 
 ;;; ability to insert random text
