@@ -119,10 +119,11 @@
           org-read-date-force-compatible-dates nil)
     (setq org-src-fontify-natively t
           org-src-tab-acts-natively t)
-    (setq org-latex-pdf-process
-          '("xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "xelatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+    (setq org-latex-compiler "xelatex"
+          org-latex-pdf-process
+          '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+            "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+            "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
     (use-package htmlize :ensure t))
   :bind
   (("C-c a" . org-agenda)
