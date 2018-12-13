@@ -95,8 +95,11 @@
 
 (global-semanticdb-minor-mode 1)
 (global-semantic-idle-scheduler-mode 1)
-
+(add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+(add-to-list 'semantic-new-buffer-setup-functions
+             (cons 'emacs-lisp-mode #'semantic-default-elisp-setup))
 (semantic-mode 1)
+(use-package stickyfunc-enhance :ensure t)
 
 (defun rtags-hook ()
   "Setup rtags and flycheck."
