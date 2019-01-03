@@ -37,6 +37,8 @@
 ;;; C-c <left> : undo
 ;;; C-c <right>: redo
 (winner-mode t)
+(dolist (m '(motion normal))
+  (evil-global-set-key m (kbd "C-w u") #'winner-undo))
 
 
 ;;; Allow easily switching windows with Shift-{left,right,up,down}
