@@ -72,6 +72,10 @@
 (global-set-key (kbd "<f9>") (lambda () (interactive)
                                (kill-buffer)
                                (delete-window)))
+(global-set-key (kbd "<f12>") (lambda ()
+                                ;; lambda needed to kill current buffer
+                                (interactive)
+                                (kill-buffer)))
 
 
 (use-package evil-matchit
