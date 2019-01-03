@@ -33,7 +33,8 @@
 
 (use-package pipenv
   :ensure t
-  :hook (python-mode . pipenv-mode))
+  :hook (python-mode . pipenv-mode)
+  :commands (pipenv-activate))
 
 
 (provide 'setup-python)
