@@ -91,6 +91,7 @@
                                (setq-local compilation-read-command nil)
                                (call-interactively 'compile)))
 (global-set-key (kbd "<f6>") #'shell)
+(global-set-key (kbd "<f7>") #'eshell)
 (global-set-key (kbd "<f8>") (lambda ()
                                (interactive)
                                (switch-to-buffer "*scratch*")))
