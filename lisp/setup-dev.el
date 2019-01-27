@@ -78,6 +78,21 @@
     (projectile-mode)))
 
 
+(use-package lsp-mode
+  :ensure t
+  :commands lsp)
+
+
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode)
+
+
+(use-package company-lsp
+  :ensure t
+  :commands company-lsp)
+
+
 (use-package zygospore
   :ensure t
   :bind (("C-x 1" . zygospore-toggle-delete-other-windows)))
