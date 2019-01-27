@@ -198,6 +198,9 @@
 ;;; TeX/LaTeX
 (use-package tex
   :ensure auctex
+  :init
+  (progn
+    (setq TeX-command-extra-options "-shell-escape"))
   :config
   (progn
     (setcdr (assoc 'output-pdf TeX-view-program-selection)
