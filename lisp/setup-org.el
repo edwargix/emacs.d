@@ -13,6 +13,8 @@
   :ensure org-plus-contrib
   :init
   (progn
+    (if (not (file-exists-p "~/org"))
+        (make-directory "~/org"))
     (when (file-exists-p "~/org/setup.el")
       (load-file "~/org/setup.el"))
     (setq org-default-notes-file "~/org/notes.org"
