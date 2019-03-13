@@ -30,7 +30,6 @@
 (require 'setup-defaults)
 (require 'setup-lisp)
 (require 'setup-python)
-(require 'setup-treemacs)
 
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
