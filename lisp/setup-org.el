@@ -16,7 +16,7 @@
       (load-file "~/org/setup.el"))
     (unless (package-installed-p 'org-plus-contrib)
       (package-install 'org-plus-contrib))
-    (setq org-default-notes-file "~/notes.org"
+    (setq org-default-notes-file "~/org/notes.org"
           org-return-follows-link t
           org-read-date-force-compatible-dates nil)
     (setq org-src-fontify-natively t
