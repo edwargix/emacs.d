@@ -88,6 +88,8 @@
 ;;; Yasnippet: yet another snippet extension
 (use-package yasnippet
   :ensure t
+  :bind
+  ("C-c y" . yas-expand)
   :config
   (yas-global-mode 1))
 

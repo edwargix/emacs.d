@@ -53,9 +53,6 @@
 (use-package helm-c-yasnippet
   :ensure t
   :after (yasnippet helm)
-  :bind
-  ("C-c y" . helm-yas-complete)
-  (:map mode-specific-map ("y" . helm-yas-complete))
   :init
   (progn
     (setq helm-yas-space-match-any-greedy t)))
