@@ -32,20 +32,7 @@
    ("C-c c" . org-capture)
    ("C-c b" . org-iswitchb)
    ("C-c l" . org-store-link)
-   ("C-c o" . org-open-at-point-global))
-  :config
-  (progn
-    (require 'ox-md)
-    (require 'ox-beamer)
-    ;; (add-to-list 'org-latex-packages-alist '("" "minted"))
-    ;; (setq org-latex-listings 'minted)
-    (org-babel-do-load-languages
-     'org-babel-load-languages
-     '((emacs-lisp . t)
-       (python . t)
-       (dot . t)
-       (org . t)
-       (gnuplot . t)))))
+   ("C-c o" . org-open-at-point-global)))
 
 
 ;;; UTF-8 bullets for org-mode
