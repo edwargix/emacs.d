@@ -24,9 +24,7 @@
           org-latex-pdf-process
           '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
             "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-    ;; (use-package htmlize :ensure t))
-    )
+            "%latex -shell-escape -interaction nonstopmode -output-directory %o %f")))
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
