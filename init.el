@@ -24,6 +24,7 @@
 (require 'setup-packages)
 (require 'setup-keys)
 (require 'setup-appearance)
+(require 'setup-org)
 (require 'setup-dev)
 (require 'setup-helm)
 (require 'setup-defaults)
@@ -106,63 +107,6 @@
     "https://duckduckgo.com/?q=%s"
     :keybinding "d")
   (engine-mode))
-
-
-;;; Org mode for keeping notes, todo lists, planning, and fast
-;;; documenting
-(use-package org
-  :init
-  (progn
-    (when (file-exists-p "~/org/setup.el")
-      (load-file "~/org/setup.el"))
-    (unless (package-installed-p 'org-plus-contrib)
-      (package-install 'org-plus-contrib))
-    (setq org-default-notes-file "~/notes.org"
-          org-return-follows-link t
-          org-read-date-force-compatible-dates nil)
-    (setq org-src-fontify-natively t
-          org-src-tab-acts-natively t)
-    (setq org-latex-compiler "xelatex"
-          org-latex-pdf-process
-          '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-    (use-package htmlize :ensure t))
-  :bind
-  (("C-c a" . org-agenda)
-   ("C-c c" . org-capture)
-   ("C-c b" . org-iswitchb)
-   ("C-c l" . org-store-link)
-   ("C-c o" . org-open-at-point-global))
-  :config
-  (progn
-    (require 'ox-md)
-    (require 'ox-beamer)
-    ;; (add-to-list 'org-latex-packages-alist '("" "minted"))
-    ;; (setq org-latex-listings 'minted)
-    (org-babel-do-load-languages
-     'org-babel-load-languages
-     '((emacs-lisp . t)
-       (python . t)
-       (dot . t)
-       (org . t)
-       (gnuplot . t)))))
-
-
-;;; UTF-8 bullets for org-mode
-(use-package org-bullets
-  :ensure t
-  :after org
-  :config
-  (progn
-    (add-hook 'org-mode-hook 'org-bullets-mode)))
-
-
-(use-package org-contacts
-  :after org
-  :config
-  (progn
-    (setq org-contacts-files '("~/org/contacts.org"))))
 
 
 ;;; Paradox: a modern package menu
