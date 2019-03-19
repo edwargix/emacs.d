@@ -145,7 +145,8 @@
   :ensure auctex
   :init
   (progn
-    (setq TeX-command-extra-options "-shell-escape"))
+    (setq TeX-command-extra-options "-shell-escape")
+    (setq-default TeX-engine 'xetex))
   :config
   (progn
     (setcdr (assoc 'output-pdf TeX-view-program-selection)
