@@ -40,6 +40,9 @@
 (dolist (m '(motion normal))
   (evil-global-set-key m (kbd "C-w u") #'winner-undo))
 
+(dolist (m '(motion normal insert))
+  (evil-global-set-key m (kbd "C-x d") (lambda () (interactive) (dired "."))))
+
 
 ;;; Allow easily switching windows with Shift-{left,right,up,down}
 (windmove-default-keybindings)
