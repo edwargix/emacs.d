@@ -37,22 +37,8 @@
 
 
 ;;; Setup theme
-(unless (package-installed-p 'doom-themes)
-  (package-install 'doom-themes))
-
-(use-package doom-themes
-  :ensure t
-  :init
-  (progn
-    (setq doom-themes-enable-bold t
-          doom-themes-enable-italic t))
-  :config
-  (progn
-    (when (display-graphic-p)
-      (load-theme 'doom-city-lights t)
-      (doom-themes-visual-bell-config)
-      (doom-themes-treemacs-config)
-      (doom-themes-org-config))))
+(use-package darktooth-theme
+  :ensure t)
 
 
 (defun toggle-transparency ()
