@@ -1,12 +1,3 @@
-;;; setup-helm --- Setup helm
-
-;;; Commentary:
-
-;; Set up helm and related packages
-
-;;; Code:
-
-
 ;;; Helm: incremental completion and selection narrowing framework
 (use-package helm
   :ensure t
@@ -101,7 +92,3 @@
 
 (use-package helm-pass
   :ensure t)
-
-
-(provide 'setup-helm)
-;;; setup-helm.el ends here

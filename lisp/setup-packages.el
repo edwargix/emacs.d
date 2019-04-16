@@ -1,12 +1,3 @@
-;;; setup-packages --- Setup packages
-;;;
-;;; Commentary:
-
-;; This sets up package archives / preliminaries for later config
-
-;;; Code:
-
-
 (require 'package)
 (require 'tls)
 
@@ -43,5 +34,3 @@
 (require 'use-package)
 
 (add-to-list 'Info-directory-list "~/.local/share/info/")
-;;; setup-packages.el ends here
-(provide 'setup-packages)

@@ -1,12 +1,3 @@
-;;; setup-keys --- Setup keys
-
-;;; Commentary:
-
-;; Setup keybindings to my liking
-
-;;; Code:
-
-
 ;;; Evil (extensible vi layer)
 (use-package evil
   :ensure t
@@ -95,7 +86,3 @@
 (global-set-key (kbd "<f8>") (lambda ()
                                (interactive)
                                (switch-to-buffer "*scratch*")))
-
-
-(provide 'setup-keys)
-;;; setup-keys.el ends here

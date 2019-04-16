@@ -1,12 +1,3 @@
-;;; setup-org.el --- Setup Org-mode packages
-
-;;; Commentary:
-
-;; This sets up org-mode related packages
-
-;;; Code:
-
-
 ;;; Org mode for keeping notes, todo lists, planning, and fast
 ;;; documenting
 (use-package org
@@ -49,7 +40,3 @@
   :config
   (progn
     (setq org-contacts-files '("~/org/contacts.org"))))
-
-
-(provide 'setup-org)
-;;; setup-org.el ends here

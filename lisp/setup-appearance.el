@@ -1,12 +1,3 @@
-;;; setup-appearance --- Setup look of Emacs
-
-;;; Commentary:
-
-;; This sets up the look of Emacs to my liking
-
-;;; Code:
-
-
 ;;; Change frame title
 (setq frame-title-format "emacs")
 
@@ -54,7 +45,3 @@
               100)
          '(85 . 50) '(100 . 100)))))
 (global-set-key (kbd "C-c t") 'toggle-transparency)
-
-
-(provide 'setup-appearance)
-;;; setup-appearance.el ends here

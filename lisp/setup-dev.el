@@ -1,11 +1,3 @@
-;;; setup-dev --- Setup packages for easy development
-
-;;; Commentary:
-
-;; This sets up packages which aid heavily in development
-
-;;; Code:
-
 (require 'evil)
 
 
@@ -166,9 +158,3 @@
   :ensure t
   :mode ("\\`PKGBUILD\\'" . pkgbuild-mode)
   :defer t)
-
-
-
-
-(provide 'setup-dev)
-;;; setup-dev.el ends here

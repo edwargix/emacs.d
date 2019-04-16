@@ -16,21 +16,18 @@
                                   "/usr/share/emacs/site-lisp/*"))))
   (add-to-list 'load-path d t))
 
-(add-to-list 'load-path "~/.emacs.d/lisp")
 
-(load-file "~/.emacs.d/lisp/setup-packages.el")
-
-
-(require 'setup-packages)
-(require 'setup-keys)
-(require 'setup-appearance)
-(require 'setup-org)
-(require 'setup-dev)
-(require 'setup-helm)
-(require 'setup-defaults)
-(require 'setup-lisp)
-(require 'setup-python)
-(require 'setup-go)
+;;; Loading of personal config files
+(load "~/.emacs.d/lisp/setup-packages")
+(load "~/.emacs.d/lisp/setup-keys")
+(load "~/.emacs.d/lisp/setup-appearance")
+(load "~/.emacs.d/lisp/setup-org")
+(load "~/.emacs.d/lisp/setup-dev")
+(load "~/.emacs.d/lisp/setup-helm")
+(load "~/.emacs.d/lisp/setup-defaults")
+(load "~/.emacs.d/lisp/setup-lisp")
+(load "~/.emacs.d/lisp/setup-python")
+(load "~/.emacs.d/lisp/setup-go")
 
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations

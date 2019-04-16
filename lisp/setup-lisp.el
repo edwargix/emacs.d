@@ -1,12 +1,3 @@
-;;; setup-lisp --- Setup lisp-related packages
-
-;;; Commentary:
-
-;; This sets up lisp-related packages, regardless of dialect
-
-;;; Code:
-
-
 (use-package elisp-slime-nav
   :ensure t
   :config
@@ -42,7 +33,3 @@
 (use-package common-lisp-snippets
   :ensure t
   :after yasnippet)
-
-
-(provide 'setup-lisp)
-;;; setup-lisp.el ends here
