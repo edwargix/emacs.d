@@ -28,7 +28,6 @@
 
 ;;; Company (complete anything) mode
 (use-package company
-  :ensure t
   :init
   (progn
     (add-hook 'after-init-hook 'global-company-mode))
@@ -40,7 +39,6 @@
 
 ;;; Quickhelp (documentation lookup) for company
 (use-package company-quickhelp
-  :ensure t
   :after company
   :config
   (progn
@@ -50,7 +48,6 @@
 
 ;;; company backend for C/C++ headers
 (use-package company-c-headers
-  :ensure t
   :after company
   :config
   (progn
@@ -60,7 +57,6 @@
 
 
 (use-package projectile
-  :ensure t
   :defer nil
   :bind
   (:map mode-specific-map
@@ -71,27 +67,22 @@
 
 
 (use-package lsp-mode
-  :ensure t
   :commands lsp)
 
 
 (use-package lsp-ui
-  :ensure t
   :commands lsp-ui-mode)
 
 
 (use-package company-lsp
-  :ensure t
   :commands company-lsp)
 
 
 (use-package zygospore
-  :ensure t
   :bind (("C-x 1" . zygospore-toggle-delete-other-windows)))
 
 
 (use-package editorconfig
-  :ensure t
   :config
   (progn
     (editorconfig-mode 1)))
@@ -106,7 +97,7 @@
 (add-to-list 'semantic-new-buffer-setup-functions
              (cons 'emacs-lisp-mode #'semantic-default-elisp-setup))
 (semantic-mode 1)
-(use-package stickyfunc-enhance :ensure t)
+(use-package stickyfunc-enhance)
 
 (defun rtags-hook ()
   "Setup rtags and flycheck."
@@ -145,7 +136,6 @@
 
 
 (use-package zeal-at-point
-  :ensure t
   :bind
   (("C-c d" . zeal-at-point))
   :config
@@ -155,6 +145,5 @@
 
 
 (use-package pkgbuild-mode
-  :ensure t
   :mode ("\\`PKGBUILD\\'" . pkgbuild-mode)
   :defer t)

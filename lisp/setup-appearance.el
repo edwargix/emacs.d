@@ -28,8 +28,7 @@
 
 
 ;;; Setup theme
-(use-package darktooth-theme
-  :ensure t)
+(use-package darktooth-theme)
 
 
 (defun toggle-transparency ()

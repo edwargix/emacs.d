@@ -1,6 +1,5 @@
 ;;; Helm: incremental completion and selection narrowing framework
 (use-package helm
-  :ensure t
   :defer nil
   :bind
   (("M-x" . helm-M-x)
@@ -42,7 +41,6 @@
 
 ;;; Helm extension for yasnippet
 (use-package helm-c-yasnippet
-  :ensure t
   :after (yasnippet helm)
   :init
   (progn
@@ -51,7 +49,6 @@
 
 ;;; Helm extension for gtags
 (use-package helm-gtags
-  :ensure t
   :commands (helm-gtags-mode)
   :init
   (progn
@@ -82,7 +79,6 @@
 
 ;;; Helm extension for projectile
 (use-package helm-projectile
-  :ensure t
   :after (projectile helm)
   :config
   (helm-projectile-on)
@@ -90,5 +86,4 @@
   (setq projectile-indexing-method 'alien))
 
 
-(use-package helm-pass
-  :ensure t)
+(use-package helm-pass)
