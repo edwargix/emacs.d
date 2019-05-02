@@ -100,15 +100,6 @@
   (engine-mode))
 
 
-;;; Paradox: a modern package menu
-(use-package paradox
-  :commands (paradox-enable paradox-quit-and-close)
-  :init
-  (progn
-    (paradox-enable)
-    (evil-set-initial-state 'paradox-menu-mode 'motion)))
-
-
 (use-package which-key
   :config
   (which-key-mode))
