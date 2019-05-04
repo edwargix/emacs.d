@@ -12,7 +12,7 @@
                                 '("~/.local/share/emacs/site-lisp/*"
                                   "/usr/local/share/emacs/site-lisp/*"
                                   "/usr/share/emacs/site-lisp/*"))))
-  (add-to-list 'load-path d t))
+  (add-to-list 'load-path d))
 
 
 ;;; Loading of personal config files
