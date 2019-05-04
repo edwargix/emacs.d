@@ -8,8 +8,8 @@
   :config
   (progn
     (require 'evil)
-    (define-key evil-ex-map "b " 'helm-mini)
-    (define-key evil-ex-map "e " 'helm-find-files)
+    (define-key evil-ex-map "b " #'counsel-ibuffer)
+    (define-key evil-ex-map "e " #'counsel-find-file)
     (add-hook 'with-editor-mode-hook 'evil-insert-state)
     (evil-global-set-key 'normal (kbd "SPC") mode-specific-map)
     (evil-global-set-key 'motion (kbd "SPC") mode-specific-map)

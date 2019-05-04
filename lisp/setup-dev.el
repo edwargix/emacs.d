@@ -126,13 +126,12 @@
     (evil-define-key '(normal motion) 'global (kbd "M-]") 'rtags-location-stack-forward)
     (use-package company-rtags)
     (use-package flycheck-rtags)
-    (use-package helm-rtags)
     (setq rtags-autostart-diagnostics t
           rtags-completions-enabled t)
     (with-eval-after-load 'company
       ;; (push 'company-rtags company-backends)
       (add-to-list 'company-backends 'company-rtags))
-    (setq rtags-display-result-backend 'helm)))
+    (setq rtags-display-result-backend 'ivy)))
 
 
 (use-package zeal-at-point
