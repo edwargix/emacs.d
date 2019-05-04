@@ -1,6 +1,5 @@
 ;;; Evil (extensible vi layer)
 (use-package evil
-  :ensure t
   :init
   (progn
     (setq evil-want-C-u-scroll t
@@ -24,7 +23,6 @@
 
 
 (use-package evil-collection
-  :ensure t
   :after evil
   :init
   (evil-collection-init))
@@ -32,7 +30,6 @@
 
 ;;; Easily surround text
 (use-package evil-surround
-  :ensure t
   :after evil
   :config
   (progn
@@ -41,13 +38,11 @@
 
 ;;; Evil keybindings for magit
 (use-package evil-magit
-  :after (evil magit)
-  :ensure t)
+  :after (evil magit))
 
 
 ;;; Evil keybindings for org
 (use-package evil-org
-  :ensure t
   :after (evil org)
   :config
   (progn
@@ -70,7 +65,6 @@
 
 
 (use-package evil-matchit
-  :ensure t
   :init
   (progn
     (add-hook 'python-mode-hook 'turn-on-evil-matchit-mode)))

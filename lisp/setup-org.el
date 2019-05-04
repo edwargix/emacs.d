@@ -1,7 +1,7 @@
 ;;; Org mode for keeping notes, todo lists, planning, and fast
 ;;; documenting
 (use-package org
-  :ensure org-plus-contrib
+  :straight org-plus-contrib
   :init
   (progn
     (if (not (file-exists-p "~/org"))
@@ -28,7 +28,6 @@
 
 ;;; UTF-8 bullets for org-mode
 (use-package org-bullets
-  :ensure t
   :after org
   :config
   (progn
@@ -36,6 +35,7 @@
 
 
 (use-package org-contacts
+  :straight nil
   :after org
   :config
   (progn

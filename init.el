@@ -6,15 +6,13 @@
 
 ;;; Code:
 
-;; (package-initialize)
-
 
 ;;; Install local user packages
 (dolist (d (apply #'append (mapcar #'file-expand-wildcards
                                 '("~/.local/share/emacs/site-lisp/*"
                                   "/usr/local/share/emacs/site-lisp/*"
                                   "/usr/share/emacs/site-lisp/*"))))
-  (add-to-list 'load-path d t))
+  (add-to-list 'load-path d))
 
 
 ;;; Loading of personal config files
@@ -50,7 +48,6 @@
 
 
 (use-package markdown-mode
-  :ensure t
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
@@ -60,7 +57,6 @@
 
 ;;; a minor mode for dealing with pairs
 (use-package smartparens
-  :ensure t
   :config
   (progn
     (require 'smartparens-config)
@@ -69,7 +65,6 @@
 
 ;;; magit: a Git Porcelain
 (use-package magit
-  :ensure t
   :bind
   (("C-x g" . magit-status)
    ("C-x M-g" . magit-dispatch-popup)))
@@ -77,7 +72,6 @@
 
 ;;; Syntax/error checking
 (use-package flycheck
-  :ensure t
   :init
   (progn
     (global-flycheck-mode)
@@ -87,7 +81,6 @@
 
 ;;; Yasnippet: yet another snippet extension
 (use-package yasnippet
-  :ensure t
   :bind
   ("C-c y" . yas-expand)
   :config
@@ -95,13 +88,11 @@
 
 
 (use-package yasnippet-snippets
-  :ensure t
   :after yasnippet)
 
 
 ;;; Setup duckduckgo search engine
 (use-package engine-mode
-  :ensure t
   :config
   (defengine duckduckgo
     "https://duckduckgo.com/?q=%s"
@@ -109,25 +100,13 @@
   (engine-mode))
 
 
-;;; Paradox: a modern package menu
-(use-package paradox
-  :ensure t
-  :commands (paradox-enable paradox-quit-and-close)
-  :init
-  (progn
-    (paradox-enable)
-    (evil-set-initial-state 'paradox-menu-mode 'motion)))
-
-
 (use-package which-key
-  :ensure t
   :config
   (which-key-mode))
 
 
 ;;; functions to manage packages on linux distros
-(use-package system-packages
-  :ensure t)
+(use-package system-packages)
 
 
 ;;; setup the mu4e email client
@@ -136,13 +115,12 @@
 
 
 ;;; statistics software and R-lang integration
-(use-package ess
-  :ensure t)
+(use-package ess)
 
 
 ;;; TeX/LaTeX
 (use-package tex
-  :ensure auctex
+  :straight auctex
   :init
   (progn
     (setq TeX-command-extra-options "-shell-escape")
@@ -154,13 +132,11 @@
 
 
 ;;; ability to insert random text
-(use-package lorem-ipsum
-  :ensure t)
+(use-package lorem-ipsum)
 
 
 ;;; number windows to easily switch between them
 (use-package winum
-  :ensure t
   :config
   (progn
     (winum-mode)))
@@ -168,7 +144,6 @@
 
 ;;; ledger
 (use-package ledger-mode
-  :ensure t
   :defer t
   :init
   (progn
@@ -181,7 +156,6 @@
 
 ;;; flycheck for ledger
 (use-package flycheck-ledger
-  :ensure t
   :after ledger)
 
 
@@ -198,8 +172,7 @@
  ;; If there is more than one, they won't work right.
  '(flycheck-disabled-checkers (quote (emacs-lisp-checkdoc)))
  '(initial-buffer-choice t)
- '(initial-scratch-message "")
- )
+ '(initial-scratch-message ""))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

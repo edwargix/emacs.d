@@ -29,7 +29,9 @@
 
 ;;; Setup theme
 (use-package darktooth-theme
-  :ensure t)
+  :config
+  (progn
+    (enable-theme 'darktooth)))
 
 
 (defun toggle-transparency ()

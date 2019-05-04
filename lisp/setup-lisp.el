@@ -1,5 +1,4 @@
 (use-package elisp-slime-nav
-  :ensure t
   :config
   (progn
     (dolist (map `(,emacs-lisp-mode-map
@@ -12,7 +11,6 @@
 
 
 (use-package auto-compile
-  :ensure t
   :defer t
   :init
   (progn
@@ -22,7 +20,6 @@
 
 
 (use-package slime
-  :ensure t
   :init
   (progn
     (slime-setup)
@@ -31,5 +28,4 @@
 
 
 (use-package common-lisp-snippets
-  :ensure t
   :after yasnippet)
