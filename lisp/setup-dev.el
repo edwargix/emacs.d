@@ -57,7 +57,7 @@
 
 
 (use-package projectile
-  :defer nil
+  :demand
   :bind
   (:map mode-specific-map
         ("p" . projectile-command-map))

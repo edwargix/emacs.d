@@ -2,7 +2,7 @@
 
 
 (use-package counsel
-  :defer nil
+  :demand
   :bind
   ("C-x b" . counsel-ibuffer)
   :config
