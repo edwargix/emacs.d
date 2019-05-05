@@ -14,3 +14,8 @@
   :config
   (progn
     (counsel-projectile-mode)))
+
+
+(use-package swiper
+  :bind
+  ("C-s" . swiper))
