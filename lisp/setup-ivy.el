@@ -18,4 +18,6 @@
 
 (use-package swiper
   :bind
-  ("C-s" . swiper))
+  (("C-s" . swiper)
+   :map Info-mode-map
+   ("C-s" . isearch-forward)))
