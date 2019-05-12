@@ -94,10 +94,14 @@
 ;;; Setup duckduckgo search engine
 (use-package engine-mode
   :config
-  (defengine duckduckgo
-    "https://duckduckgo.com/?q=%s"
-    :keybinding "d")
-  (engine-mode))
+  (progn
+    (defengine duckduckgo
+      "https://duckduckgo.com/?q=%s"
+      :keybinding "d")
+    (defengine wordnik
+      "https://www.wordnik.com/words/%s"
+      :keybinding "w")
+    (engine-mode)))
 
 
 (use-package which-key
