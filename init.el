@@ -47,6 +47,18 @@
 (setq make-backup-files nil)
 
 
+(use-package scribble
+  :straight nil
+  :load-path "contrib/"
+  :init
+  (progn
+    (mapc (lambda (pair)
+            (or (assoc (car pair) auto-mode-alist)
+                (push pair auto-mode-alist)))
+          '(("\\.scrbl\\'" . scribble-mode))))
+  :commands scribble-mode)
+
+
 (use-package markdown-mode
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
