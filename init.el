@@ -26,7 +26,7 @@
 (load "~/.emacs.d/lisp/setup-lisp")
 (load "~/.emacs.d/lisp/setup-python")
 (load "~/.emacs.d/lisp/setup-go")
-(load "~/.emacs.d/lisp/setup-javascript")
+(load "~/.emacs.d/lisp/setup-web")
 
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
