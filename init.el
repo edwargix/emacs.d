@@ -48,6 +48,9 @@
 (setq make-backup-files nil)
 
 
+(add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode t)))
+
+
 (use-package fzf
   :commands fzf-projectile
   :init
