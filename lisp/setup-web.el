@@ -9,4 +9,11 @@
          ("\\.html?\\'" . web-mode)
          ("\\.ts\\'" . web-mode)
          ("\\.tsx\\'" . web-mode)
-         ("\\.jsx\\'" . web-mode)))
+         ("\\.jsx\\'" . web-mode))
+  :init
+  (progn
+    (setq web-mode-markup-indent-offset 2
+          web-mode-code-indent-offset 2)
+    (with-eval-after-load 'eglot
+      (add-to-list 'eglot-server-programs
+                   '(web-mode . ("javascript-typescript-stdio"))))))
