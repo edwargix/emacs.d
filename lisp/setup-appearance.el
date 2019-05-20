@@ -45,5 +45,5 @@
                     ;; Also handle undocumented (<active> <inactive>) form.
                     ((numberp (cadr alpha)) (cadr alpha)))
               100)
-         90 100))))
+         80 100))))
 (global-set-key (kbd "C-c t") 'toggle-transparency)
