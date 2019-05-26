@@ -1,4 +1,7 @@
-(use-package ivy)
+(use-package ivy
+  :bind
+  (:map evil-normal-state-map
+        ("C-k" . ivy-resume)))
 
 
 (use-package counsel
