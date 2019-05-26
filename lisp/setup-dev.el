@@ -59,8 +59,8 @@
 (use-package projectile
   :demand
   :bind
-  (:map mode-specific-map
-        ("p" . projectile-command-map))
+  (:map evil-normal-state-map
+        ("C-p" . projectile-command-map))
   :config
   (progn
     (projectile-mode)))
