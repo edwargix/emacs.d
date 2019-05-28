@@ -58,6 +58,9 @@
     (evil-global-set-key 'normal (kbd "C-n") #'fzf-projectile)))
 
 
+(use-package ag)
+
+
 (use-package scribble
   :straight nil
   :load-path "contrib/"
