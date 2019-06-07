@@ -21,7 +21,7 @@
 (load "~/.emacs.d/lisp/setup-appearance")
 (load "~/.emacs.d/lisp/setup-org")
 (load "~/.emacs.d/lisp/setup-dev")
-(load "~/.emacs.d/lisp/setup-ivy.el")
+(load "~/.emacs.d/lisp/setup-ivy")
 (load "~/.emacs.d/lisp/setup-defaults")
 (load "~/.emacs.d/lisp/setup-lisp")
 (load "~/.emacs.d/lisp/setup-python")
