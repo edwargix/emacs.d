@@ -13,6 +13,10 @@
    nil t))
 
 
+(set-language-environment "UTF-8")
+(prefer-coding-system 'utf-8)
+
+
 (menu-bar-mode 0) ; Disable menu bar
 (scroll-bar-mode 0) ; Disable scroll bar
 (tool-bar-mode 0) ; Disable tool bar
