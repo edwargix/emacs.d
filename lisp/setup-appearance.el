@@ -21,6 +21,7 @@
 (scroll-bar-mode 0) ; Disable scroll bar
 (tool-bar-mode 0) ; Disable tool bar
 (blink-cursor-mode 0) ; Turn off cursor blinking
+(setq visible-cursor nil) ; Turn off cursor blinking in terminals
 (column-number-mode 1) ; Show column number next to line number in mode line
 (show-paren-mode 1) ; Highlight parentheses
 (global-hi-lock-mode 1) ; Highlight stuff with M-s h
