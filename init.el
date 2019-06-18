@@ -61,6 +61,11 @@
 (use-package ag)
 
 
+(use-package help+)
+(use-package help-fns+)
+(use-package help-mode+)
+
+
 (use-package scribble
   :straight nil
   :load-path "contrib/"
