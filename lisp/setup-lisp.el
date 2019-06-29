@@ -5,10 +5,9 @@
                    ;; ,ielm-map
                    ,lisp-interaction-mode-map))
       (with-eval-after-load 'evil
-        (evil-define-key 'normal map (kbd "M-.") #'elisp-slime-nav-find-elisp-thing-at-point)
-        (evil-define-key 'normal map (kbd "M-,") #'xref-find-references)
-        (evil-define-key 'normal map (kbd "M-[") #'pop-tag-mark)
-        (evil-define-key 'normal map (kbd "M-?") #'elisp-slime-nav-describe-elisp-thing-at-point)))))
+        (evil-define-key 'normal map (kbd "g d") #'elisp-slime-nav-find-elisp-thing-at-point)
+        (evil-define-key 'normal map (kbd "M-?") #'xref-find-references)
+        (evil-define-key 'normal map (kbd "K") #'elisp-slime-nav-describe-elisp-thing-at-point)))))
 
 
 (use-package auto-compile
