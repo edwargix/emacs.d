@@ -13,6 +13,7 @@
     (add-hook 'with-editor-mode-hook 'evil-insert-state)
     (dolist (m '(normal motion))
       (evil-global-set-key m (kbd "K") #'man)
+      (evil-global-set-key m (kbd "M-K") #'man)
       (evil-global-set-key m (kbd "SPC") mode-specific-map)
       (evil-global-set-key m (kbd "SPC u") 'universal-argument))
     (evil-mode 1)))
