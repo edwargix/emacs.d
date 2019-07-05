@@ -7,10 +7,6 @@
             (setq show-trailing-whitespace 1)))
 
 
-;; set appearance of a tab that is represented by 8 spaces
-(setq-default tab-width 8)
-
-
 (setq-default indent-tabs-mode nil)
 
 
@@ -23,7 +19,7 @@
 
 
 ;;; Reload file's buffer when the file changes on disk
-(global-auto-revert-mode 1)
+(global-auto-revert-mode t)
 
 
 ;;; Company (complete anything) mode
@@ -53,7 +49,7 @@
   (progn
     (add-to-list 'company-backends 'company-c-headers)
     (dolist (folder (file-expand-wildcards "/usr/include/c++/*"))
-      (add-to-list 'company-c-headers-path-system "/usr/include/c++/7.2.1/"))))
+      (add-to-list 'company-c-headers-path-system folder))))
 
 
 (use-package projectile
