@@ -30,6 +30,7 @@
   :config
   (progn
     (delete 'company-semantic company-backends)
+    (evil-global-set-key 'insert (kbd "C-SPC") #'company-complete)
     (define-key company-active-map (kbd "RET") 'company-complete-selection)))
 
 
