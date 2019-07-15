@@ -33,10 +33,10 @@
 
 
 ;;; Setup theme
-(use-package darktooth-theme
+(use-package badger-theme
   :config
   (progn
-    (enable-theme 'darktooth)))
+    (enable-theme 'badger)))
 
 
 (defun toggle-transparency ()
