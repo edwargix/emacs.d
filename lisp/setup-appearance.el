@@ -38,17 +38,27 @@
   (progn
     (enable-theme 'badger)))
 
+;;; Transparency control
 
-(defun toggle-transparency ()
-  "Toggle the current frame's transparency."
+(defvar new-frames-are-transparent t
+  "Whether new frames should be transparent")
+
+(defun toggle-transparency (&optional frame)
+  "Toggle FRAME's transparency."
   (interactive)
-  (let ((alpha (frame-parameter nil 'alpha)))
+  (let ((alpha (frame-parameter frame 'alpha)))
     (set-frame-parameter
-     nil 'alpha
-     (if (eql (cond ((numberp alpha) alpha)
-                    ((numberp (cdr alpha)) (cdr alpha))
-                    ;; Also handle undocumented (<active> <inactive>) form.
-                    ((numberp (cadr alpha)) (cadr alpha)))
-              100)
+     frame 'alpha
+     (if (memq (cond ((numberp alpha) alpha)
+                     ((numberp (cdr alpha)) (cdr alpha))
+                     ;; Also handle undocumented (<active> <inactive>) form.
+                     ((numberp (cadr alpha)) (cadr alpha)))
+               '(nil 100))
          80 100))))
+
 (global-set-key (kbd "C-c t") 'toggle-transparency)
+
+(add-to-list 'after-make-frame-functions
+             (lambda (frame)
+               (if new-frames-are-transparent
+                   (set-frame-parameter frame 'alpha 80))))
