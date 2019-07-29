@@ -56,7 +56,8 @@
   :commands fzf-projectile
   :init
   (progn
-    (evil-global-set-key 'normal (kbd "C-n") #'fzf-projectile)))
+    (evil-global-set-key 'normal (kbd "C-n") #'fzf-projectile)
+    (evil-global-set-key 'normal (kbd "C-S-n") #'fzf-directory)))
 
 
 (use-package ag)
