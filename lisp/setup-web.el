@@ -13,6 +13,8 @@
          ("\\.jsx\\'" . web-mode))
   :init
   (progn
+    (setq web-mode-content-types-alist
+          '(("jsx"  . ".*\\.js[x]?\\'")))
     (setq web-mode-markup-indent-offset 2
           web-mode-code-indent-offset 2
           web-mode-engines-alist '(("django" . "\\.html?\\'")))
