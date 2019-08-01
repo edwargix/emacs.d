@@ -179,6 +179,12 @@
     (winum-mode)))
 
 
+(use-package shell-pop
+  :custom
+  (shell-pop-shell-type '("eshell" "*eshell*" (lambda () (eshell))))
+  (shell-pop-universal-key "C-S-s"))
+
+
 ;;; Start Emacs Daemon
 (require 'server)
 (unless (server-running-p)
