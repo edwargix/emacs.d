@@ -100,7 +100,7 @@
 (use-package magit
   :bind
   (("C-x g" . magit-status)
-   ("C-x M-g" . magit-dispatch-popup)))
+   ("C-x M-g" . magit-dispatch)))
 
 
 ;;; Syntax/error checking
