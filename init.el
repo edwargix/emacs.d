@@ -179,23 +179,6 @@
     (winum-mode)))
 
 
-;;; ledger
-(use-package ledger-mode
-  :defer t
-  :init
-  (progn
-    (setq ledger-clear-whole-transactions t))
-  :config
-  (progn
-    (add-to-list 'evil-emacs-state-modes 'ledger-report-mode))
-  :mode ("\\.\\(ledger\\|ldg\\)\\'" . ledger-mode))
-
-
-;;; flycheck for ledger
-(use-package flycheck-ledger
-  :after ledger)
-
-
 ;;; Start Emacs Daemon
 (require 'server)
 (unless (server-running-p)
