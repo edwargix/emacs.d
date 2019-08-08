@@ -7,6 +7,7 @@
          ("\\.mustache\\'" . web-mode)
          ("\\.djhtml\\'" . web-mode)
          ("\\.html?\\'" . web-mode)
+         ("\\.xhtml\\'" . web-mode)
          ("\\.js\\'" . web-mode)
          ("\\.ts\\'" . web-mode)
          ("\\.tsx\\'" . web-mode)
