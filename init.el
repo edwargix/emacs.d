@@ -185,6 +185,10 @@
   (shell-pop-universal-key "C-S-s"))
 
 
+(use-package yaml-mode
+  :mode "\\.sls\\'")
+
+
 ;;; Start Emacs Daemon
 (require 'server)
 (unless (server-running-p)
