@@ -28,6 +28,7 @@
 (load "~/.emacs.d/lisp/setup-go")
 (load "~/.emacs.d/lisp/setup-web")
 (load "~/.emacs.d/lisp/setup-racket")
+(load "~/.emacs.d/lisp/setup-clojure")
 
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
