@@ -189,6 +189,9 @@
 (use-package yaml-mode
   :mode "\\.sls\\'")
 
+(use-package graphviz-dot-mode
+  :defer t)
+
 
 ;;; Start Emacs Daemon
 (require 'server)
