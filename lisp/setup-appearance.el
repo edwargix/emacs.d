@@ -6,7 +6,7 @@
 (ignore-errors
   (set-frame-font
    (font-spec
-    :name "Source Code Pro"
+    :name "Iosevka"
     :size 13
     :weight 'normal
     :width 'normal)
