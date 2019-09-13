@@ -1,1 +1,3 @@
-(use-package scala-mode)
+(use-package scala-mode
+  :custom
+  (scala-indent:step 4))
