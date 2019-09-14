@@ -25,7 +25,7 @@
 (column-number-mode 1) ; Show column number next to line number in mode line
 (show-paren-mode 1) ; Highlight parentheses
 (global-hi-lock-mode 1) ; Highlight stuff with M-s h
-(mouse-avoidance-mode 'animate) ; Move mouse if it gets in the way of the cursor
+(mouse-avoidance-mode 'none) ; Move mouse if it gets in the way of the cursor
 
 
 ;;; Spell check in comments and strings
