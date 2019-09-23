@@ -23,7 +23,11 @@
    ("C-c c" . org-capture)
    ("C-c b" . org-iswitchb)
    ("C-c l" . org-store-link)
-   ("C-c o" . org-open-at-point-global)))
+   ("C-c o" . org-open-at-point-global)
+   ("C-c M-t i" . org-timer)
+   ("C-c M-t c" . org-timer-pause-or-continue)
+   ("C-c M-t r" . org-timer-stop) ; r for reset
+   ("C-c M-t s" . org-timer-start)))
 
 
 ;;; UTF-8 bullets for org-mode
