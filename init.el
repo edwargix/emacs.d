@@ -65,9 +65,12 @@
 (use-package ag)
 
 
-(use-package help+)
-(use-package help-fns+)
-(use-package help-mode+)
+(use-package help+
+  :straight help-plus)
+(use-package help-fns+
+  :straight help-fns-plus)
+(use-package help-mode+
+  :straight help-mode-plus)
 
 
 (use-package scribble
