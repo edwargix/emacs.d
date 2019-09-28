@@ -33,10 +33,7 @@
 
 
 ;;; Setup theme
-(use-package badger-theme
-  :config
-  (progn
-    (enable-theme 'badger)))
+(use-package gruvbox-theme)
 
 ;;; Transparency control
 
