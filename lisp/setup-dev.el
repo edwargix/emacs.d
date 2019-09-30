@@ -57,7 +57,8 @@
   :demand
   :bind
   (:map evil-normal-state-map
-        ("C-p" . projectile-command-map))
+        ("C-p" . projectile-command-map)
+        ("C-p C-p" . projectile-switch-project))
   :config
   (progn
     (projectile-mode)))
