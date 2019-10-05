@@ -64,7 +64,8 @@
     (projectile-mode)))
 
 
-(use-package eglot)
+(use-package eglot
+  :defer t)
 
 
 (use-package zygospore
