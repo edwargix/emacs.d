@@ -36,8 +36,8 @@
 (use-package gruvbox-dark-hard-theme
   :straight gruvbox-theme)
 
-;;; Transparency control
 
+;;; Transparency control
 (defvar new-frames-are-transparent t
   "Whether new frames should be transparent")
 
@@ -60,3 +60,9 @@
              (lambda (frame)
                (if new-frames-are-transparent
                    (set-frame-parameter frame 'alpha 80))))
+
+
+;;; display ugly ^L page breaks as tidy horizontal lines
+(use-package page-break-lines
+  :config
+  (global-page-break-lines-mode))
