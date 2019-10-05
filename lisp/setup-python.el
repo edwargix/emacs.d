@@ -4,6 +4,7 @@
 
 (use-package pipenv
   :hook (python-mode . pipenv-mode)
+  :custom (pipenv-with-projectile nil)
   :commands (pipenv-activate))
 
 
