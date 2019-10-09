@@ -68,6 +68,22 @@
   :defer t)
 
 
+(use-package lsp-mode
+  :hook (scala-mode . lsp)
+  :custom
+  (lsp-prefer-flymake nil)
+  :config
+  (progn
+    (evil-collection-define-key 'normal 'lsp-mode-map
+      "gd" 'lsp-find-definition
+      (kbd "C-t") 'xref-pop-marker-stack
+      "K" 'lsp-describe-thing-at-point)))
+
+
+(use-package company-lsp
+  :after (company lsp-mode))
+
+
 (use-package zygospore
   :bind (("C-x 1" . zygospore-toggle-delete-other-windows)))
 
