@@ -33,8 +33,9 @@
 
 
 ;;; Setup theme
-(use-package gruvbox-dark-hard-theme
-  :straight gruvbox-theme)
+(use-package gruvbox-theme
+  :defer t)
+(load-theme 'gruvbox-dark-hard t)
 
 
 ;;; Transparency control
