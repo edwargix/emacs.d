@@ -139,6 +139,9 @@
     (defengine wordnik
       "https://www.wordnik.com/words/%s"
       :keybinding "w")
+    (defengine pypi
+      "https://pypi.org/search/?q=%s"
+      :keybinding "p")
     (engine-mode)))
 
 
