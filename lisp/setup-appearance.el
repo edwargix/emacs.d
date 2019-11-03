@@ -33,11 +33,9 @@
 
 
 ;;; Setup theme
-(use-package afternoon-theme
-  ;; merely loading the file enables the theme, so defer because I want to be
-  ;; able to disable the theme in the same session
+(use-package gruvbox-theme
   :defer t)
-(load-theme 'afternoon t)
+(load-theme 'gruvbox-dark-hard t)
 
 
 ;;; Transparency control
