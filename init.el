@@ -93,14 +93,6 @@
   :init (setq markdown-command "markdown"))
 
 
-;;; a minor mode for dealing with pairs
-(use-package smartparens
-  :config
-  (progn
-    (require 'smartparens-config)
-    (smartparens-global-mode t)))
-
-
 ;;; magit: a Git Porcelain
 (use-package magit
   :bind
