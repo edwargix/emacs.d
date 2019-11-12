@@ -70,7 +70,9 @@
   :config
   (progn
     (require 'smartparens-config)
-    (smartparens-global-mode t)))
+    (smartparens-global-mode t)
+    (evil-global-set-key 'normal (kbd ">") #'sp-slurp-hybrid-sexp)
+    (evil-global-set-key 'normal (kbd "<") #'sp-forward-barf-sexp)))
 
 
 (use-package evil-matchit
