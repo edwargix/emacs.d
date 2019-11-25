@@ -23,4 +23,6 @@
   :bind
   (("C-s" . swiper)
    :map Info-mode-map
-   ("C-s" . isearch-forward)))
+   ("C-s" . isearch-forward)
+   :map isearch-mode-map
+   ("C-n" . isearch-repeat-forward)))
