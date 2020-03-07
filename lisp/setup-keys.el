@@ -15,7 +15,8 @@
       (evil-global-set-key m (kbd "K") #'man)
       (evil-global-set-key m (kbd "M-K") #'man)
       (evil-global-set-key m (kbd "SPC") mode-specific-map)
-      (evil-global-set-key m (kbd "SPC u") 'universal-argument))
+      (evil-global-set-key m (kbd "SPC u") 'universal-argument)
+      (evil-global-set-key m (kbd "M-;") #'comment-dwim))
     (add-hook 'Info-mode-hook
               (lambda ()
                 (evil-define-key '(normal motion) Info-mode-map (kbd "m") #'Info-menu)))
