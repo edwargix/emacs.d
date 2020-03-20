@@ -11,7 +11,7 @@
     (define-key evil-ex-map "b " #'counsel-ibuffer)
     (define-key evil-ex-map "e " #'counsel-find-file)
     (add-hook 'with-editor-mode-hook 'evil-insert-state)
-    (dolist (m '(normal motion))
+    (dolist (m '(normal motion visual))
       (evil-global-set-key m (kbd "K") #'man)
       (evil-global-set-key m (kbd "M-K") #'man)
       (evil-global-set-key m (kbd "SPC") mode-specific-map)
