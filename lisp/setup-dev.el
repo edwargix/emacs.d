@@ -94,8 +94,17 @@
     (editorconfig-mode 1)))
 
 
-(require 'cc-mode)
-(require 'semantic)
+(use-package cc-mode
+  :straight nil
+  :hook
+  (c-mode . (lambda ()
+              (setq-local indent-tabs-mode t)
+              (setq-local c-basic-offset 8)))
+  :init
+  (setq-default c-file-style "linux"))
+
+(use-package semantic
+  :straight nil)
 
 (global-semanticdb-minor-mode 1)
 (global-semantic-idle-scheduler-mode 1)
