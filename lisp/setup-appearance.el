@@ -6,7 +6,7 @@
 (ignore-errors
   (set-frame-font
    (font-spec
-    :name "Iosevka"
+    :name "Fira Code"
     :size 13
     :weight 'normal
     :width 'normal)
