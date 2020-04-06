@@ -85,6 +85,13 @@
     (add-hook 'python-mode-hook 'turn-on-evil-matchit-mode)))
 
 
+(use-package evil-numbers
+  :config
+  (progn
+    (evil-global-set-key 'normal (kbd "C-a") #'evil-numbers/inc-at-pt)
+    (evil-global-set-key 'normal (kbd "C-S-a") #'evil-numbers/dec-at-pt)))
+
+
 ;;; Function keys
 (global-set-key (kbd "<f5>") (lambda ()
                                (interactive)
