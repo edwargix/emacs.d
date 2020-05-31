@@ -48,9 +48,8 @@
 (use-package fzf
   :commands fzf-projectile
   :init
-  (progn
-    (evil-global-set-key 'normal (kbd "C-n") #'fzf-projectile)
-    (evil-global-set-key 'normal (kbd "C-S-n") #'fzf-directory)))
+  (evil-global-set-key 'normal (kbd "C-n") #'fzf-projectile)
+  (evil-global-set-key 'normal (kbd "C-S-n") #'fzf-directory))
 
 (use-package ag)
 
@@ -65,11 +64,10 @@
   :straight nil
   :load-path "contrib/"
   :init
-  (progn
-    (mapc (lambda (pair)
-            (or (assoc (car pair) auto-mode-alist)
-                (push pair auto-mode-alist)))
-          '(("\\.scrbl\\'" . scribble-mode))))
+  (mapc (lambda (pair)
+          (or (assoc (car pair) auto-mode-alist)
+              (push pair auto-mode-alist)))
+        '(("\\.scrbl\\'" . scribble-mode)))
   :commands scribble-mode)
 
 (use-package markdown-mode
@@ -88,10 +86,9 @@
 ;;; Syntax/error checking
 (use-package flycheck
   :init
-  (progn
-    (global-flycheck-mode)
-    (evil-define-key 'normal
-      flycheck-error-list-mode-map (kbd "q") 'quit-window)))
+  (global-flycheck-mode)
+  (evil-define-key 'normal
+    flycheck-error-list-mode-map (kbd "q") 'quit-window))
 
 ;;; Yasnippet: yet another snippet extension
 (use-package yasnippet
@@ -106,17 +103,16 @@
 ;;; Setup duckduckgo search engine
 (use-package engine-mode
   :config
-  (progn
-    (defengine duckduckgo
-      "https://duckduckgo.com/?q=%s"
-      :keybinding "d")
-    (defengine wordnik
-      "https://www.wordnik.com/words/%s"
-      :keybinding "w")
-    (defengine pypi
-      "https://pypi.org/search/?q=%s"
-      :keybinding "p")
-    (engine-mode)))
+  (defengine duckduckgo
+    "https://duckduckgo.com/?q=%s"
+    :keybinding "d")
+  (defengine wordnik
+    "https://www.wordnik.com/words/%s"
+    :keybinding "w")
+  (defengine pypi
+    "https://pypi.org/search/?q=%s"
+    :keybinding "p")
+  (engine-mode))
 
 (use-package which-key
   :config
@@ -136,13 +132,11 @@
 (use-package tex
   :straight auctex
   :init
-  (progn
-    (setq TeX-command-extra-options "-shell-escape")
-    (setq-default TeX-engine 'xetex))
+  (setq TeX-command-extra-options "-shell-escape")
+  (setq-default TeX-engine 'xetex)
   :config
-  (progn
-    (setcdr (assoc 'output-pdf TeX-view-program-selection)
-            '("Zathura"))))
+  (setcdr (assoc 'output-pdf TeX-view-program-selection)
+          '("Zathura")))
 
 ;;; ability to insert random text
 (use-package lorem-ipsum)
@@ -150,8 +144,7 @@
 ;;; number windows to easily switch between them
 (use-package winum
   :config
-  (progn
-    (winum-mode)))
+  (winum-mode))
 
 (use-package shell-pop
   :custom
