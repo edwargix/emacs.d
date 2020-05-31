@@ -30,6 +30,7 @@
 (load "~/.emacs.d/lisp/racket")
 (load "~/.emacs.d/lisp/clojure")
 (load "~/.emacs.d/lisp/scala")
+(load "~/.emacs.d/lisp/docker")
 
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
