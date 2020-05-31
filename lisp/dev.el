@@ -53,7 +53,6 @@
   :defer t)
 
 (use-package lsp-mode
-  :hook (scala-mode . lsp)
   :defer t
   :custom
   (lsp-prefer-flymake nil)

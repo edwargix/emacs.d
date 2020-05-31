@@ -1,4 +1,5 @@
 (use-package scala-mode
+  :hook (scala-mode . lsp)
   :custom
   (scala-indent:step 4))
 
