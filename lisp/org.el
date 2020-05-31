@@ -2,22 +2,22 @@
 ;;; documenting
 (use-package org
   :straight org-plus-contrib
+  :custom
+  (org-default-notes-file "~/org/notes.org")
+  (org-return-follows-link t)
+  (org-read-date-force-compatible-dates nil)
+  (org-src-fontify-natively t)
+  (org-src-tab-acts-natively t)
+  (org-latex-compiler "xelatex")
+  (org-latex-pdf-process
+   '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+     "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+     "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
   :init
-  (progn
-    (if (not (file-exists-p "~/org"))
-        (make-directory "~/org"))
-    (when (file-exists-p "~/org/setup.el")
-      (load-file "~/org/setup.el"))
-    (setq org-default-notes-file "~/org/notes.org"
-          org-return-follows-link t
-          org-read-date-force-compatible-dates nil)
-    (setq org-src-fontify-natively t
-          org-src-tab-acts-natively t)
-    (setq org-latex-compiler "xelatex"
-          org-latex-pdf-process
-          '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
-            "%latex -shell-escape -interaction nonstopmode -output-directory %o %f")))
+  (if (not (file-exists-p "~/org"))
+      (make-directory "~/org"))
+  (when (file-exists-p "~/org/setup.el")
+    (load-file "~/org/setup.el"))
   :bind
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
@@ -29,18 +29,13 @@
    ("C-c M-t r" . org-timer-stop) ; r for reset
    ("C-c M-t s" . org-timer-start)))
 
-
 ;;; UTF-8 bullets for org-mode
 (use-package org-bullets
   :after org
-  :config
-  (progn
-    (add-hook 'org-mode-hook 'org-bullets-mode)))
+  :hook (org-mode . org-bullets-mode))
 
-
+;;; Keep personal contacts in org-mode file
 (use-package org-contacts
   :straight nil
   :after org
-  :config
-  (progn
-    (setq org-contacts-files '("~/org/contacts.org"))))
+  :custom (org-contacts-files '("~/org/contacts.org")))
