@@ -1,2 +1,3 @@
 (use-package go-mode
-  :defer t)
+  :defer t
+  :hook (go-mode . lsp))
