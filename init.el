@@ -16,20 +16,20 @@
 
 
 ;;; Loading of personal config files
-(load "~/.emacs.d/lisp/setup-packages")
-(load "~/.emacs.d/lisp/setup-keys")
-(load "~/.emacs.d/lisp/setup-appearance")
-(load "~/.emacs.d/lisp/setup-org")
-(load "~/.emacs.d/lisp/setup-dev")
-(load "~/.emacs.d/lisp/setup-ivy")
-(load "~/.emacs.d/lisp/setup-defaults")
-(load "~/.emacs.d/lisp/setup-lisp")
-(load "~/.emacs.d/lisp/setup-python")
-(load "~/.emacs.d/lisp/setup-go")
-(load "~/.emacs.d/lisp/setup-web")
-(load "~/.emacs.d/lisp/setup-racket")
-(load "~/.emacs.d/lisp/setup-clojure")
-(load "~/.emacs.d/lisp/setup-scala")
+(load "~/.emacs.d/lisp/packages")
+(load "~/.emacs.d/lisp/keys")
+(load "~/.emacs.d/lisp/appearance")
+(load "~/.emacs.d/lisp/org")
+(load "~/.emacs.d/lisp/dev")
+(load "~/.emacs.d/lisp/ivy")
+(load "~/.emacs.d/lisp/defaults")
+(load "~/.emacs.d/lisp/lisp")
+(load "~/.emacs.d/lisp/python")
+(load "~/.emacs.d/lisp/go")
+(load "~/.emacs.d/lisp/web")
+(load "~/.emacs.d/lisp/racket")
+(load "~/.emacs.d/lisp/clojure")
+(load "~/.emacs.d/lisp/scala")
 
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
