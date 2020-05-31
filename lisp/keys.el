@@ -1,96 +1,78 @@
 ;;; Evil (extensible vi layer)
 (use-package evil
-  :init
-  (progn
-    (setq evil-want-C-u-scroll t
-          evil-want-integration nil
-          evil-want-keybinding nil)) ; needed by evil-collection
+  :custom
+  (evil-want-C-u-scroll t)
+  (evil-want-integration nil)
+  (evil-want-keybinding nil) ; needed by evil-collection
   :config
-  (progn
-    (require 'evil)
-    (define-key evil-ex-map "b " #'counsel-ibuffer)
-    (define-key evil-ex-map "e " #'counsel-find-file)
-    (add-hook 'with-editor-mode-hook 'evil-insert-state)
-    (dolist (m '(normal motion visual))
-      (evil-global-set-key m (kbd "K") #'man)
-      (evil-global-set-key m (kbd "M-K") #'man)
-      (evil-global-set-key m (kbd "SPC") mode-specific-map)
-      (evil-global-set-key m (kbd "SPC u") 'universal-argument)
-      (evil-global-set-key m (kbd "M-;") #'comment-dwim))
-    (add-hook 'Info-mode-hook
-              (lambda ()
-                (evil-define-key '(normal motion) Info-mode-map (kbd "m") #'Info-menu)))
-    (evil-mode 1)))
-
+  (require 'evil)
+  (define-key evil-ex-map "b " #'counsel-ibuffer)
+  (define-key evil-ex-map "e " #'counsel-find-file)
+  (add-hook 'with-editor-mode-hook 'evil-insert-state)
+  (dolist (m '(normal motion visual))
+    (evil-global-set-key m (kbd "K") #'man)
+    (evil-global-set-key m (kbd "M-K") #'man)
+    (evil-global-set-key m (kbd "SPC") mode-specific-map)
+    (evil-global-set-key m (kbd "SPC u") 'universal-argument)
+    (evil-global-set-key m (kbd "M-;") #'comment-dwim))
+  (add-hook 'Info-mode-hook
+            (lambda ()
+              (evil-define-key '(normal motion) Info-mode-map (kbd "m") #'Info-menu)))
+  (evil-mode 1))
 
 (setq scroll-step 1
       delete-selection-mode 1)
 
-
+;;; Evil-like bindings for various modes
 (use-package evil-collection
   :after evil
   :init
   (evil-collection-init))
 
-
 ;;; Easily surround text
 (use-package evil-surround
   :after evil
   :config
-  (progn
-    (global-evil-surround-mode 1)))
-
+  (global-evil-surround-mode 1))
 
 ;;; Evil keybindings for magit
 (use-package evil-magit
   :after (evil magit))
 
-
 ;;; Evil keybindings for org
 (use-package evil-org
   :after (evil org)
+  :hook (org-mode . evil-org-mode)
   :config
-  (progn
-    (add-hook 'org-mode-hook 'evil-org-mode)
-    (add-hook 'evil-org-mode-hook
-              (lambda ()
-                (evil-org-set-key-theme)))))
-
+  (evil-org-set-key-theme))
 
 ;;; I don't always know where my frames are, and I want a way to kill
 ;;; Emacs 100% of the time
 (global-set-key (kbd "C-x C-c") 'save-buffers-kill-emacs)
-(global-set-key (kbd "<f9>") (lambda () (interactive)
+(global-set-key (kbd "<f9>") (lambda ()
+                               (interactive)
                                (kill-buffer)
                                (delete-window)))
 (global-set-key (kbd "<f12>") (lambda ()
-                                ;; lambda needed to kill current buffer
                                 (interactive)
                                 (kill-buffer)))
-
 
 ;;; a minor mode for dealing with pairs
 (use-package smartparens
   :config
-  (progn
-    (require 'smartparens-config)
-    (smartparens-global-mode t)
-    (evil-global-set-key 'normal (kbd ">") #'sp-slurp-hybrid-sexp)
-    (evil-global-set-key 'normal (kbd "<") #'sp-forward-barf-sexp)))
-
+  (require 'smartparens-config)
+  (smartparens-global-mode t)
+  (evil-global-set-key 'normal (kbd ">") #'sp-slurp-hybrid-sexp)
+  (evil-global-set-key 'normal (kbd "<") #'sp-forward-barf-sexp))
 
 (use-package evil-matchit
   :init
-  (progn
-    (add-hook 'python-mode-hook 'turn-on-evil-matchit-mode)))
-
+  (add-hook 'python-mode-hook 'turn-on-evil-matchit-mode))
 
 (use-package evil-numbers
   :config
-  (progn
-    (evil-global-set-key 'normal (kbd "C-a") #'evil-numbers/inc-at-pt)
-    (evil-global-set-key 'normal (kbd "C-S-a") #'evil-numbers/dec-at-pt)))
-
+  (evil-global-set-key 'normal (kbd "C-a") #'evil-numbers/inc-at-pt)
+  (evil-global-set-key 'normal (kbd "C-S-a") #'evil-numbers/dec-at-pt))
 
 ;;; Function keys
 (global-set-key (kbd "<f5>") (lambda ()
