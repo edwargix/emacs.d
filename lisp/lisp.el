@@ -1,31 +1,27 @@
 (use-package elisp-slime-nav
+  :after evil
   :config
-  (progn
-    (dolist (map `(,emacs-lisp-mode-map
-                   ;; ,ielm-map
-                   ,lisp-interaction-mode-map))
-      (with-eval-after-load 'evil
-        (evil-define-key 'normal map (kbd "g d") #'elisp-slime-nav-find-elisp-thing-at-point)
-        (evil-define-key 'normal map (kbd "M-?") #'xref-find-references)
-        (evil-define-key 'normal map (kbd "K") #'elisp-slime-nav-describe-elisp-thing-at-point)))))
-
+  (dolist (map (list emacs-lisp-mode-map
+                     ;; ,ielm-map
+                     lisp-interaction-mode-map))
+    (evil-define-key 'normal map (kbd "g d") #'elisp-slime-nav-find-elisp-thing-at-point)
+    (evil-define-key 'normal map (kbd "M-?") #'xref-find-references)
+    (evil-define-key 'normal map (kbd "K") #'elisp-slime-nav-describe-elisp-thing-at-point)))
 
 (use-package auto-compile
   :defer t
-  :init
-  (progn
-    (setq auto-compile-display-buffer nil
-          auto-compile-use-mode-line nil)
-    (add-hook 'emacs-lisp-mode-hook 'auto-compile-mode)))
-
+  :custom
+  (auto-compile-display-buffer nil)
+  (auto-compile-use-mode-line nil)
+  :hook
+  (emacs-lisp-mode . auto-compile-mode))
 
 (use-package slime
-  :init
-  (progn
-    (slime-setup)
-    (setq slime-contribs '(slime-scratch))
-    (setq inferior-lisp-program "sbcl")))
-
+  :custom
+  (inferior-lisp-program "sbcl")
+  :config
+  (add-to-list 'slime-contribs 'slime-scratch)
+  (slime-setup))
 
 (use-package common-lisp-snippets
-  :after yasnippet)
+  :after (yasnippet slime))
