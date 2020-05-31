@@ -12,9 +12,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-
 (setq straight-use-package-by-default t)
 (straight-use-package 'use-package)
-
 
 (add-to-list 'Info-directory-list "~/.local/share/info/")
