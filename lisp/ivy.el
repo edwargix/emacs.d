@@ -3,21 +3,16 @@
   (:map evil-normal-state-map
         ("C-k" . ivy-resume)))
 
-
 (use-package counsel
   :demand
   :bind
   ("C-x b" . counsel-ibuffer)
   :config
-  (progn
-    (counsel-mode)))
-
+  (counsel-mode))
 
 (use-package counsel-projectile
   :config
-  (progn
-    (counsel-projectile-mode)))
-
+  (counsel-projectile-mode))
 
 (use-package swiper
   :bind
