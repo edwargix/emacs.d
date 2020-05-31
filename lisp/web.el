@@ -12,13 +12,12 @@
          ("\\.ts\\'" . web-mode)
          ("\\.tsx\\'" . web-mode)
          ("\\.jsx\\'" . web-mode))
+  :custom
+  (web-mode-content-types-alist '(("jsx"  . ".*\\.js[x]?\\'")))
+  (web-mode-markup-indent-offset 2)
+  (web-mode-code-indent-offset 2)
+  (web-mode-engines-alist '(("django" . "\\.html?\\'")))
   :init
-  (progn
-    (setq web-mode-content-types-alist
-          '(("jsx"  . ".*\\.js[x]?\\'")))
-    (setq web-mode-markup-indent-offset 2
-          web-mode-code-indent-offset 2
-          web-mode-engines-alist '(("django" . "\\.html?\\'")))
-    (with-eval-after-load 'eglot
-      (add-to-list 'eglot-server-programs
-                   '(web-mode . ("javascript-typescript-stdio"))))))
+  (with-eval-after-load 'eglot
+    (add-to-list 'eglot-server-programs
+                 '(web-mode . ("javascript-typescript-stdio")))))
