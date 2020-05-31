@@ -1,3 +1,5 @@
+;;; Emacs LISP ;;;
+
 (use-package elisp-slime-nav
   :after evil
   :config
@@ -16,6 +18,8 @@
   :hook
   (emacs-lisp-mode . auto-compile-mode))
 
+;;; Common LISP ;;;
+
 (use-package slime
   :custom
   (inferior-lisp-program "sbcl")
@@ -25,3 +29,13 @@
 
 (use-package common-lisp-snippets
   :after (yasnippet slime))
+
+;;; Racket ;;;
+
+(use-package racket-mode)
+
+;;; Clojure ;;;
+
+(use-package cider
+  :custom
+  (cider-prompt-for-symbol nil))

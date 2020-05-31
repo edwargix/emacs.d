@@ -20,12 +20,10 @@
 (load "~/.emacs.d/lisp/org")
 (load "~/.emacs.d/lisp/dev")
 (load "~/.emacs.d/lisp/ivy")
-(load "~/.emacs.d/lisp/lisp")
+(load "~/.emacs.d/lisp/lisps")
 (load "~/.emacs.d/lisp/python")
 (load "~/.emacs.d/lisp/go")
 (load "~/.emacs.d/lisp/web")
-(load "~/.emacs.d/lisp/racket")
-(load "~/.emacs.d/lisp/clojure")
 (load "~/.emacs.d/lisp/scala")
 (load "~/.emacs.d/lisp/docker")
 
