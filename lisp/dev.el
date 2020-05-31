@@ -1,14 +1,11 @@
 (require 'evil)
 
-
 ;; show unnecessary whitespace that can mess up your diff
 (add-hook 'prog-mode-hook
           (lambda () (interactive)
-            (setq show-trailing-whitespace 1)))
-
+            (setq show-trailing-whitespace t)))
 
 (setq-default indent-tabs-mode nil)
-
 
 ;; setup GDB
 (setq
@@ -17,41 +14,31 @@
  ;; Non-nil means display source file contatining the main routine at startup
  gdb-show-main t)
 
-
 ;;; Reload file's buffer when the file changes on disk
 (global-auto-revert-mode t)
 
-
 ;;; Company (complete anything) mode
 (use-package company
-  :init
-  (progn
-    (add-hook 'after-init-hook 'global-company-mode))
+  :hook
+  (after-init . global-company-mode)
   :config
-  (progn
-    (delete 'company-semantic company-backends)
-    (evil-global-set-key 'insert (kbd "C-SPC") #'company-complete)
-    (define-key company-active-map (kbd "RET") 'company-complete-selection)))
-
+  (delete 'company-semantic company-backends)
+  (evil-global-set-key 'insert (kbd "C-SPC") #'company-complete)
+  (define-key company-active-map (kbd "RET") 'company-complete-selection))
 
 ;;; Quickhelp (documentation lookup) for company
 (use-package company-quickhelp
   :after company
   :config
-  (progn
-    (setq company-quickhelp-idle-delay 1)
-    (company-quickhelp-mode 1)))
-
+  (company-quickhelp-mode 1))
 
 ;;; company backend for C/C++ headers
 (use-package company-c-headers
   :after company
   :config
-  (progn
-    (add-to-list 'company-backends 'company-c-headers)
-    (dolist (folder (file-expand-wildcards "/usr/include/c++/*"))
-      (add-to-list 'company-c-headers-path-system folder))))
-
+  (add-to-list 'company-backends 'company-c-headers)
+  (dolist (folder (file-expand-wildcards "/usr/include/c++/*"))
+    (add-to-list 'company-c-headers-path-system folder)))
 
 (use-package projectile
   :demand
@@ -60,39 +47,28 @@
         ("C-p" . projectile-command-map)
         ("C-p C-p" . projectile-switch-project))
   :config
-  (progn
-    (projectile-mode)))
-
+  (projectile-mode))
 
 (use-package eglot
   :defer t)
 
-
 (use-package lsp-mode
   :hook (scala-mode . lsp)
+  :defer t
   :custom
   (lsp-prefer-flymake nil)
   :config
-  (progn
-    (evil-collection-define-key 'normal 'lsp-mode-map
-      "gd" 'lsp-find-definition
-      (kbd "C-t") 'xref-pop-marker-stack
-      "K" 'lsp-describe-thing-at-point)))
-
+  (evil-collection-define-key 'normal 'lsp-mode-map
+    "gd" 'lsp-find-definition
+    (kbd "C-t") 'xref-pop-marker-stack
+    "K" 'lsp-describe-thing-at-point))
 
 (use-package company-lsp
   :after (company lsp-mode))
 
-
-(use-package zygospore
-  :bind (("C-x 1" . zygospore-toggle-delete-other-windows)))
-
-
 (use-package editorconfig
   :config
-  (progn
-    (editorconfig-mode 1)))
-
+  (editorconfig-mode 1))
 
 (use-package cc-mode
   :straight nil
@@ -104,14 +80,16 @@
   (setq-default c-file-style "linux"))
 
 (use-package semantic
-  :straight nil)
+  :straight nil
+  :config
+  (global-semanticdb-minor-mode 1)
+  (global-semantic-idle-scheduler-mode 1)
+  (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+  (add-to-list 'semantic-new-buffer-setup-functions
+               (cons 'emacs-lisp-mode #'semantic-default-elisp-setup))
+  (semantic-mode 1))
 
-(global-semanticdb-minor-mode 1)
-(global-semantic-idle-scheduler-mode 1)
-(add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
-(add-to-list 'semantic-new-buffer-setup-functions
-             (cons 'emacs-lisp-mode #'semantic-default-elisp-setup))
-(semantic-mode 1)
+
 (use-package stickyfunc-enhance)
 
 (defun rtags-hook ()
@@ -119,9 +97,7 @@
   (require 'flycheck-rtags)
   (rtags-start-process-unless-running)
   (flycheck-select-checker 'rtags)
-  (setq-local flycheck-highlighting-mode nil)
-  ;; (rtags-mode)
-  )
+  (setq-local flycheck-highlighting-mode nil))
 
 (use-package rtags
   :straight nil
@@ -130,36 +106,23 @@
   (c++-mode . rtags-hook)
   (objc-mode . rtags-hook)
   :config
-  (progn
-    (evil-define-key '(normal motion) 'global (kbd "M-.") 'rtags-find-symbol-at-point)
-    (evil-define-key '(normal motion) 'global (kbd "M-,") 'rtags-find-references-at-point)
-    (evil-define-key '(normal motion) 'global (kbd "M-;") 'rtags-find-file)
-    (evil-define-key '(normal motion) 'global (kbd "C-.") 'rtags-find-symbol)
-    (evil-define-key '(normal motion) 'global (kbd "C-,") 'rtags-find-references)
-    (evil-define-key '(normal motion) 'global (kbd "C-<") 'rtags-find-virtuals-at-point)
-    (evil-define-key '(normal motion) 'global (kbd "C->") 'rtags-diagnostics)
-    (evil-define-key '(normal motion) 'global (kbd "M-[") 'rtags-location-stack-back)
-    (evil-define-key '(normal motion) 'global (kbd "M-]") 'rtags-location-stack-forward)
-    (use-package company-rtags
-      :straight nil)
-    (use-package flycheck-rtags
-      :straight nil)
-    (setq rtags-autostart-diagnostics t
-          rtags-completions-enabled t)
-    (with-eval-after-load 'company
-      ;; (push 'company-rtags company-backends)
-      (add-to-list 'company-backends 'company-rtags))
-    (setq rtags-display-result-backend 'ivy)))
-
-
-(use-package zeal-at-point
-  :bind
-  (("C-c d" . zeal-at-point))
-  :config
-  (progn
-    (add-to-list 'zeal-at-point-mode-alist '(c-mode . "c"))
-    (add-to-list 'zeal-at-point-mode-alist '(python-mode . "python"))))
-
+  (dolist (map (list c-mode-map c++-mode-map objc-mode-map))
+    (evil-define-key 'normal map (kbd "gd") 'rtags-find-symbol-at-point)
+    (evil-define-key 'normal map (kbd "M-?") 'rtags-find-references-at-point)
+    (evil-define-key 'normal map (kbd "C-<") 'rtags-find-virtuals-at-point)
+    (evil-define-key 'normal map (kbd "C->") 'rtags-diagnostics)
+    (evil-define-key 'normal map (kbd "C-t") 'rtags-location-stack-back)
+    (evil-define-key 'normal map (kbd "M-[") 'rtags-location-stack-back)
+    (evil-define-key 'normal map (kbd "M-]") 'rtags-location-stack-forward))
+  (use-package company-rtags
+    :straight nil)
+  (use-package flycheck-rtags
+    :straight nil)
+  (setq rtags-autostart-diagnostics t
+        rtags-completions-enabled t)
+  (with-eval-after-load 'company
+    (add-to-list 'company-backends 'company-rtags))
+  (setq rtags-display-result-backend 'ivy))
 
 (use-package pkgbuild-mode
   :mode ("\\`PKGBUILD\\'" . pkgbuild-mode)
