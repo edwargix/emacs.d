@@ -1,7 +1,6 @@
 ;;; Change frame title
 (setq frame-title-format "emacs")
 
-
 ;;; Font
 (ignore-errors
   (set-frame-font
@@ -12,10 +11,8 @@
     :width 'normal)
    nil t))
 
-
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8)
-
 
 (menu-bar-mode 0) ; Disable menu bar
 (scroll-bar-mode 0) ; Disable scroll bar
@@ -27,16 +24,13 @@
 (global-hi-lock-mode 1) ; Highlight stuff with M-s h
 (mouse-avoidance-mode 'none) ; Move mouse if it gets in the way of the cursor
 
-
 ;;; Spell check in comments and strings
 (flyspell-prog-mode)
-
 
 ;;; Setup theme
 (use-package gruvbox-theme
   :defer t)
 (load-theme 'gruvbox-dark-hard t)
-
 
 ;;; Transparency control
 (defvar new-frames-are-transparent t
@@ -55,13 +49,12 @@
                '(nil 100))
          80 100))))
 
-(global-set-key (kbd "C-c t") 'toggle-transparency)
+(global-set-key (kbd "C-c t") #'toggle-transparency)
 
 (add-to-list 'after-make-frame-functions
              (lambda (frame)
                (if new-frames-are-transparent
                    (set-frame-parameter frame 'alpha 80))))
-
 
 ;;; display ugly ^L page breaks as tidy horizontal lines
 (use-package page-break-lines
