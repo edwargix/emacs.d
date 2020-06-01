@@ -40,9 +40,7 @@
 ;;; Allow easily switching windows with Shift-{left,right,up,down}
 (windmove-default-keybindings)
 
-;;; Don't make backup files
-(setq make-backup-files nil)
-
+;;; don't show details of files in dired mode by default
 (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode t)))
 
 (use-package fzf
@@ -63,19 +61,14 @@
 (use-package scribble
   :straight nil
   :load-path "contrib/"
-  :init
-  (mapc (lambda (pair)
-          (or (assoc (car pair) auto-mode-alist)
-              (push pair auto-mode-alist)))
-        '(("\\.scrbl\\'" . scribble-mode)))
-  :commands scribble-mode)
+  :mode ("\\.scrbl\\'" . scribble-mode))
 
 (use-package markdown-mode
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
-  :init (setq markdown-command "markdown"))
+  :custom (markdown-command "markdown"))
 
 ;;; magit: a Git Porcelain
 (use-package magit
@@ -85,7 +78,7 @@
 
 ;;; Syntax/error checking
 (use-package flycheck
-  :init
+  :config
   (global-flycheck-mode)
   (evil-define-key 'normal
     flycheck-error-list-mode-map (kbd "q") 'quit-window))
@@ -118,9 +111,6 @@
   :config
   (which-key-mode))
 
-;;; functions to manage packages on linux distros
-(use-package system-packages)
-
 ;;; setup the mu4e email client
 (when (file-exists-p "~/scripts/setup-mu4e.el")
   (load-file "~/scripts/setup-mu4e.el"))
@@ -130,10 +120,11 @@
 
 ;;; TeX/LaTeX
 (use-package tex
+  :defer
   :straight auctex
-  :init
-  (setq TeX-command-extra-options "-shell-escape")
-  (setq-default TeX-engine 'xetex)
+  :custom
+  (TeX-command-extra-options "-shell-escape")
+  (TeX-engine 'xetex)
   :config
   (setcdr (assoc 'output-pdf TeX-view-program-selection)
           '("Zathura")))
@@ -141,11 +132,7 @@
 ;;; ability to insert random text
 (use-package lorem-ipsum)
 
-;;; number windows to easily switch between them
-(use-package winum
-  :config
-  (winum-mode))
-
+;;; show eshell with C-S-s
 (use-package shell-pop
   :custom
   (shell-pop-shell-type '("eshell" "*eshell*" #'eshell))
@@ -171,7 +158,8 @@
  '(fill-column 80)
  '(initial-buffer-choice t)
  '(initial-scratch-message "")
- '(url-privacy-level (quote paranoid)))
+ '(url-privacy-level (quote paranoid))
+ '(make-backup-files nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
