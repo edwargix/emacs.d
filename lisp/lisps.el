@@ -32,7 +32,8 @@
 
 ;;; Racket ;;;
 
-(use-package racket-mode)
+(use-package racket-mode
+  :defer t)
 
 ;;; Clojure ;;;
 
