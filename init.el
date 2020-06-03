@@ -27,6 +27,7 @@
 (load "~/.emacs.d/lisp/scala")
 (load "~/.emacs.d/lisp/docker")
 (load "~/.emacs.d/lisp/rust")
+(load "~/.emacs.d/lisp/treemacs")
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
