@@ -14,20 +14,23 @@
   (add-to-list 'load-path d))
 
 ;;; Loading of personal config files
+
+;; these config files have high priority
 (load "~/.emacs.d/lisp/packages")
 (load "~/.emacs.d/lisp/keys")
+
 (load "~/.emacs.d/lisp/appearance")
-(load "~/.emacs.d/lisp/org")
 (load "~/.emacs.d/lisp/dev")
+(load "~/.emacs.d/lisp/docker")
+(load "~/.emacs.d/lisp/go")
 (load "~/.emacs.d/lisp/ivy")
 (load "~/.emacs.d/lisp/lisps")
+(load "~/.emacs.d/lisp/org")
 (load "~/.emacs.d/lisp/python")
-(load "~/.emacs.d/lisp/go")
-(load "~/.emacs.d/lisp/web")
-(load "~/.emacs.d/lisp/scala")
-(load "~/.emacs.d/lisp/docker")
 (load "~/.emacs.d/lisp/rust")
+(load "~/.emacs.d/lisp/scala")
 (load "~/.emacs.d/lisp/treemacs")
+(load "~/.emacs.d/lisp/web")
 
 ;;; Winner mode: allows for undoing and redoing of windoow configurations
 ;;; C-c <left> : undo
