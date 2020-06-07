@@ -124,5 +124,8 @@
   (setq rtags-display-result-backend 'ivy))
 
 (use-package pkgbuild-mode
-  :mode ("\\`PKGBUILD\\'" . pkgbuild-mode)
-  :defer t)
+  :mode ("\\`PKGBUILD\\'"
+         "APKBUILD")
+  :hook (pkgbuild-mode . (lambda ()
+                           (setq-local indent-tabs-mode t)
+                           (setq-local sh-basic-offset 8))))
