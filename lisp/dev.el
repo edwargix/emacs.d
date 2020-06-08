@@ -127,5 +127,8 @@
   :mode ("\\`PKGBUILD\\'"
          "APKBUILD")
   :hook (pkgbuild-mode . (lambda ()
-                           (setq-local indent-tabs-mode t)
-                           (setq-local sh-basic-offset 8))))
+                           ; only APKBUILDs consistently use tabs of 8 columns
+                           (when (string= (buffer-name (current-buffer))
+                                          "APKBUILD")
+                             (setq-local indent-tabs-mode t)
+                             (setq-local sh-basic-offset 8)))))
