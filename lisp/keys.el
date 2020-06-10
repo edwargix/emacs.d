@@ -46,6 +46,15 @@
   :config
   (evil-org-set-key-theme))
 
+;; opens a new terminal in default-directory
+(global-set-key (kbd "C-<return>")
+                (lambda ()
+                  (interactive)
+                  (start-process
+                   "urxvt"
+                   "*urxvt*"
+                   "/usr/bin/urxvt"))) ;TODO: don't use absolute path
+
 ;;; I don't always know where my frames are, and I want a way to kill
 ;;; Emacs 100% of the time
 (global-set-key (kbd "C-x C-c") 'save-buffers-kill-emacs)
