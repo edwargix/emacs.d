@@ -1,4 +1,4 @@
-;;; Emacs LISP ;;;
+;;; Emacs LISP
 
 (use-package elisp-slime-nav
   :after evil
@@ -18,7 +18,7 @@
   :hook
   (emacs-lisp-mode . auto-compile-mode))
 
-;;; Common LISP ;;;
+;;; Common LISP
 
 (use-package slime
   :custom
@@ -30,12 +30,12 @@
 (use-package common-lisp-snippets
   :after (yasnippet slime))
 
-;;; Racket ;;;
+;;; Racket
 
 (use-package racket-mode
   :defer t)
 
-;;; Clojure ;;;
+;;; Clojure
 
 (use-package cider
   :custom

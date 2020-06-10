@@ -1,5 +1,4 @@
-;;; Org mode for keeping notes, todo lists, planning, and fast
-;;; documenting
+;;; Org mode for keeping notes, todo lists, planning, and fast documenting
 (use-package org
   :straight org-plus-contrib
   :custom
@@ -29,12 +28,12 @@
    ("C-c M-t r" . org-timer-stop) ; r for reset
    ("C-c M-t s" . org-timer-start)))
 
-;;; UTF-8 bullets for org-mode
+;; UTF-8 bullets
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))
 
-;;; Keep personal contacts in org-mode file
+;; keep personal contacts in org-mode file
 (use-package org-contacts
   :straight nil
   :after org

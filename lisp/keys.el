@@ -1,4 +1,4 @@
-;;; Evil (extensible vi layer)
+;; Evil (extensible vi layer)
 (use-package evil
   :custom
   (evil-want-C-u-scroll t)
@@ -23,23 +23,23 @@
 (setq scroll-step 1
       delete-selection-mode 1)
 
-;;; Evil-like bindings for various modes
+;; Evil-like bindings for various modes
 (use-package evil-collection
   :after evil
   :init
   (evil-collection-init))
 
-;;; Easily surround text
+;; Easily surround text
 (use-package evil-surround
   :after evil
   :config
   (global-evil-surround-mode 1))
 
-;;; Evil keybindings for magit
+;; Evil keybindings for magit
 (use-package evil-magit
   :after (evil magit))
 
-;;; Evil keybindings for org
+;; Evil keybindings for org
 (use-package evil-org
   :after (evil org)
   :hook (org-mode . evil-org-mode)
@@ -55,8 +55,8 @@
                    "*urxvt*"
                    "/usr/bin/urxvt"))) ;TODO: don't use absolute path
 
-;;; I don't always know where my frames are, and I want a way to kill
-;;; Emacs 100% of the time
+;; I don't always know where my frames are, and I want a way to kill Emacs 100%
+;; of the time
 (global-set-key (kbd "C-x C-c") 'save-buffers-kill-emacs)
 (global-set-key (kbd "<f9>") (lambda ()
                                (interactive)
@@ -66,7 +66,7 @@
                                 (interactive)
                                 (kill-buffer)))
 
-;;; a minor mode for dealing with pairs
+;; a minor mode for dealing with pairs
 (use-package smartparens
   :config
   (require 'smartparens-config)
@@ -84,7 +84,7 @@
         ("C-a"   . evil-numbers/inc-at-pt)
         ("C-S-a" . evil-numbers/dec-at-pt)))
 
-;;; Function keys
+;; Function keys
 (global-set-key (kbd "<f5>") (lambda ()
                                (interactive)
                                (setq-local compilation-read-command nil)

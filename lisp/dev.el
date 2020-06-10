@@ -14,10 +14,10 @@
  ;; Non-nil means display source file contatining the main routine at startup
  gdb-show-main t)
 
-;;; Reload file's buffer when the file changes on disk
+;; Reload file's buffer when the file changes on disk
 (global-auto-revert-mode t)
 
-;;; Company (complete anything) mode
+;; Company (complete anything) mode
 (use-package company
   :hook
   (after-init . global-company-mode)
@@ -26,13 +26,13 @@
   (evil-global-set-key 'insert (kbd "C-SPC") #'company-complete)
   (define-key company-active-map (kbd "RET") 'company-complete-selection))
 
-;;; Quickhelp (documentation lookup) for company
+;; Quickhelp (documentation lookup) for company
 (use-package company-quickhelp
   :after company
   :config
   (company-quickhelp-mode 1))
 
-;;; company backend for C/C++ headers
+;; company backend for C/C++ headers
 (use-package company-c-headers
   :after company
   :config

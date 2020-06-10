@@ -6,16 +6,14 @@
 
 ;;; Code:
 
-;;; Install local user packages
+;; Install local user packages
 (dolist (d (apply #'append (mapcar #'file-expand-wildcards
                                 '("~/.local/share/emacs/site-lisp/*"
                                   "/usr/local/share/emacs/site-lisp/*"
                                   "/usr/share/emacs/site-lisp/*"))))
   (add-to-list 'load-path d))
 
-;;; Loading of personal config files
-
-;; these config files have high priority
+;; Loading of personal config files.  The top two files have priority
 (load "~/.emacs.d/lisp/packages")
 (load "~/.emacs.d/lisp/keys")
 
@@ -32,9 +30,9 @@
 (load "~/.emacs.d/lisp/treemacs")
 (load "~/.emacs.d/lisp/web")
 
-;;; Winner mode: allows for undoing and redoing of windoow configurations
-;;; C-c <left> : undo
-;;; C-c <right>: redo
+;; Winner mode: allows for undoing and redoing of windoow configurations
+;; C-c <left> : undo
+;; C-c <right>: redo
 (winner-mode t)
 (dolist (m '(motion normal))
   (evil-global-set-key m (kbd "C-w u") #'winner-undo))
@@ -42,10 +40,10 @@
 (dolist (m '(motion normal insert))
   (evil-global-set-key m (kbd "C-x d") (lambda () (interactive) (dired "."))))
 
-;;; Allow easily switching windows with Shift-{left,right,up,down}
+;; Allow easily switching windows with Shift-{left,right,up,down}
 (windmove-default-keybindings)
 
-;;; don't show details of files in dired mode by default
+;; don't show details of files in dired mode by default
 (add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode t)))
 
 (use-package fzf
@@ -75,20 +73,20 @@
          ("\\.markdown\\'" . markdown-mode))
   :custom (markdown-command "markdown"))
 
-;;; magit: a Git Porcelain
+;; magit: a Git Porcelain
 (use-package magit
   :bind
   (("C-x g" . magit-status)
    ("C-x M-g" . magit-dispatch)))
 
-;;; Syntax/error checking
+;; Syntax/error checking
 (use-package flycheck
   :config
   (global-flycheck-mode)
   (evil-define-key 'normal
     flycheck-error-list-mode-map (kbd "q") 'quit-window))
 
-;;; Yasnippet: yet another snippet extension
+;; Yasnippet: yet another snippet extension
 (use-package yasnippet
   :bind
   ("C-c y" . yas-expand)
@@ -98,7 +96,7 @@
 (use-package yasnippet-snippets
   :after yasnippet)
 
-;;; Setup duckduckgo search engine
+;; Setup duckduckgo search engine
 (use-package engine-mode
   :config
   (defengine duckduckgo
@@ -116,14 +114,14 @@
   :config
   (which-key-mode))
 
-;;; setup the mu4e email client
+;; setup the mu4e email client
 (when (file-exists-p "~/scripts/setup-mu4e.el")
   (load-file "~/scripts/setup-mu4e.el"))
 
-;;; statistics software and R-lang integration
+;; statistics software and R-lang integration
 (use-package ess)
 
-;;; TeX/LaTeX
+;; TeX/LaTeX
 (use-package tex
   :defer
   :straight auctex
@@ -134,10 +132,10 @@
   (setcdr (assoc 'output-pdf TeX-view-program-selection)
           '("Zathura")))
 
-;;; ability to insert random text
+;; ability to insert random text
 (use-package lorem-ipsum)
 
-;;; show eshell with C-S-s
+;; show eshell with C-S-s
 (use-package shell-pop
   :custom
   (shell-pop-shell-type '("eshell" "*eshell*" #'eshell))
@@ -149,7 +147,7 @@
 (use-package graphviz-dot-mode
   :defer t)
 
-;;; Start Emacs Daemon
+;; Start Emacs Daemon
 (require 'server)
 (unless (server-running-p)
   (server-start))
