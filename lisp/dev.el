@@ -132,3 +132,6 @@
                                           "APKBUILD")
                              (setq-local indent-tabs-mode t)
                              (setq-local sh-basic-offset 8)))))
+
+(use-package ebuild-mode
+  :defer t)
