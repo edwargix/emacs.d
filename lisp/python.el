@@ -1,3 +1,6 @@
+(use-package python
+  :custom (python-shell-interpreter "python3"))
+
 (use-package pyvenv
   :commands (pyvenv-activate pyvenv-workon))
 
