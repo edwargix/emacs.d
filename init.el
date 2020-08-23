@@ -30,6 +30,10 @@
 (load "~/.emacs.d/lisp/treemacs")
 (load "~/.emacs.d/lisp/web")
 
+(use-package exec-path-from-shell
+  :config
+  (exec-path-from-shell-initialize))
+
 ;; Winner mode: allows for undoing and redoing of windoow configurations
 ;; C-c <left> : undo
 ;; C-c <right>: redo
