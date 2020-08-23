@@ -33,6 +33,7 @@
 (use-package exec-path-from-shell
   :config
   (add-to-list 'exec-path-from-shell-variables "GOPATH")
+  (add-to-list 'exec-path-from-shell-variables "SSH_AUTH_SOCK")
   (exec-path-from-shell-initialize))
 
 ;; Winner mode: allows for undoing and redoing of windoow configurations
