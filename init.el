@@ -32,6 +32,7 @@
 
 (use-package exec-path-from-shell
   :config
+  (add-to-list 'exec-path-from-shell-variables "GOPATH")
   (exec-path-from-shell-initialize))
 
 ;; Winner mode: allows for undoing and redoing of windoow configurations
