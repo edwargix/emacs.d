@@ -6,3 +6,6 @@
 
 (use-package treemacs-projectile
   :after (treemacs projectile))
+
+(use-package lsp-treemacs
+  :after lsp)
