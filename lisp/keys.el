@@ -25,6 +25,9 @@
 
 ;; Evil-like bindings for various modes
 (use-package evil-collection
+  :straight (evil-collection
+             :type git :host github :repo "emacs-evil/evil-collection"
+             :fork (:host github :repo "edwargix/evil-collection"))
   :after evil
   :init
   (evil-collection-init))
