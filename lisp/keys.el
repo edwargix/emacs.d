@@ -47,7 +47,7 @@
   (evil-org-set-key-theme))
 
 ;; opens a new terminal in default-directory
-(global-set-key (kbd "C-<return>")
+(global-set-key (kbd "C-M-<return>")
                 (lambda ()
                   (interactive)
                   (start-process
