@@ -11,3 +11,7 @@
 
 (use-package python-docstring
   :hook (python-mode . python-docstring-mode))
+
+(defun activate-python-lsp-hook ()
+  (interactive)
+  (add-hook 'python-mode-hook #'lsp))
