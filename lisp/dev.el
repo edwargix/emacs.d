@@ -19,12 +19,17 @@
 
 ;; Company (complete anything) mode
 (use-package company
+  :straight (company
+             :type git :flavor melpa :host github :repo "company-mode/company-mode"
+             :fork (:host github :repo "edwargix/company-mode"))
   :hook
   (after-init . global-company-mode)
   :config
   (delete 'company-semantic company-backends)
   (evil-global-set-key 'insert (kbd "C-SPC") #'company-complete)
-  (define-key company-active-map (kbd "RET") 'company-complete-selection))
+  (define-key company-active-map (kbd "RET") #'company-complete-selection)
+  (define-key company-active-map (kbd "M-<") #'company-select-first)
+  (define-key company-active-map (kbd "M->") #'company-select-last))
 
 ;; Quickhelp (documentation lookup) for company
 (use-package company-quickhelp
