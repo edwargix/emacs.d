@@ -68,11 +68,6 @@
 (use-package help-mode+
   :straight help-mode-plus)
 
-(use-package scribble
-  :straight nil
-  :load-path "contrib/"
-  :mode ("\\.scrbl\\'" . scribble-mode))
-
 (use-package markdown-mode
   :commands (markdown-mode gfm-mode)
   :mode (("README\\.md\\'" . gfm-mode)
