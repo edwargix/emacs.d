@@ -5,11 +5,16 @@
   (exec-path-from-shell-initialize))
 
 ;; Winner mode: allows for undoing and redoing of windoow configurations
-;; C-c <left> : undo
-;; C-c <right>: redo
-(winner-mode t)
-(dolist (m '(motion normal))
-  (evil-global-set-key m (kbd "C-w u") #'winner-undo))
+(use-package winner
+  :straight nil
+  :bind (:map evil-normal-state-map
+              ("C-w u" . #'winner-undo)
+         :map evil-motion-state-map
+              ("C-w u" . #'winner-undo))
+  :init
+  ;; C-c <left> : undo
+  ;; C-c <right>: redo
+  (winner-mode t))
 
 ;; Allow easily switching windows with Shift-{left,right,up,down}
 (windmove-default-keybindings)
