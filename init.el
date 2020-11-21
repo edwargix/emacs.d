@@ -44,14 +44,17 @@
 (dolist (m '(motion normal))
   (evil-global-set-key m (kbd "C-w u") #'winner-undo))
 
-(dolist (m '(motion normal insert))
-  (evil-global-set-key m (kbd "C-x d") (lambda () (interactive) (dired "."))))
-
 ;; Allow easily switching windows with Shift-{left,right,up,down}
 (windmove-default-keybindings)
 
-;; don't show details of files in dired mode by default
-(add-hook 'dired-mode-hook (lambda () (dired-hide-details-mode t)))
+(use-package dired
+  :straight nil
+  ;; don't show details of files in dired mode by default
+  :hook (dired-mode . (lambda ()
+                        (dired-hide-details-mode t)))
+  :bind ("C-x d" . (lambda ()
+                     (interactive)
+                     (dired "."))))
 
 (use-package fzf
   :commands fzf-projectile
