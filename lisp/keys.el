@@ -4,6 +4,7 @@
   (evil-want-C-u-scroll t)
   (evil-want-integration nil)
   (evil-want-keybinding nil) ; needed by evil-collection
+  (evil-undo-system 'undo-tree)
   :config
   (require 'evil)
   (define-key evil-ex-map "b " #'counsel-ibuffer)
@@ -19,6 +20,8 @@
             (lambda ()
               (evil-define-key '(normal motion) Info-mode-map (kbd "m") #'Info-menu)))
   (evil-mode 1))
+
+(use-package undo-tree)
 
 (setq scroll-step 1
       delete-selection-mode 1)
