@@ -21,7 +21,9 @@
               (evil-define-key '(normal motion) Info-mode-map (kbd "m") #'Info-menu)))
   (evil-mode 1))
 
-(use-package undo-tree)
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
 
 (setq scroll-step 1
       delete-selection-mode 1)
