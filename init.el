@@ -8,9 +8,9 @@
 
 ;; Install local user packages
 (dolist (d (apply #'append (mapcar #'file-expand-wildcards
-                                '("~/.local/share/emacs/site-lisp/*"
-                                  "/usr/local/share/emacs/site-lisp/*"
-                                  "/usr/share/emacs/site-lisp/*"))))
+                                   '("/usr/share/emacs/site-lisp/*"
+                                     "/usr/local/share/emacs/site-lisp/*"
+                                     "~/.local/share/emacs/site-lisp/*"))))
   (add-to-list 'load-path d))
 
 ;; Loading of personal config files.  The top two files have priority
