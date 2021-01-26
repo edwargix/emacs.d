@@ -2,7 +2,6 @@
 (use-package evil
   :custom
   (evil-want-C-u-scroll t)
-  (evil-want-integration nil)
   (evil-want-keybinding nil) ; needed by evil-collection
   (evil-undo-system 'undo-tree)
   :config
