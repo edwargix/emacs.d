@@ -43,10 +43,6 @@
   :config
   (global-evil-surround-mode 1))
 
-;; Evil keybindings for magit
-(use-package evil-magit
-  :after (evil magit))
-
 ;; Evil keybindings for org
 (use-package evil-org
   :after (evil org)
