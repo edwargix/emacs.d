@@ -55,6 +55,7 @@ projectile-bookmarks.eld
 /.cache/
 abbrev_defs
 bookmarks
-/straight/
+/straight/*
+!/straight/versions
 /transient/
 .lsp-session-v1
