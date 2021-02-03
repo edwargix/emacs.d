@@ -142,3 +142,6 @@
 
 (use-package nginx-mode
   :defer t)
+
+(use-package smarty-mode
+  :defer t)

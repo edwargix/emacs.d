@@ -96,6 +96,7 @@
  ("shell-pop-el" . "4b4394037940a890a313d715d203d9ead2d156a6")
  ("slime" . "06ac458b337f7aed7c76d2ddcef1a6f6e7103fa4")
  ("smartparens" . "63695c64233d215a92bf08e762f643cdb595bdd9")
+ ("smarty-mode" . "3dfdfe1571f5e9ef55a29c51e5a80046d4cb7568")
  ("spinner" . "61f59fab44d22cd5add61a1baf3f0b88a5d829d7")
  ("straight.el" . "2d407bccd9378f1d5218f8ba2ae85c6be73fbaf1")
  ("swiper" . "25439e26a67b54d1f8aab1cbc727228427692ec8")
