@@ -15,7 +15,7 @@
  ("common-lisp-snippets" . "c82ebf18f4ad49f390dd96ffcc59f8683c1a868b")
  ("company-c-headers" . "9d384571b1190e99d0a789e5296176d69a3d0771")
  ("company-lsp" . "f921ffa0cdc542c21dc3dd85f2c93df4288e83bd")
- ("company-mode" . "bea319537433dac3d053d5452f89b654eb34d8ad")
+ ("company-mode" . "5c25e114c3ac1bee3671abd47f46592a3151d549")
  ("company-quickhelp" . "b13ff1ba0d6176825f165920b17625948f1256c5")
  ("counsel-projectile" . "06b03c1080d3ccc3fa9b9c41b1ccbcf13f058e4b")
  ("dap-mode" . "44c0ffcf301ea3962ec34ca49d694415453f3386")

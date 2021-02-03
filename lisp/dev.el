@@ -19,9 +19,6 @@
 
 ;; Company (complete anything) mode
 (use-package company
-  :straight (company
-             :type git :flavor melpa :host github :repo "company-mode/company-mode"
-             :fork (:host github :repo "edwargix/company-mode"))
   :hook
   (after-init . global-company-mode)
   :config
