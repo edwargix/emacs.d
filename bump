@@ -1,0 +1,11 @@
+#!/bin/sh
+tmpfile=$(mktemp)
+cat <<EOF >$tmpfile
+$(cat ./init.el)
+
+(straight-pull-all)
+(straight-freeze-versions)
+EOF
+emacs --batch -l $tmpfile
+rm $tmpfile
+git add ./straight/versions
