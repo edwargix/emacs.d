@@ -29,8 +29,22 @@
 
 ;; Setup theme
 (use-package gruvbox-theme
-  :defer t)
-(load-theme 'gruvbox-dark-hard t)
+  :config
+  (load-theme 'gruvbox-dark-hard t t)
+  (load-theme 'gruvbox-light-hard t t)
+
+  (defun dark-theme ()
+    (interactive)
+    (disable-theme 'gruvbox-light-hard)
+    (enable-theme 'gruvbox-dark-hard))
+
+  (defun light-theme ()
+    (interactive)
+    (disable-theme 'gruvbox-dark-hard)
+    (enable-theme 'gruvbox-light-hard))
+
+  ;; dark theme by default
+  (dark-theme))
 
 ;; Transparency control
 (defvar new-frames-are-transparent t
