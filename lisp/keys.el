@@ -75,7 +75,20 @@
   (require 'smartparens-config)
   (smartparens-global-mode t)
   (evil-global-set-key 'normal (kbd ">") #'sp-slurp-hybrid-sexp)
-  (evil-global-set-key 'normal (kbd "<") #'sp-forward-barf-sexp))
+  (evil-global-set-key 'normal (kbd "<") #'sp-forward-barf-sexp)
+
+  (defun radian-enter-and-indent-sexp (&rest _ignored)
+    "Insert an extra newline after point, and reindent."
+    (newline)
+    (indent-according-to-mode)
+    (forward-line -1)
+    (indent-according-to-mode))
+
+  ; TODO: add more modes
+  (dolist (mode '(go-mode terraform-mode))
+    (sp-local-pair mode "{" nil :post-handlers
+                   '((radian-enter-and-indent-sexp "RET")
+                     (radian-enter-and-indent-sexp "<return>")))))
 
 (use-package evil-matchit
   :init
