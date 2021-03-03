@@ -13,6 +13,7 @@
          "\\.tpl\\.php\\'"
          "\\.ts\\'"
          "\\.tsx\\'"
+         "\\.vue\\'"
          "\\.xhtml\\'")
   :custom
   (web-mode-content-types-alist '(("jsx"  . ".*\\.js[x]?\\'")))
