@@ -66,9 +66,6 @@
     (kbd "C-t") 'xref-pop-marker-stack
     "K" 'lsp-describe-thing-at-point))
 
-(use-package company-lsp
-  :after (company lsp-mode))
-
 (use-package editorconfig
   :config
   (editorconfig-mode 1))
