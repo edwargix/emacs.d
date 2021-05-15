@@ -1,6 +1,5 @@
 ;;; Org mode for keeping notes, todo lists, planning, and fast documenting
 (use-package org
-  :straight org-plus-contrib
   :custom
   (org-default-notes-file "~/org/notes.org")
   (org-return-follows-link t)
@@ -35,6 +34,6 @@
 
 ;; keep personal contacts in org-mode file
 (use-package org-contacts
-  :straight nil
+  :straight org-contrib
   :after org
   :custom (org-contacts-files '("~/org/contacts.org")))
