@@ -8,6 +8,7 @@
  ("auto-compile" . "ec4c700f5a7d6af6992b50d7b309c8d9a7c07a7c")
  ("autothemer" . "8ec0c27a73b2d0a335eda63fde695a101e2956b2")
  ("avy" . "e92cb37457b43336b765630dbfbea8ba4be601fa")
+ ("browse-at-remote" . "e02ad2189c87da33f80bf4967a968772ce3e4431")
  ("bui.el" . "f3a137628e112a91910fd33c0cff0948fa58d470")
  ("cfrs" . "7c42f2c82c7ae689f3ef291b066688c58ab96298")
  ("cider" . "061a6db1e641fb338976b137c1175574e102c22e")

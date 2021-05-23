@@ -142,3 +142,6 @@
 
 (use-package smarty-mode
   :defer t)
+
+(use-package browse-at-remote
+  :commands browse-at-remote)
