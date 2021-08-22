@@ -4,6 +4,18 @@
   (evil-want-C-u-scroll t)
   (evil-want-keybinding nil) ; needed by evil-collection
   (evil-undo-system 'undo-tree)
+  (evil-overriding-maps
+   '((Buffer-menu-mode-map     . nil)
+     (color-theme-mode-map     . nil)
+     (comint-mode-map          . nil)
+     (compilation-mode-map     . nil)
+     (grep-mode-map            . nil)
+     (dictionary-mode-map      . nil)
+     (ert-results-mode-map     . motion)
+     (Info-mode-map            . motion)
+     (speedbar-key-map         . nil)
+     (speedbar-file-key-map    . nil)
+     (speedbar-buffers-key-map . nil)))
   :config
   (require 'evil)
   (define-key evil-ex-map "b " #'counsel-ibuffer)
