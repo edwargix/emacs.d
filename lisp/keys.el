@@ -17,7 +17,6 @@
      (speedbar-file-key-map    . nil)
      (speedbar-buffers-key-map . nil)))
   :config
-  (require 'evil)
   (define-key evil-ex-map "b " #'counsel-ibuffer)
   (define-key evil-ex-map "e " #'counsel-find-file)
   (add-hook 'with-editor-mode-hook 'evil-insert-state)
