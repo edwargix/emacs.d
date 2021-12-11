@@ -144,4 +144,7 @@
   :defer t)
 
 (use-package browse-at-remote
-  :commands browse-at-remote)
+  :commands browse-at-remote
+  :config
+  (add-to-list 'browse-at-remote-remote-type-regexps
+               '("^git\\.hnitbjorg\\.xyz$" . "sourcehut")))
