@@ -144,7 +144,15 @@
   :defer t)
 
 (use-package browse-at-remote
-  :commands browse-at-remote
+  :commands (browse-at-remote browse-at-remote-kill)
   :config
   (add-to-list 'browse-at-remote-remote-type-regexps
-               '("^git\\.hnitbjorg\\.xyz$" . "sourcehut")))
+               '("^git\\.hnitbjorg\\.xyz$" . "sourcehut"))
+  :bind
+  (("C-c g o" . browse-at-remote)
+   ("C-c g y" . browse-at-remote-kill)
+   ("C-c g c" .
+    (lambda ()
+      (interactive)
+      (let ((browse-at-remote-prefer-symbolic nil))
+        (browse-at-remote-kill))))))
