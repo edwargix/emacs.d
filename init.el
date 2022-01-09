@@ -23,6 +23,7 @@
 (load "~/.emacs.d/lisp/go")
 (load "~/.emacs.d/lisp/ivy")
 (load "~/.emacs.d/lisp/java")
+(load "~/.emacs.d/lisp/kubernetes")
 (load "~/.emacs.d/lisp/lisps")
 (load "~/.emacs.d/lisp/misc")
 (load "~/.emacs.d/lisp/org")

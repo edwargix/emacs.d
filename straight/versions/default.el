@@ -59,6 +59,7 @@
  ("hydra" . "2d553787aca1aceb3e6927e426200e9bb9f056f1")
  ("jsonrpc" . "c0e2ba7dfc06fbdaee5d9162e367d89d8c8b6f1a")
  ("kotlin-mode" . "3e0c34087ba4965a8bf08d3f27325f0a1e631bfb")
+ ("kubel" . "68d2925c7942039e3fb3eb6c113adec5369c6c72")
  ("let-alist" . "d2d0cac92851d4480328bc3f41d30c518beb1f99")
  ("log4e" . "737d275eac28dbdfb0b26d28e99da148bfce9d16")
  ("lsp-java" . "ce03cb6574566e334c3ce5735458cc3ec1989486")
