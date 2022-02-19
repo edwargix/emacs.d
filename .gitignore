@@ -59,3 +59,4 @@ bookmarks
 !/straight/versions
 /transient/
 .lsp-session-v1
+.dap-breakpoints
