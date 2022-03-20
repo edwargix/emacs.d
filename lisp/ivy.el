@@ -12,7 +12,10 @@
 
 (use-package counsel-projectile
   :config
-  (counsel-projectile-mode))
+  (counsel-projectile-mode)
+  (require 'dash)
+  (setcar counsel-projectile-switch-project-action
+        (1+ (--find-index (eq (cadr it) #'counsel-projectile-switch-project-action-vc) (cdr counsel-projectile-switch-project-action)))))
 
 (use-package swiper
   :bind

@@ -16,6 +16,7 @@
 ;; Loading of personal config files.  The top two files have priority
 (load "~/.emacs.d/lisp/packages")
 (load "~/.emacs.d/lisp/keys")
+(load "~/.emacs.d/lisp/libs")
 
 (load "~/.emacs.d/lisp/appearance")
 (load "~/.emacs.d/lisp/dev")
