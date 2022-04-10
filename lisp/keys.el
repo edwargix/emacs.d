@@ -26,9 +26,11 @@
     (evil-global-set-key m (kbd "SPC") mode-specific-map)
     (evil-global-set-key m (kbd "SPC u") 'universal-argument)
     (evil-global-set-key m (kbd "M-;") #'comment-dwim))
-  (add-hook 'Info-mode-hook
-            (lambda ()
-              (evil-define-key '(normal motion) Info-mode-map (kbd "m") #'Info-menu)))
+  (eval-after-load 'info
+    (progn
+      (evil-define-key '(normal motion) Info-mode-map (kbd "m") #'Info-menu)
+      (evil-define-key '(normal motion) Info-mode-map (kbd "^") #'Info-up)
+      (evil-define-key '(normal motion) Info-mode-map (kbd "RET") #'Info-follow-nearest-node)))
   (evil-mode 1))
 
 (use-package undo-tree
