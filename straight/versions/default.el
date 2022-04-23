@@ -70,6 +70,7 @@
  ("map" . "3d80a6d7cdc7d9e5760290fa95db4da992612837")
  ("markdown-mode" . "d2a3d5b8625a7c6be21f19f9146745cd5c791a6a")
  ("melpa" . "92100b66bac72090515e957ab53d654829c922cf")
+ ("monokai-emacs" . "4a09c59f948ba5b602b6f395e667f53224fd75a2")
  ("mu4e-alert" . "91f0657c5b245a9de57aa38391221fb5d141d9bd")
  ("mu4e-maildirs-extension" . "1167bc6e08996f866e73e9a02f563fd21ac317fd")
  ("nginx-mode" . "6e9d96f58eddd69f62f7fd443d9b9753e16e0e96")

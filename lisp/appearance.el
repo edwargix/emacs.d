@@ -46,6 +46,11 @@
   ;; dark theme by default
   (dark-theme))
 
+(use-package monokai-theme
+  :config
+
+  (load-theme 'monokai t t))
+
 ;; Transparency control
 (defvar new-frames-are-transparent t
   "Whether new frames should be transparent")
