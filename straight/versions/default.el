@@ -75,6 +75,7 @@
  ("mu4e-alert" . "b34d0ea7b75709cc25d842a783cebea855dc9f7d")
  ("mu4e-maildirs-extension" . "1167bc6e08996f866e73e9a02f563fd21ac317fd")
  ("nginx-mode" . "6e9d96f58eddd69f62f7fd443d9b9753e16e0e96")
+ ("nix-mode" . "8e20de5ba7061d810b08df5557b1fdb60c94b639")
  ("org" . "58eb3e7894d5b0a0b67f9ec26cb885bcbc4d1026")
  ("org-bullets" . "767f55feb58b840a5a04eabfc3fbbf0d257c4792")
  ("org-contrib" . "4936783e74b7b51d73a0ac397710ef59081819de")

@@ -27,6 +27,7 @@
 (load "~/.emacs.d/lisp/kubernetes")
 (load "~/.emacs.d/lisp/lisps")
 (load "~/.emacs.d/lisp/misc")
+(load "~/.emacs.d/lisp/nix")
 (load "~/.emacs.d/lisp/org")
 (load "~/.emacs.d/lisp/python")
 (load "~/.emacs.d/lisp/rust")
