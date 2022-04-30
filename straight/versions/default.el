@@ -38,7 +38,7 @@
  ("engine-mode" . "e0910f141f2d37c28936c51c3c8bb8a9ca0c01d1")
  ("epl" . "78ab7a85c08222cd15582a298a364774e3282ce6")
  ("evil" . "008a6cdb12f15e748979a7d1c2f26c34c84dedbf")
- ("evil-collection" . "bd5a145ff79f854af7dce9cc6d09bdc2169f1be0")
+ ("evil-collection" . "59d0e47bc7cbfc0770d5f2cfdb2688a392b80619")
  ("evil-matchit" . "b314e816bacfc01bb7df9b19a06b18638af5cdbe")
  ("evil-numbers" . "08f0c1ee93b8a563770eaefaf21ab9087fca7bdb")
  ("evil-org-mode" . "0d10ff7bb9a3a93d25cd91018b17f0a052b335f3")
