@@ -44,6 +44,7 @@
 
 ;; Evil-like bindings for various modes
 (use-package evil-collection
+  :custom (evil-collection-magit-use-$-for-end-of-line nil)
   :straight (evil-collection
              :type git :host github :repo "emacs-evil/evil-collection"
              :fork (:host github :repo "edwargix/evil-collection"))
