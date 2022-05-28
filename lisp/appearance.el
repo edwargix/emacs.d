@@ -48,8 +48,13 @@
 
 (use-package monokai-theme
   :config
-
   (load-theme 'monokai t t))
+
+(use-package doom-themes
+  :config
+  (load-theme 'doom-one t t)
+  (load-theme 'doom-one-light t t)
+  (load-theme 'doom-vibrant t t))
 
 ;; Transparency control
 (defvar new-frames-are-transparent t

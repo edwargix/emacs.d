@@ -108,6 +108,7 @@
  ("straight.el" . "af5437f2afd00936c883124d6d3098721c2d306c")
  ("swiper" . "7489968257a74f176c0d1de7ec8bd1e2011f0db4")
  ("terraform-mode" . "e560caaa9d9a11b0868adf6d9dcae5ebb5055730")
+ ("themes" . "ec199971005e720f138b3bf12b4004714a074c8c")
  ("transient" . "84f2d12ef31ec74c85e616283926780532fed13f")
  ("treemacs" . "2f38579b1626bb22d9391bfb6e6f28a84689816e")
  ("undo-tree" . "16f4121032d09ef44b3d7d02c4d02c3c2f18041f")
