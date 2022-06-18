@@ -1,7 +1,7 @@
-alias lla ls -lA $*
-alias lal ls -Al $*
-alias ll ls -l $*
-alias la ls -A $*
 alias gfftp git fetch --force --tags --prune $*
 alias gfftpa git fetch --force --tags --prune --all $*
 alias gfftpo git fetch --force --tags --prune origin $*
+alias la ls -A $*
+alias lal ls -Al $*
+alias ll ls -l $*
+alias lla ls -lA $*
