@@ -34,6 +34,5 @@
 
 ;; keep personal contacts in org-mode file
 (use-package org-contacts
-  :straight org-contrib
   :after org
   :custom (org-contacts-files '("~/org/contacts.org")))

@@ -85,7 +85,7 @@
  ("nix-mode" . "8fe2ccf0b01f694a77d2528e06c10f06057784f6")
  ("org" . "0583a0c5eaa955d4370558b980b3772bb91dd057")
  ("org-bullets" . "767f55feb58b840a5a04eabfc3fbbf0d257c4792")
- ("org-contrib" . "c6aef31ccfc7c4418c3b51e98f7c3bd8e255f5e6")
+ ("org-contacts" . "dba21b48952e78e9db27e25628bcfb0353c19b24")
  ("packed" . "6a427d9da742d78a8f6bd6ed9e31fbf241b2ea82")
  ("page-break-lines" . "cc283621c64e4f1133a63e0945658a4abecf42ef")
  ("parseclj" . "a8c4cf30fb68b66ae51541462a8b21753229a6e5")
