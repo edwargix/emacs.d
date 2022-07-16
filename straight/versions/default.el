@@ -28,6 +28,7 @@
  ("el-get" . "bf3dba444dcd240b8cb358a0850c8c5a92606134")
  ("eldoc" . "88f5e70a8868bef0d685a57a623e51a233a33380")
  ("elisp-slime-nav" . "8588d80d414aee1fafce5b9da0e913612ee0bcdd")
+ ("emacs-ccls" . "ae74a39303457a5e6976dd1c6816cde97d357a0d")
  ("emacs-hcl-mode" . "e4d9eef631e8a386341ae8f94f7c2579586e65b5")
  ("emacs-load-env-vars" . "3808520efaf9492033f6e11a9bffd68eabf02a0f")
  ("emacs-lorem-ipsum" . "da75c155da327c7a7aedb80f5cfe409984787049")

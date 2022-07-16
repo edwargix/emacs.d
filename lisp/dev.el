@@ -92,38 +92,6 @@
 
 (use-package stickyfunc-enhance)
 
-(defun rtags-hook ()
-  "Setup rtags and flycheck."
-  (require 'flycheck-rtags)
-  (rtags-start-process-unless-running)
-  (flycheck-select-checker 'rtags)
-  (setq-local flycheck-highlighting-mode nil))
-
-(use-package rtags
-  :straight nil
-  :hook
-  (c-mode . rtags-hook)
-  (c++-mode . rtags-hook)
-  (objc-mode . rtags-hook)
-  :config
-  (dolist (map (list c-mode-map c++-mode-map objc-mode-map))
-    (evil-define-key 'normal map (kbd "gd") 'rtags-find-symbol-at-point)
-    (evil-define-key 'normal map (kbd "M-?") 'rtags-find-references-at-point)
-    (evil-define-key 'normal map (kbd "C-<") 'rtags-find-virtuals-at-point)
-    (evil-define-key 'normal map (kbd "C->") 'rtags-diagnostics)
-    (evil-define-key 'normal map (kbd "C-t") 'rtags-location-stack-back)
-    (evil-define-key 'normal map (kbd "M-[") 'rtags-location-stack-back)
-    (evil-define-key 'normal map (kbd "M-]") 'rtags-location-stack-forward))
-  (use-package company-rtags
-    :straight nil)
-  (use-package flycheck-rtags
-    :straight nil)
-  (setq rtags-autostart-diagnostics t
-        rtags-completions-enabled t)
-  (with-eval-after-load 'company
-    (add-to-list 'company-backends 'company-rtags))
-  (setq rtags-display-result-backend 'ivy))
-
 (use-package pkgbuild-mode
   :mode ("\\`PKGBUILD\\'"
          "APKBUILD")
@@ -156,3 +124,7 @@
       (interactive)
       (let ((browse-at-remote-prefer-symbolic nil))
         (browse-at-remote-kill))))))
+
+(use-package ccls
+  :hook ((c-mode c++-mode objc-mode cuda-mode) .
+         (lambda () (require 'ccls) (lsp))))
