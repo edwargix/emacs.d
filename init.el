@@ -51,7 +51,8 @@
  '(fill-column 80)
  '(initial-buffer-choice t)
  '(initial-scratch-message "")
- '(url-privacy-level (quote paranoid))
+ ;; only send User-Agent
+ '(url-privacy-level '(email os emacs lastloc cookies))
  '(make-backup-files nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
