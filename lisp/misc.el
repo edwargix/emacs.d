@@ -70,6 +70,9 @@
 ;; Setup duckduckgo search engine
 (use-package engine-mode
   :config
+  (defengine brave
+    "https://search.brave.com/search?q=%s"
+    :keybinding "b")
   (defengine duckduckgo
     "https://duckduckgo.com/?q=%s"
     :keybinding "d")
