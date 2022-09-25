@@ -10,7 +10,3 @@
    'minibuffer-complete-word
    'self-insert-command
    minibuffer-local-completion-map))
-
-(with-eval-after-load 'eglot
-  (add-to-list 'eglot-server-programs
-               '(scala-mode . ("metals-emacs"))))

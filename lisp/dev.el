@@ -51,9 +51,6 @@
   :config
   (projectile-mode))
 
-(use-package eglot
-  :defer t)
-
 (use-package lsp-mode
   :defer t
   :custom
