@@ -28,12 +28,6 @@
                      (interactive)
                      (dired "."))))
 
-(use-package fzf
-  :commands fzf-projectile
-  :init
-  (evil-global-set-key 'normal (kbd "C-n") #'fzf-projectile)
-  (evil-global-set-key 'normal (kbd "C-S-n") #'fzf-directory))
-
 (use-package ag)
 
 (use-package help+
