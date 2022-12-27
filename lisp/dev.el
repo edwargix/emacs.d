@@ -60,7 +60,7 @@
   :config
   (evil-collection-define-key 'normal 'lsp-mode-map
     "gd" 'lsp-find-definition
-    (kbd "C-t") 'xref-pop-marker-stack
+    (kbd "C-t") 'xref-go-back
     "K" 'lsp-describe-thing-at-point))
 
 (use-package editorconfig
