@@ -116,6 +116,7 @@
  ("transient" . "c6cf2f2705ab56cd89d807e723ce45b9fcdfb9e1")
  ("treemacs" . "9986d6cd3d2822db7ae0e6d8a275db7057f3e828")
  ("treepy.el" . "7c4a0d21322506a4d4b2301b4274ec955b429b47")
+ ("typescript.el" . "4fcb4594819caf472ae42ea068a1c7795cf07f46")
  ("undo-tree" . "16f4121032d09ef44b3d7d02c4d02c3c2f18041f")
  ("use-package" . "bcf0984cf55b70fe6896c6a15f61df92b24f8ffd")
  ("web-mode" . "53bed1e6a8554da877c27ffad6bd65113dc758e3")

@@ -11,12 +11,14 @@
          "\\.phtml\\'"
          "\\.tmpl\\'"
          "\\.tpl\\.php\\'"
-         "\\.ts\\'"
-         "\\.tsx\\'"
-         "\\.vue\\'"
          "\\.xhtml\\'")
   :custom
   (web-mode-content-types-alist '(("jsx"  . ".*\\.js[x]?\\'")))
   (web-mode-markup-indent-offset 2)
   (web-mode-code-indent-offset 2)
   (web-mode-engines-alist '(("django" . "\\.html?\\'"))))
+
+(use-package typescript-mode
+  :mode ("\\.ts\\'"
+         "\\.tsx\\'"
+         "\\.vue\\'"))
