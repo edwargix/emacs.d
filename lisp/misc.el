@@ -83,8 +83,8 @@
   (which-key-mode))
 
 ;; setup the mu4e email client
-(when (file-exists-p "~/scripts/setup-mu4e.el")
-  (load-file "~/scripts/setup-mu4e.el"))
+(when (file-exists-p "~/lisp/setup-mu4e.el")
+  (load-file "~/lisp/setup-mu4e.el"))
 
 ;; statistics software and R-lang integration
 (use-package ess)
