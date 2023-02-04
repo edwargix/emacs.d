@@ -70,9 +70,9 @@
                 (lambda ()
                   (interactive)
                   (start-process
-                   "urxvt"
-                   "*urxvt*"
-                   "/usr/bin/urxvt"))) ;TODO: don't use absolute path
+                   "kitty"
+                   "*kitty*"
+                   "/usr/bin/kitty"))) ;TODO: don't use absolute path
 
 ;; I don't always know where my frames are, and I want a way to kill Emacs 100%
 ;; of the time
