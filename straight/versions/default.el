@@ -7,7 +7,7 @@
  ("auto-compile" . "4cbd304698a897baf438400c9a2b31d3dfb3a7f9")
  ("autothemer" . "f1489cc976dd4f4ae825d33a5e63a301dfa904a3")
  ("avy" . "955c8dedd68c74f3cf692c1249513f048518c4c9")
- ("browse-at-remote" . "c020975a891438e278ad1855213d4f3d62c9fccb")
+ ("browse-at-remote" . "010639fc6bd6c710b56e0f095352da60c92473a3")
  ("bui.el" . "f3a137628e112a91910fd33c0cff0948fa58d470")
  ("cfrs" . "f3a21f237b2a54e6b9f8a420a9da42b4f0a63121")
  ("cider" . "14923cb8c3be94a40fe7ca213948d1137b1cb3dc")
