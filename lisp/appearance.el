@@ -1,6 +1,8 @@
 ;; Change frame title
 (setq frame-title-format "emacs")
 
+(add-to-list 'default-frame-alist '(font . "Fira Code-10"))
+
 ;; Font
 (ignore-errors
   (set-frame-font
