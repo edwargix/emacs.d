@@ -39,9 +39,3 @@
   :straight nil
   :load-path "contrib/"
   :mode ("\\.scrbl\\'" . scribble-mode))
-
-;;; Clojure
-
-(use-package cider
-  :custom
-  (cider-prompt-for-symbol nil))
