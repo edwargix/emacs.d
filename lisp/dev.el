@@ -112,7 +112,7 @@
   :commands (browse-at-remote browse-at-remote-kill)
   :config
   (add-to-list 'browse-at-remote-remote-type-regexps
-               '("^git\\.hnitbjorg\\.xyz$" . "sourcehut"))
+               '(:host "^git\\.hnitbjorg\\.xyz$" :type "sourcehut"))
   :bind
   (("C-c g o" . browse-at-remote)
    ("C-c g y" . browse-at-remote-kill)
