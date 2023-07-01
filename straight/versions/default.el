@@ -107,7 +107,7 @@
  ("swiper" . "aa18c1f4861cef2ddcf0c70b6fd7edd93ae9c627")
  ("terraform-mode" . "25a22a66f81e35c75f2fdaaab89aad7f9940fe06")
  ("themes" . "e4f0b006a516a35f53df2dce2ec116876c5cd7f9")
- ("transient" . "c6cf2f2705ab56cd89d807e723ce45b9fcdfb9e1")
+ ("transient" . "a1575e58331b1ff85ac97667df0130ae822ccf5f")
  ("treemacs" . "cb56fb908e612e008608a910a0606ec84d9f63ac")
  ("treepy.el" . "298c49b48f36b230224421ff2f168734f74fce15")
  ("typescript.el" . "4fcb4594819caf472ae42ea068a1c7795cf07f46")
