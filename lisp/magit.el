@@ -6,5 +6,7 @@
    ("C-c g b" . magit-blame)
    ("C-c g l" . magit-log)))
 
+(use-package sqlite3)
+
 (use-package forge
-  :after magit)
+  :after (magit sqlite3))
