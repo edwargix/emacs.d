@@ -48,7 +48,7 @@
  ("f.el" . "af7d37c619010b576fd22b50c62c71ff33093f3c")
  ("flycheck" . "5f2ef177cb21ae8b73714575802beef04abd0f5e")
  ("forge" . "ec68fcd778f6b3dc6100498aea790457d2fc98f6")
- ("ghub" . "142b0dbe2b8e94db9489061813b703481566dfa1")
+ ("ghub" . "0fd648f0529f34b5da441d54c9dbff7810477d12")
  ("gntp.el" . "767571135e2c0985944017dc59b0be79af222ef5")
  ("gnu-elpa-mirror" . "14a93ba0f780dfe9e2eadedafbe534d03fc246bf")
  ("go-mode.el" . "f21347ae9cf68ea33031bf5125896e8f16c8183c")
