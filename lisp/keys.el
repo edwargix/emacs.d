@@ -131,3 +131,6 @@
 
 (global-set-key (kbd "C-c C-s") #'switch-to-scratch)
 (global-set-key (kbd "<f8>") #'switch-to-scratch)
+
+;; override: list-buffers -> ibuffer
+(global-set-key (kbd "C-x C-b") #'ibuffer)
