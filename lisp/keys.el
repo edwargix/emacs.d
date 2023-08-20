@@ -123,6 +123,11 @@
                                (call-interactively 'compile)))
 (global-set-key (kbd "<f6>") #'shell)
 (global-set-key (kbd "<f7>") #'eshell)
-(global-set-key (kbd "<f8>") (lambda ()
-                               (interactive)
-                               (switch-to-buffer "*scratch*")))
+
+(defun switch-to-scratch ()
+  "Switch to the *scratch* buffer"
+  (interactive)
+  (switch-to-buffer "*scratch*"))
+
+(global-set-key (kbd "C-c C-s") #'switch-to-scratch)
+(global-set-key (kbd "<f8>") #'switch-to-scratch)
