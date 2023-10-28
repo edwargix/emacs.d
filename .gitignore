@@ -61,4 +61,4 @@ bookmarks
 .lsp-session-v1
 .dap-breakpoints
 projects
-forge-database.sqlite
+forge-database*.sqlite
