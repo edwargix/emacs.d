@@ -1,17 +1,16 @@
 ;; Change frame title
 (setq frame-title-format "emacs")
 
-(add-to-list 'default-frame-alist '(font . "Fira Code-10"))
-
 ;; Font
-(ignore-errors
-  (set-frame-font
-   (font-spec
-    :name "Fira Code"
-    :size 13
-    :weight 'normal
-    :width 'normal)
-   nil t))
+(setq my-font (font-spec
+                :name "Fira Code"
+                :size 14
+                :weight 'normal
+                :width 'normal))
+(ignore-errors (set-frame-font my-font nil t))
+(add-to-list 'after-make-frame-functions
+             (lambda (frame)
+               (set-frame-font my-font nil t)))
 
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8)
