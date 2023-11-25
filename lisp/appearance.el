@@ -2,11 +2,17 @@
 (setq frame-title-format "emacs")
 
 ;; Font
-(setq my-font (font-spec
-                :name "Fira Code"
-                :size 14
-                :weight 'normal
-                :width 'normal))
+(setq my-font-size 14)
+(defun set-my-font-size (font-size)
+  (interactive (list (read-number "size: " my-font-size)))
+  (setq my-font-size font-size)
+  (setq my-font (font-spec
+                 :name "Fira Code"
+                 :size font-size
+                 :weight 'normal
+                 :width 'normal))
+  (set-frame-font my-font nil t))
+(set-my-font-size my-font-size)
 (ignore-errors (set-frame-font my-font nil t))
 (add-to-list 'after-make-frame-functions
              (lambda (frame)
