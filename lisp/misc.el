@@ -65,9 +65,12 @@
 ;; Setup duckduckgo search engine
 (use-package engine-mode
   :config
+  (defengine bible
+    "https://www.biblegateway.com/passage/?search=%s&version=ESV"
+    :keybinding "b")
   (defengine brave
     "https://search.brave.com/search?q=%s"
-    :keybinding "b")
+    :keybinding "s")
   (defengine duckduckgo
     "https://duckduckgo.com/?q=%s"
     :keybinding "d")
