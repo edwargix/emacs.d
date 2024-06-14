@@ -26,3 +26,23 @@
   (load-theme 'doom-one t t)
   (load-theme 'doom-one-light t t)
   (load-theme 'doom-vibrant t t))
+
+(defun switch-theme (theme)
+  ;; The (interactive ...) and subsequent (unless ...) code was copied from the
+  ;; enable-theme function in custom.el.gz
+  (interactive (list (intern
+                      (completing-read
+                       "Switch to custom theme: "
+                       obarray (lambda (sym) (get sym 'theme-settings)) t))))
+  (unless (custom-theme-p theme)
+    (error "Undefined Custom theme %s" theme))
+  ;; end of copied code
+
+  (disable-current-themes)
+  (enable-theme theme))
+
+(defun disable-current-themes ()
+  "disabled all currently-enabled themes"
+  (interactive)
+  (dolist (thm custom-enabled-themes)
+    (disable-theme thm)))
