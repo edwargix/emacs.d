@@ -34,6 +34,7 @@
 (load "~/.emacs.d/lisp/rust")
 (load "~/.emacs.d/lisp/scala")
 (load "~/.emacs.d/lisp/terraform")
+(load "~/.emacs.d/lisp/themes")
 (load "~/.emacs.d/lisp/treemacs")
 (load "~/.emacs.d/lisp/web")
 
