@@ -39,13 +39,11 @@
 
 (defun dark-theme ()
   (interactive)
-  (disable-theme 'gruvbox-light-hard)
-  (enable-theme 'gruvbox-dark-hard))
+  (switch-theme 'gruvbox-dark-hard))
 
 (defun light-theme ()
   (interactive)
-  (disable-theme 'gruvbox-dark-hard)
-  (enable-theme 'gruvbox-light-hard))
+  (switch-theme 'gruvbox-light-hard))
 
 ;; enable dark theme by default
 (dark-theme)
