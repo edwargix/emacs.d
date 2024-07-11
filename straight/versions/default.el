@@ -118,5 +118,6 @@
  ("yaml-mode" . "7b5ce294fb15c2c8926fa476d7218aa415550a2a")
  ("yaml.el" . "70c4fcead97e9bd6594e418c922ae769818f4245")
  ("yasnippet" . "eb5ba2664c3a68ae4a53bb38b85418dd131b208f")
- ("yasnippet-snippets" . "6fafad13bb4689600285d9e38c61958dd63c356d"))
+ ("yasnippet-snippets" . "6fafad13bb4689600285d9e38c61958dd63c356d")
+ ("zenburn-emacs" . "15f48bfc6b52d112f3c3fd98e533bda9138ffdd2"))
 :gamma

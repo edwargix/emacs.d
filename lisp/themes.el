@@ -15,6 +15,10 @@
   (load-theme 'doom-one-light t t)
   (load-theme 'doom-vibrant t t))
 
+(use-package zenburn-theme
+  :config
+  (load-theme 'zenburn t t))
+
 ;; theme functions
 
 (defun switch-theme (theme)
