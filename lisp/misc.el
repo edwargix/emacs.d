@@ -74,8 +74,8 @@
   (defengine duckduckgo
     "https://duckduckgo.com/?q=%s"
     :keybinding "d")
-  (defengine wordnik
-    "https://www.wordnik.com/words/%s"
+  (defengine merriam-webster
+    "https://www.merriam-webster.com/dictionary/%s"
     :keybinding "w")
   (defengine pypi
     "https://pypi.org/search/?q=%s"
