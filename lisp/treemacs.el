@@ -1,5 +1,7 @@
 (use-package treemacs
-  :bind ("M-0" . treemacs)
+  :bind
+  ("M-0" . treemacs-select-window)
+  ("C-M-0" . treemacs)
   :config
   (treemacs-project-follow-mode))
 
