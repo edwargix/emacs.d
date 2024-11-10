@@ -81,6 +81,7 @@
  ("org-contacts" . "f0a430442b2ae60035dcd74fc6a76299875694f3")
  ("page-break-lines" . "e33426ae7f10c60253afe4850450902919fc87fd")
  ("pfuture" . "19b53aebbc0f2da31de6326c495038901bffb73c")
+ ("php-mode" . "e3087db57e6b1682eb80af2916f106ac19472ce3")
  ("pipenv.el" . "3af159749824c03f59176aff7f66ddd6a5785a10")
  ("pkgbuild-mode" . "8ef396d8fa9187b65c065a6bc2ca15dfaf3255df")
  ("pos-tip" . "4889e08cf9077c8589ea6fea4e2ce558614dfcde")
