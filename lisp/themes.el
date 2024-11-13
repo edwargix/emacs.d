@@ -1,4 +1,22 @@
-;; install themes
+(defun disable-current-themes ()
+  "disabled all currently-enabled themes"
+  (interactive)
+  (dolist (thm custom-enabled-themes)
+    (disable-theme thm)))
+
+(defun switch-theme (theme)
+  ;; The (interactive ...) and subsequent (unless ...) code was copied from the
+  ;; enable-theme function in custom.el.gz
+  (interactive (list (intern
+                      (completing-read
+                       "Switch to custom theme: "
+                       obarray (lambda (sym) (get sym 'theme-settings)) t))))
+  (unless (custom-theme-p theme)
+    (error "Undefined Custom theme %s" theme))
+  ;; end of copied code
+
+  (disable-current-themes)
+  (enable-theme theme))
 
 (use-package gruvbox-theme
   :config
@@ -18,28 +36,6 @@
 (use-package zenburn-theme
   :config
   (load-theme 'zenburn t t))
-
-;; theme functions
-
-(defun switch-theme (theme)
-  ;; The (interactive ...) and subsequent (unless ...) code was copied from the
-  ;; enable-theme function in custom.el.gz
-  (interactive (list (intern
-                      (completing-read
-                       "Switch to custom theme: "
-                       obarray (lambda (sym) (get sym 'theme-settings)) t))))
-  (unless (custom-theme-p theme)
-    (error "Undefined Custom theme %s" theme))
-  ;; end of copied code
-
-  (disable-current-themes)
-  (enable-theme theme))
-
-(defun disable-current-themes ()
-  "disabled all currently-enabled themes"
-  (interactive)
-  (dolist (thm custom-enabled-themes)
-    (disable-theme thm)))
 
 (defun dark-theme ()
   (interactive)
