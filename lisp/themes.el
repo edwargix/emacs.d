@@ -18,24 +18,29 @@
   (disable-current-themes)
   (enable-theme theme))
 
-(use-package gruvbox-theme
-  :config
-  (load-theme 'gruvbox-dark-hard t t)
-  (load-theme 'gruvbox-light-hard t t))
+(defmacro use-theme (pkg themes)
+  `(use-package ,pkg
+     :config
+     ;; load each theme
+     ,@(cl-loop for thm in themes collect
+                `(load-theme (quote ,thm) t t))
+     ;; define an interactive function for each theme
+     ,@(cl-loop for thm in themes collect
+                `(defun ,(intern (format "%s-theme" thm)) ()
+                   ,(format "Switch current theme to %s." thm)
+                   (interactive)
+                   (switch-theme (quote ,thm))))))
 
-(use-package monokai-theme
-  :config
-  (load-theme 'monokai t t))
+(use-theme gruvbox-theme (gruvbox-dark-hard
+                          gruvbox-light-hard))
 
-(use-package doom-themes
-  :config
-  (load-theme 'doom-one t t)
-  (load-theme 'doom-one-light t t)
-  (load-theme 'doom-vibrant t t))
+(use-theme monokai-theme (monokai))
 
-(use-package zenburn-theme
-  :config
-  (load-theme 'zenburn t t))
+(use-theme doom-themes (doom-one
+                        doom-one-light
+                        doom-vibrant))
+
+(use-theme zenburn-theme (zenburn))
 
 (defun dark-theme ()
   (interactive)
