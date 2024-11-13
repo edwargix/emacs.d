@@ -42,13 +42,8 @@
 
 (use-theme zenburn-theme (zenburn))
 
-(defun dark-theme ()
-  (interactive)
-  (switch-theme 'gruvbox-dark-hard))
-
-(defun light-theme ()
-  (interactive)
-  (switch-theme 'gruvbox-light-hard))
+(defalias 'dark-theme #'gruvbox-dark-hard-theme)
+(defalias 'light-theme #'gruvbox-light-hard-theme)
 
 ;; enable dark theme by default
 (dark-theme)
