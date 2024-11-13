@@ -42,6 +42,7 @@
 
 (use-theme zenburn-theme (zenburn))
 
+(defalias 'no-themes #'disable-current-themes)
 (defalias 'dark-theme #'gruvbox-dark-hard-theme)
 (defalias 'light-theme #'gruvbox-light-hard-theme)
 
