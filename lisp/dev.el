@@ -42,6 +42,11 @@
   (dolist (folder (file-expand-wildcards "/usr/include/c++/*"))
     (add-to-list 'company-c-headers-path-system folder)))
 
+(use-package company-emoji
+  :after company
+  :config
+  (company-emoji-init))
+
 (use-package projectile
   :demand
   :bind

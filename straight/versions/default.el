@@ -14,6 +14,7 @@
  ("closql" . "c90bb6536307d26943442a69137d6f03675aa2d7")
  ("common-lisp-snippets" . "c82ebf18f4ad49f390dd96ffcc59f8683c1a868b")
  ("company-c-headers" . "9d384571b1190e99d0a789e5296176d69a3d0771")
+ ("company-emoji" . "dcc0e42757b872c16426122a7ddbcf66f9aec62d")
  ("company-mode" . "1924eabfa7438974da0500e85fff5fb32c27282c")
  ("company-quickhelp" . "5bda859577582cc42d16fc0eaf5f7c8bedfd9e69")
  ("compat" . "2aee8353772745bb18db1ca63729a7f5ea572a74")
