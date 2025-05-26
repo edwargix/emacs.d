@@ -35,7 +35,7 @@
 (flyspell-prog-mode)
 
 ;; Transparency control
-(defvar new-frames-are-transparent t
+(defvar new-frames-are-transparent nil
   "Whether new frames should be transparent")
 
 (defun toggle-transparency (&optional frame)
