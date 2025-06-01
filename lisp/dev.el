@@ -49,7 +49,9 @@
         ("C-p" . projectile-command-map)
         ("C-p C-p" . projectile-switch-project))
   :config
-  (projectile-mode))
+  (projectile-mode)
+  ;; Alternative to <https://github.com/ericdanan/counsel-projectile/pull/190>
+  (projectile-known-projects))
 
 (use-package lsp-mode
   :defer t
