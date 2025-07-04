@@ -54,6 +54,7 @@
  ("gnu-elpa-mirror" . "f498c07548b83e13ff9e2b9e2f772a19256affdf")
  ("go-mode.el" . "0ed3c5227e7f622589f1411b4939c3ee34711ebd")
  ("goto-chg" . "72f556524b88e9d30dc7fc5b0dc32078c166fda7")
+ ("gptel" . "d967f9d66f6d2d857278a00ecc95bd87c7a4ed1e")
  ("graphviz-dot-mode" . "8ff793b13707cb511875f56e167ff7f980a31136")
  ("hcl-mode" . "1da895ed75d28d9f87cbf9b74f075d90ba31c0ed")
  ("help-fns-plus" . "d66c26f0f6918c6c1fb0bea16c1796f27da43031")
