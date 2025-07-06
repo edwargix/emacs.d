@@ -42,7 +42,7 @@
   :mode (("README\\.md\\'" . gfm-mode)
          ("\\.md\\'" . markdown-mode)
          ("\\.markdown\\'" . markdown-mode))
-  :custom (markdown-command "markdown")
+  :custom (markdown-command "pandoc")
   :hook (markdown-mode . visual-line-mode))
 
 ;; Syntax/error checking
