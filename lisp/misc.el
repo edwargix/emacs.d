@@ -66,7 +66,7 @@
 (use-package engine-mode
   :config
   (defengine bible
-    "https://www.biblegateway.com/passage/?search=%s&version=ESV"
+    "https://www.biblegateway.com/passage/?search=%s&version=NIV"
     :keybinding "b")
   (defengine brave
     "https://search.brave.com/search?q=%s"
