@@ -69,10 +69,11 @@
 (global-set-key (kbd "C-M-<return>")
                 (lambda ()
                   (interactive)
-                  (start-process
-                   "kitty"
-                   "*kitty*"
-                   "/usr/bin/kitty"))) ;TODO: don't use absolute path
+                  (with-environment-variables (("DISPLAY" ":0"))
+                    (start-process
+                     "kitty"
+                     "*kitty*"
+                     "/usr/bin/kitty")))) ;TODO: don't use absolute path
 
 ;; I don't always know where my frames are, and I want a way to kill Emacs 100%
 ;; of the time
