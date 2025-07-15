@@ -30,6 +30,7 @@
  ("emacs-ccls" . "5636ee6c501355eb0acc75f71569688857f8c10d")
  ("emacs-load-env-vars" . "3808520efaf9492033f6e11a9bffd68eabf02a0f")
  ("emacs-lorem-ipsum" . "4e87a899868e908a7a9e1812831d76c8d072f885")
+ ("emacs-material-theme" . "6823009bc92f82aa3a90e27e1009f7da8e87b648")
  ("emacs-request" . "c22e3c23a6dd90f64be536e176ea0ed6113a5ba6")
  ("emacs-sbt-mode" . "cc68728a6ef0600aad369157b3a2d0ce56afba9b")
  ("emacs-scala-mode" . "661337d8aa0a0cb418184c83757661603de3b2e3")

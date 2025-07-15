@@ -34,6 +34,9 @@
 (use-theme gruvbox-theme (gruvbox-dark-hard
                           gruvbox-light-hard))
 
+(use-theme material-theme (material
+                           material-light))
+
 (use-theme monokai-theme (monokai))
 
 (use-theme doom-themes (doom-one
