@@ -39,6 +39,7 @@
 (load "~/.emacs.d/lisp/themes")
 (load "~/.emacs.d/lisp/treemacs")
 (load "~/.emacs.d/lisp/web")
+(load "~/.emacs.d/lisp/writing")
 
 ;; Start Emacs Daemon
 (require 'server)

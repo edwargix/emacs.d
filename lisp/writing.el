@@ -1,0 +1,5 @@
+(defun my-writing-mode ()
+  (interactive)
+  (markdown-mode)
+  (setq-local buffer-face-mode-face '(:family "DejaVu Sans" :height 160))
+  (buffer-face-mode))
