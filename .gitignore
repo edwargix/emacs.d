@@ -62,3 +62,4 @@ bookmarks
 .dap-breakpoints
 projects
 forge-database*.sqlite
+eln-cache/
