@@ -31,6 +31,10 @@
                    (interactive)
                    (switch-theme (quote ,thm))))))
 
+(use-theme darktooth-theme (darktooth
+                            darktooth-dark
+                            darktooth-darker))
+
 (use-theme gruvbox-theme (gruvbox-dark-hard
                           gruvbox-light-hard))
 

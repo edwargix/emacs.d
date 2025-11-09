@@ -36,6 +36,7 @@
  ("emacs-scala-mode" . "661337d8aa0a0cb418184c83757661603de3b2e3")
  ("emacs-soothe-theme" . "b4fae2f5a97557ae87ab991d60b974246b4009fa")
  ("emacs-sqlite3-api" . "a601c9965e4d0178705a64b7d4f88709ca9aea66")
+ ("emacs-theme-darktooth" . "998639b2ce629dbdc0901ed560371f82de7af490")
  ("emacs-theme-gruvbox" . "6cbf80b6cde3c2390502dc94a911ab7378495249")
  ("emacs-which-key" . "38d4308d1143b61e4004b6e7a940686784e51500")
  ("emacsmirror-mirror" . "9b69ae200045b6ec53f717b365c6ea0b2f821acd")
