@@ -43,6 +43,10 @@
                         doom-one-light
                         doom-vibrant))
 
+(use-theme soothe-theme (soothe
+                         soothe-darker
+                         soothe-obsidian))
+
 (use-theme zenburn-theme (zenburn))
 
 (defalias 'no-themes #'disable-current-themes)
