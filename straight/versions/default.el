@@ -112,6 +112,7 @@
  ("spinner" . "fa117f0893788f3fe24673715a6b83bb34d238dd")
  ("straight.el" . "40e55e56cd0feedece1c76ad967686e2c1aa27e7")
  ("swiper" . "2257a9d0519e18f5ce7a7fafda8a1a8e5023628e")
+ ("systemd-mode" . "8742607120fbc440821acbc351fda1e8e68a8806")
  ("terraform-mode" . "80383ff42bd0047cde6e3a1dfb87bdb9e0340da3")
  ("themes" . "376cf4bdd7d296a3da94aa9a6c68761e7c38a252")
  ("transient" . "c04d1dc76611b19e3b4c9f63e79a7a02aa320685")

@@ -93,6 +93,7 @@
                (cons 'emacs-lisp-mode #'semantic-default-elisp-setup))
   (semantic-mode 1))
 
+(use-package systemd)
 
 (use-package stickyfunc-enhance)
 
