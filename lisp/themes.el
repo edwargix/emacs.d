@@ -35,6 +35,10 @@
                             darktooth-dark
                             darktooth-darker))
 
+(use-theme doom-themes (doom-one
+                        doom-one-light
+                        doom-vibrant))
+
 (use-theme gruvbox-theme (gruvbox-dark-hard
                           gruvbox-light-hard))
 
@@ -42,10 +46,6 @@
                            material-light))
 
 (use-theme monokai-theme (monokai))
-
-(use-theme doom-themes (doom-one
-                        doom-one-light
-                        doom-vibrant))
 
 (use-theme soothe-theme (soothe
                          soothe-darker
