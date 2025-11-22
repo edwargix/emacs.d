@@ -100,6 +100,7 @@
  ("pyvenv" . "31ea715f2164dd611e7fc77b26390ef3ca93509b")
  ("queue" . "8df1334d54d4735d2f821790422a850dfaaa08ef")
  ("racket-mode" . "d98852ef6d0c05e16ce3e87f4a14cf47c557ce2b")
+ ("replace-colorthemes" . "99839fe205ff7dd299b15355e98e6b0aeb9cc646")
  ("rust-mode" . "9915b3a585a7a75e9126df9e0e9d1df8057ae3cf")
  ("rustic" . "ad6f3061ff287fe6a9391a67b59c77c4622a2c1b")
  ("s.el" . "dda84d38fffdaf0c9b12837b504b402af910d01d")

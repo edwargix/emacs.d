@@ -35,6 +35,8 @@
                             darktooth-dark
                             darktooth-darker))
 
+(use-theme color-theme-modern (pierson))
+
 (use-theme doom-themes (doom-one
                         doom-one-light
                         doom-vibrant))
