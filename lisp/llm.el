@@ -1,3 +1,5 @@
+(use-package agent-shell)
+
 (use-package gptel
   :config
   (setq
