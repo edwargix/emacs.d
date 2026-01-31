@@ -59,8 +59,8 @@
 (defalias 'dark-theme #'gruvbox-dark-hard-theme)
 (defalias 'light-theme #'gruvbox-light-hard-theme)
 
-;; enable dark theme by default
-(dark-theme)
+;; defalut theme
+(zenburn-theme)
 
 (global-set-key (kbd "C-c C-t C-d") #'dark-theme)
 (global-set-key (kbd "C-c C-t C-l") #'light-theme)
