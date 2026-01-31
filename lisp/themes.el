@@ -61,8 +61,3 @@
 
 ;; defalut theme
 (zenburn-theme)
-
-(global-set-key (kbd "C-c C-t C-d") #'dark-theme)
-(global-set-key (kbd "C-c C-t C-l") #'light-theme)
-(global-set-key (kbd "C-c C-t C-t") #'switch-theme)
-(global-set-key (kbd "C-c C-t C-n") #'no-themes)
