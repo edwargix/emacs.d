@@ -1,4 +1,6 @@
-(use-package agent-shell)
+(use-package agent-shell
+  :config
+  (setq acp-logging-enabled t))
 
 (use-package gptel
   :config
