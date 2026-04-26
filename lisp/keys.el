@@ -45,12 +45,19 @@
 ;; Evil-like bindings for various modes
 (use-package evil-collection
   :custom (evil-collection-magit-use-$-for-end-of-line nil)
-  :straight (evil-collection
-             :type git :host github :repo "emacs-evil/evil-collection"
-             :fork (:host github :repo "edwargix/evil-collection"))
   :after evil
   :init
-  (evil-collection-init))
+  (evil-collection-init)
+  :config
+  ;; I don't like these evil-collection keybindings in view-mode, so I disable
+  ;; them manually
+  (advice-add #'evil-collection-view-setup :after
+              (lambda ()
+                (evil-define-key* 'normal view-mode-map
+                  "+" nil
+                  "=" nil
+                  "0" nil
+                  "-" nil))))
 
 ;; Easily surround text
 (use-package evil-surround

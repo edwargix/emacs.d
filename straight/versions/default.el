@@ -47,7 +47,7 @@
  ("emacsql" . "2fe6d4562b32a170a750d5e80514fbb6b6694803")
  ("engine-mode" . "e7f317f1b284853b6df4dfd37ab7715b248e0ebd")
  ("evil" . "729d9a58b387704011a115c9200614e32da3cefc")
- ("evil-collection" . "4ec98d88f1955209c16986057ea36447b2f01d1d")
+ ("evil-collection" . "6b38c3d3bbdddba242386644fe49f04b8fdc13cd")
  ("evil-matchit" . "dd03aacd8602ffd2cd9b67d0072092f8d57d5e01")
  ("evil-numbers" . "616aff9e5cee012954756ed2715209fa90308cdf")
  ("evil-org-mode" . "b1f309726b1326e1a103742524ec331789f2bf94")
