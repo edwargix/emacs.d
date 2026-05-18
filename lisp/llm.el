@@ -1,4 +1,6 @@
 (use-package agent-shell
+  :custom
+  (agent-shell-prefer-viewport-interaction t)
   :config
   (setq acp-logging-enabled t))
 
