@@ -2,7 +2,7 @@
 (setq frame-title-format "emacs")
 
 ;; Font
-(setq my-font-size 14)
+(setq my-font-size 17)
 (defun set-my-font-size (font-size)
   (interactive (list (read-number "size: " my-font-size)))
   (setq my-font-size font-size)
