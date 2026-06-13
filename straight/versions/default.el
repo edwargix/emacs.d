@@ -4,7 +4,6 @@
  ("ag.el" . "ed7e32064f92f1315cecbfc43f120bbc7508672c")
  ("agent-shell" . "6a2184f2b941e8cedbf980e62f85a49c759159c0")
  ("alert" . "31fc56855289d0846e73d7ca9b84b628aeac16a0")
- ("annalist.el" . "f83019d61b82a64e621d8dfd63a527a578ff0a11")
  ("auctex" . "bcf439d45e22dbdef3d676deaa3ada16c17388db")
  ("auto-compile" . "4db3a0e497feecc8b3dbeeefacdf363ae60a6392")
  ("autothemer" . "811beeca5b273903516d393fc39401f100343aea")
