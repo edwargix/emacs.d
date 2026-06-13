@@ -45,6 +45,10 @@
   :custom (markdown-command "pandoc")
   :hook (markdown-mode . visual-line-mode))
 
+(use-package grip-mode
+  :commands (grip-mode)
+  :custom (grip-command 'go-grip)) ;; auto, grip, go-grip or mdopen
+
 ;; Syntax/error checking
 (use-package flycheck
   :config

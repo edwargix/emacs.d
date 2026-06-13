@@ -63,6 +63,7 @@
  ("goto-chg" . "72f556524b88e9d30dc7fc5b0dc32078c166fda7")
  ("gptel" . "6589abf7c51143f9424f3e402b29dd7755408781")
  ("graphviz-dot-mode" . "516c151b845a3eb2da73eb4ee648ad99172087ac")
+ ("grip-mode" . "6ed3f9739e4a3320ab063f923c00215f7ee5b5cc")
  ("hcl-mode" . "1da895ed75d28d9f87cbf9b74f075d90ba31c0ed")
  ("help-fns-plus" . "d66c26f0f6918c6c1fb0bea16c1796f27da43031")
  ("help-mode-plus" . "d323bf882c70f89f87d3bc28ebd62e745b5c2b65")
