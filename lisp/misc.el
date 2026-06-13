@@ -110,7 +110,7 @@
 ;; show eshell with C-S-s
 (use-package shell-pop
   :custom
-  (shell-pop-shell-type '("eshell" "*eshell*" #'eshell))
+  (shell-pop-shell-type '("eshell" "*eshell*" (lambda nil (eshell))))
   (shell-pop-universal-key "C-S-s"))
 
 (use-package yaml-mode
