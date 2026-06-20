@@ -69,6 +69,7 @@
  ("help-plus" . "405d525cffd25fd3f3c7976b4fdb0d0a3bccb64c")
  ("ht.el" . "1c49aad1c820c86f7ee35bf9fff8429502f60fef")
  ("hydra" . "59a2a45a35027948476d1d7751b0f0215b1e61aa")
+ ("just-ts-mode.el" . "94f788eccb13cd3ade827af5612ffe3cad5fddf0")
  ("kotlin-mode" . "fddd747e5b4736e8b27a147960f369b86179ddff")
  ("kubel" . "ceb35d50e7ff736a7a707e22407cd9542bf50ffd")
  ("let-alist" . "a331a39b02da002c6c570c4960106454f88a99a5")
