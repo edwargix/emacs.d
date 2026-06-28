@@ -1,5 +1,5 @@
 (use-package scala-mode
-  :hook (scala-mode . lsp)
+  :hook (scala-mode . lsp-deferred)
   :custom
   (scala-indent:step 4))
 

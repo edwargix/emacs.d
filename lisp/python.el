@@ -14,4 +14,4 @@
 
 (defun activate-python-lsp-hook ()
   (interactive)
-  (add-hook 'python-mode-hook #'lsp))
+  (add-hook 'python-mode-hook #'lsp-deferred))

@@ -41,6 +41,11 @@
 (load "~/.emacs.d/lisp/web")
 (load "~/.emacs.d/lisp/writing")
 
+;; Load last so envrc-global-mode is the last globalized minor mode enabled
+;; (so envrc-mode runs first in each buffer's setup), and so exec-path-from-shell
+;; has seeded the base PATH (incl. direnv, and e.g. nix) before envrc shells out.
+(load "~/.emacs.d/lisp/env")
+
 ;; Start Emacs Daemon
 (require 'server)
 (unless (server-running-p)

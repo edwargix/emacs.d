@@ -1,6 +1,6 @@
 (use-package go-mode
   :defer t
-  :hook (go-mode . lsp))
+  :hook (go-mode . lsp-deferred))
 
 (require 'project)
 
