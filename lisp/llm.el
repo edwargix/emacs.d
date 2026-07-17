@@ -1,6 +1,7 @@
 (use-package agent-shell
   :custom
   (agent-shell-prefer-viewport-interaction t)
+  (agent-shell-session-restore-verbosity 'full)
   :config
   (setq acp-logging-enabled t))
 
