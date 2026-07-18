@@ -55,6 +55,13 @@
         ("C-p C-p" . projectile-switch-project))
   :config
   (projectile-mode)
+  ;; In terminal frames with the Kitty Keyboard Protocol active, a second C-p
+  ;; arrives as the escape sequence ESC[112;5u.  projectile binds ESC in this
+  ;; map (projectile-project-buffers-other-buffer), so `C-p ESC' matches a
+  ;; complete command and fires before `input-decode-map' can translate the
+  ;; sequence back into C-p -- breaking `C-p C-p' and spilling the rest into
+  ;; the buffer.  Drop the ESC binding so the sequence decodes normally.
+  (define-key projectile-command-map (kbd "ESC") nil)
   ;; Alternative to <https://github.com/ericdanan/counsel-projectile/pull/190>
   (projectile-known-projects))
 
