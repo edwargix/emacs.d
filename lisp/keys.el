@@ -143,3 +143,12 @@
 ;; protocol; check `kkp-status' in a given frame to confirm.
 (use-package kkp
   :hook (tty-setup . global-kkp-mode))
+
+;; Give terminal frames (emacsclient -t) access to the system clipboard by
+;; shelling out to the platform's clipboard tool (wl-copy on Wayland, pbcopy on
+;; macOS, xclip/xsel on X11 -- auto-detected via `xclip-method').  On Emacs >= 25
+;; xclip dispatches only for terminal frames (its gui-backend-* methods are
+;; specialized on `(window-system nil)'), so GUI frames keep their native
+;; clipboard.  Bidirectional: both kill and yank reach the system clipboard.
+(use-package xclip
+  :config (xclip-mode 1))

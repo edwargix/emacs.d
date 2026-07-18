@@ -128,6 +128,7 @@
  ("use-package" . "4b3484b550431f74ab9cda060a8dc983fe482131")
  ("web-mode" . "aeee2d4c82a791ff69657c1413873bf9265544df")
  ("with-editor" . "45bfc6084f03e3aa7f4f8db20836d559186c5957")
+ ("xclip" . "9ab22517f3f2044e1c8c19be263da9803fbca26a")
  ("xref" . "bd31f9ac86a105c01631b29e6f442049500e9928")
  ("xterm-color" . "ffdad85e584dfc0857f2a1fb970f5ef0f5d31ba3")
  ("yaml-mode" . "96ef0201101a7cd591febd5886633154dae8834c")
