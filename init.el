@@ -30,7 +30,6 @@
 (load "~/.emacs.d/lisp/magit")
 (load "~/.emacs.d/lisp/misc")
 (load "~/.emacs.d/lisp/nix")
-(load "~/.emacs.d/lisp/org")
 (load "~/.emacs.d/lisp/php")
 (load "~/.emacs.d/lisp/python")
 (load "~/.emacs.d/lisp/rust")

@@ -68,7 +68,6 @@
 (use-package lsp-mode
   :defer t
   :custom
-  ;; this does conflict with an Org Mode binding, but lsp is useless in org-mode
   (lsp-keymap-prefix "C-c C-l")
   (lsp-prefer-flymake nil)
   :config

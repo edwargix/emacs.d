@@ -65,13 +65,6 @@
   :config
   (global-evil-surround-mode 1))
 
-;; Evil keybindings for org
-(use-package evil-org
-  :after (evil org)
-  :hook (org-mode . evil-org-mode)
-  :config
-  (evil-org-set-key-theme))
-
 ;; opens a new terminal in default-directory
 (global-set-key (kbd "C-M-<return>")
                 (lambda ()
