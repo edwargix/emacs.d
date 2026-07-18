@@ -52,6 +52,7 @@ recentf
 /semanticdb/
 projectile.cache
 projectile-bookmarks.eld
+projectile-frecency.eld
 /.cache/
 abbrev_defs
 bookmarks
@@ -63,3 +64,4 @@ bookmarks
 projects
 forge-database*.sqlite
 eln-cache/
+agent/
