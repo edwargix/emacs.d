@@ -142,3 +142,11 @@
 
 ;; override: list-buffers -> ibuffer
 (global-set-key (kbd "C-x C-b") #'ibuffer)
+
+;; Support the Kitty Keyboard Protocol so terminal frames (e.g. those opened
+;; via `emacsclient -t') can send key combinations that plain terminal escape
+;; codes can't represent -- C-M-S chords, distinct C-h vs C-<backspace>,
+;; Hyper/Super, etc.  Only takes effect on terminals that actually speak the
+;; protocol; check `kkp-status' in a given frame to confirm.
+(use-package kkp
+  :hook (tty-setup . global-kkp-mode))

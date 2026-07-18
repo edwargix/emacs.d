@@ -72,6 +72,7 @@
  ("hydra" . "59a2a45a35027948476d1d7751b0f0215b1e61aa")
  ("inheritenv" . "b9e67cc20c069539698a9ac54d0e6cc11e616c6f")
  ("just-ts-mode.el" . "6b4b23fcc6f0f0d0903e84c51771d43c06a00771")
+ ("kkp" . "82b7443e10a2ba287467b62e90b6adb6dd93dc99")
  ("kotlin-mode" . "fddd747e5b4736e8b27a147960f369b86179ddff")
  ("kubel" . "ceb35d50e7ff736a7a707e22407cd9542bf50ffd")
  ("let-alist" . "a331a39b02da002c6c570c4960106454f88a99a5")
