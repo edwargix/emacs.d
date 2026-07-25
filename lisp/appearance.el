@@ -1,7 +1,7 @@
-;; Change frame title
+;;; Frame title
 (setq frame-title-format "emacs")
 
-;; Font
+;;; Font
 (setq my-font-size 17)
 (defun set-my-font-size (font-size)
   (interactive (list (read-number "size: " my-font-size)))
@@ -18,9 +18,11 @@
              (lambda (frame)
                (set-frame-font my-font nil t)))
 
+;;; Coding systems
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8)
 
+;;; General UI
 (blink-cursor-mode 0)        ; Turn off cursor blinking
 (column-number-mode 1)       ; Show column number next to line number in mode line
 (global-hi-lock-mode 1)      ; Highlight stuff with M-s h
@@ -31,33 +33,41 @@
 (show-paren-mode 1)          ; Highlight parentheses
 (tool-bar-mode 0)            ; Disable tool bar
 
-;; Spell check in comments and strings
+;;; Spell checking in comments and strings
 (flyspell-prog-mode)
 
-;; Transparency control
+;;; Transparency control
+(defvar transparent-frame-alpha 80
+  "Background opacity, in percent, used when a frame is transparent.")
+
 (defvar new-frames-are-transparent nil
   "Whether new frames should be transparent")
 
+(defun frame-transparent-p (&optional frame)
+  "Return non-nil if FRAME's background is transparent."
+  (let ((alpha (frame-parameter frame 'alpha-background)))
+    (and (numberp alpha) (< alpha 100))))
+
+;; `alpha' is a no-op under pgtk: it asks the window system for whole-window
+;; opacity, which Wayland has no protocol for.  `alpha-background' is drawn by
+;; Emacs itself, and keeps foreground text opaque.
 (defun toggle-transparency (&optional frame)
-  "Toggle FRAME's transparency."
+  "Toggle FRAME's background transparency."
   (interactive)
-  (let ((alpha (frame-parameter frame 'alpha)))
-    (set-frame-parameter
-     frame 'alpha
-     (if (memq (cond ((numberp alpha) alpha)
-                     ((numberp (cdr alpha)) (cdr alpha))
-                     ;; Also handle undocumented (<active> <inactive>) form.
-                     ((numberp (cadr alpha)) (cadr alpha)))
-               '(nil 100))
-         80 100))))
+  (set-frame-parameter frame 'alpha-background
+                       (if (frame-transparent-p frame)
+                           100
+                         transparent-frame-alpha)))
 
 (global-set-key (kbd "C-c t") #'toggle-transparency)
 
 (add-to-list 'after-make-frame-functions
              (lambda (frame)
                (if new-frames-are-transparent
-                   (set-frame-parameter frame 'alpha 80))))
+                   (set-frame-parameter frame 'alpha-background
+                                        transparent-frame-alpha))))
 
+;;; Page breaks
 ;; display ugly ^L page breaks as tidy horizontal lines
 (use-package page-break-lines
   :config
