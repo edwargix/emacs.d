@@ -1,7 +1,14 @@
 (use-package ivy
+  :demand
   :bind
   (:map evil-normal-state-map
-        ("C-k" . ivy-resume)))
+        ("C-k" . ivy-resume))
+  :config
+  ;; Route `completing-read' through ivy.  Without this only the commands
+  ;; counsel remaps get an ivy UI; everything reading with `completing-read'
+  ;; -- all of projectile's commands, in particular -- falls back to the
+  ;; default minibuffer completion.
+  (ivy-mode 1))
 
 (use-package counsel
   :demand
@@ -9,13 +16,6 @@
   ("C-x b" . counsel-ibuffer)
   :config
   (counsel-mode))
-
-(use-package counsel-projectile
-  :config
-  (counsel-projectile-mode)
-  (require 'dash)
-  (setcar counsel-projectile-switch-project-action
-        (1+ (--find-index (eq (cadr it) #'counsel-projectile-switch-project-action-vc) (cdr counsel-projectile-switch-project-action)))))
 
 (use-package swiper
   :bind

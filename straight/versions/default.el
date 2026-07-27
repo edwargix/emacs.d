@@ -20,7 +20,6 @@
  ("company-quickhelp" . "5bda859577582cc42d16fc0eaf5f7c8bedfd9e69")
  ("compat" . "d3be8ee1b12809d6171c4384139a531de71343a5")
  ("cond-let" . "c48600dfab6372670225f046cace263700c78eab")
- ("counsel-projectile" . "40d1e1d4bb70acb00fddd6f4df9778bf2c52734b")
  ("dap-mode" . "7372c429031ad37adb88b42e4a2f4cfff246ce55")
  ("dash.el" . "d3a84021dbe48dba63b52ef7665651e0cf02e915")
  ("dockerfile-mode" . "97733ce074b1252c1270fd5e8a53d178b66668ed")

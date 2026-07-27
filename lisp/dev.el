@@ -62,8 +62,13 @@
   ;; sequence back into C-p -- breaking `C-p C-p' and spilling the rest into
   ;; the buffer.  Drop the ESC binding so the sequence decodes normally.
   (define-key projectile-command-map (kbd "ESC") nil)
-  ;; Alternative to <https://github.com/ericdanan/counsel-projectile/pull/190>
-  (projectile-known-projects))
+  ;; Force the known-projects list to load eagerly rather than on first use.
+  (projectile-known-projects)
+
+  (setq projectile-switch-project-action #'projectile-vc)
+  ;; counsel-ag narrows in the minibuffer rather than popping ag.el's
+  ;; compilation buffer; it finds the git root and honors .gitignore itself.
+  (define-key projectile-command-map (kbd "s a") #'counsel-ag))
 
 (use-package lsp-mode
   :defer t
