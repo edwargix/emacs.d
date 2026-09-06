@@ -1,5 +1,7 @@
 ;; magit: a Git Porcelain
 (use-package magit
+  :custom
+  (magit-diff-fontify-hunk 'all)
   :bind
   (("C-x g" . magit-status)
    ("C-x M-g" . magit-dispatch)
