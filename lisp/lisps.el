@@ -34,8 +34,3 @@
 
 (use-package racket-mode
   :defer t)
-
-(use-package scribble
-  :straight nil
-  :load-path "contrib/"
-  :mode ("\\.scrbl\\'" . scribble-mode))
