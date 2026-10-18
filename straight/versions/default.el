@@ -54,7 +54,7 @@
  ("exec-path-from-shell" . "7552abf032a383ff761e7d90e6b5cbb4658a728a")
  ("f.el" . "931b6d0667fe03e7bf1c6c282d6d8d7006143c52")
  ("flycheck" . "9076d01a8a685bb0f03302e7bf3feaf41e6c34dc")
- ("forge" . "74f3d04e9909520a7c0789c8b0dea19d73fec659")
+ ("forge" . "4233cbba4f566988d78cdb9c5f85af8a171f518d")
  ("ghub" . "01e2bc064ab4965d332efa11fafeda2a43f338d1")
  ("gntp.el" . "767571135e2c0985944017dc59b0be79af222ef5")
  ("gnu-elpa-mirror" . "01092794cb0eaaf18ed44a50c6b84954feec581f")
