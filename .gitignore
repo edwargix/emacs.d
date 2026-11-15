@@ -58,6 +58,7 @@ bookmarks
 .lsp-session-v1
 .dap-breakpoints
 projects
+forge-database*.db
 forge-database*.sqlite
 eln-cache/
 agent/
