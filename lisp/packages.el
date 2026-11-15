@@ -29,8 +29,7 @@
 ;; commits out after pulling, so a bump can't silently undo them.  Each entry is
 ;; (PACKAGE COMMIT REASON); drop it once upstream is fixed.
 (defvar my/straight-holds
-  '(("forge" "4233cbba4f566988d78cdb9c5f85af8a171f518d"
-     "74f3d04 binds magit-repolist-mode-map before magit-repos defines it"))
+  '()
   "Packages to keep at a fixed commit across `my/straight-bump'.")
 
 (defun my/straight-apply-holds ()
